@@ -35,22 +35,22 @@ bot.on('message', (message) => {
         }
         const args = message.content.trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-        if (command === "Howdumbis") {
+        if (command === "howdumbis") {
             let name = args[0];
-//            var list = [
-//                '1, Not Really Dumb At All',
-//                '2, Not The Brightest Dude On The Block',
-//                '3, Pretty Goddamn Stupid',
-//                '4, Incompetent Fool',
-//                '5, Born And Raised In Texas',
-//                '6, Invested In Cryptocurrency',
-//                '7, Cannot Tell The Difference Between Tomatoes and Dildos',
-//                '8, Suffering From The Jslayer Disease',
-//                '9, Promoted Dreamz To Sector Leader',
-//                '10, Has Already Pre-Ordered Battlefront III'
-//            ];
+            var list = [
+                '1, Not Really Dumb At All',
+                '2, Not The Brightest Dude On The Block',
+                '3, Pretty Goddamn Stupid',
+                '4, Incompetent Fool',
+                '5, Born And Raised In Texas',
+                '6, Invested In Cryptocurrency',
+                '7, Cannot Tell The Difference Between Tomatoes and Dildos',
+                '8, Suffering From The Jslayer Disease',
+                '9, Promoted Dreamz To Sector Leader',
+                '10, Has Already Pre-Ordered Battlefront III'
+            ];
             
-//            var rand = Math.floor(Math.random() * list.length);
+            var rand = Math.floor(Math.random() * list.length);
 
             message.reply(`${name} has received a dumbass score of `);
         }
