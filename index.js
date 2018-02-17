@@ -5,8 +5,6 @@ const db = require('quick.db');
 
 const func = require('./functions.js');
 
-const commands = JSON.parse(fs.readFileSync('./commands.json','utf8'));
-
 bot.on('message', (message) => {
 
         if(message.content == '!help') {
