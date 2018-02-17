@@ -41,7 +41,8 @@ bot.on('message', (message) => {
             let location = args[2];
             message.reply(`Hello ${message.author.username}, I see you're a ${age} year old ${sex} from ${location}. Wanna date?`);
           }
-        if(message.content == 'How dumb am I on a scale from 1-10?') {
+          if (command === "On a scale from 1-10, how dumb is") {
+            let name = args[0];
             var list = [
                 '1, Not Really Dumb At All',
                 '2, Not The Brightest Dude On The Block',
@@ -55,9 +56,9 @@ bot.on('message', (message) => {
                 '10, Has Already Pre-Ordered Battlefront III'
             ];
             
-            var rand = Math.floor(Math.random() * list.length)
+            var rand = Math.floor(Math.random() * list.length);
 
-            message.channel.send(list[rand])
+            message.channel.send(`${name} has received a dumbass score of ` + list[rand])
         }
 
 });
