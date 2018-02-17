@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 bot.on('guildMemberAdd', member => {
-        const welcomechannel = member.guild.channels.find('name','public-chat')
+        const welcomechannel = member.guild.channels.find('name','general')
         
         var embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -11,7 +11,7 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberRemove', member => {
-        const leave = member.guild.channels.find('name','public-chat')
+        const leave = member.guild.channels.find('name','general')
         
         var embed = new Discord.RichEmbed()
         .setColor('RANDOM')
