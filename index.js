@@ -5,7 +5,7 @@ const db = require('quick.db');
 
 const func = require('./functions.js');
 
-const commands = JSON.parse(fs.readFileSync('Storage/commands.json','utf8'));
+const commands = JSON.parse(fs.readFileSync('./commands.json','utf8'));
 
 bot.on('message', (message) => {
 
