@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 bot.on('guildMemberAdd', member => {
-        const welcomechannel = member.guild.channels.find('name','reception-area')
+        const welcomechannel = member.guild.channels.find('name','unofficial')
         
         var embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -11,7 +11,7 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberRemove', member => {
-        const leave = member.guild.channels.find('name','reception-area')
+        const leave = member.guild.channels.find('name','unofficial')
         
         var embed = new Discord.RichEmbed()
         .setColor('RANDOM')
