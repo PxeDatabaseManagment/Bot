@@ -5,8 +5,6 @@ const db = require('quick.db');
 
 const func = require('./functions.js');
 
-const config = require('./config.js');
-
 bot.on('message', (message) => {
 
         if(message.content == '!help') {
