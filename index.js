@@ -37,8 +37,10 @@ bot.on('message', (message) => {
         const args = message.content.trim().split(/ +/g);
         const command = args.shift().toLowerCase();
         
-        if (command === "how_dumb_is") {
-            let name = args[0];
+        if (command === "?how") {
+            let a = args[0];
+            let b = args[1];
+            let name = args[2];
 
             var list = [
                 '1, Not Really Dumb At All',
