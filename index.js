@@ -2,20 +2,20 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 bot.on('guildMemberAdd', member => {
-        const welcomechannel = member.guild.channels.find('name','general')
+        const welcomechannel = member.guild.channels.find('name','reception-area')
         
         var embed = new Discord.RichEmbed()
         .setColor('RANDOM')
-        .setDescription('Please welcome ' + member.user)
+        .setDescription(member.user + " has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
         return welcomechannel.send(embed)
 });
 
 bot.on('guildMemberRemove', member => {
-        const leave = member.guild.channels.find('name','general')
+        const leave = member.guild.channels.find('name','reception-area')
         
         var embed = new Discord.RichEmbed()
         .setColor('RANDOM')
-        .setDescription(member.user.tag + " has left the server.")
+        .setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.")
         return leave.send(embed)
 });
 
