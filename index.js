@@ -52,7 +52,7 @@ bot.on('message', (message) => {
             
             var rand = Math.floor(Math.random() * list.length);
 
-            message.reply(`${name} has received a dumbass score of `);
+            message.channel.send(`${name} has received a dumbass score of ` + list[rand]);
         }
 
 });
