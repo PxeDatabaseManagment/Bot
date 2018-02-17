@@ -16,7 +16,7 @@ bot.on('guildMemberRemove', member => {
         var embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setDescription(member.user.tag + " has left the server.")
-        return welcomechannel.send(embed)
+        return leave.send(embed)
 });
 
 bot.on('message', (message) => {
