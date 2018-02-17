@@ -1,6 +1,24 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
+bot.on('guildMemberAdd', member => {
+        const welcomechannel = member.guild.channels.find('name','public-chat')
+        
+        var embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setDescription('Please welcome ' + member.user)
+        return welcomechannel.send(embed)
+});
+
+bot.on('guildMemberRemove', member => {
+        const leave = member.guild.channels.find('name','public-chat')
+        
+        var embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setDescription(member.user.tag + " has left the server.")
+        return welcomechannel.send(embed)
+});
+
 bot.on('message', (message) => {
 
         if(message.content == '!help') {
