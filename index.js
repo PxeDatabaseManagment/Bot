@@ -35,13 +35,7 @@ bot.on('message', (message) => {
         }
         const args = message.content.trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-        if (command === "asl") {
-            let age = args[0];
-            let sex = args[1];
-            let location = args[2];
-            message.reply(`Hello ${message.author.username}, I see you're a ${age} year old ${sex} from ${location}. Wanna date?`);
-          }
-          if (command === "On a scale from 1-10, how dumb is") {
+        if (command === "On a scale from 1-10, how dumb is") {
             let name = args[0];
             var list = [
                 '1, Not Really Dumb At All',
