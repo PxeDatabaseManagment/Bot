@@ -1,10 +1,11 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require('fs');
+const db = require('quick.db');
 
 const func = require('./functions.js');
 
-const config = require('./config.js');
+const commands = JSON.parse(fs.readFileSync('Storage/commands.json','utf8'));
 
 bot.on('message', (message) => {
 
