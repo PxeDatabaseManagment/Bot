@@ -33,6 +33,24 @@ bot.on('message', (message) => {
         if(message.content == '!chatrules') {
             message.channel.send('Phoenix Server Chat Rules: \n  \nServer leadership reserves the right to declare any content inappropriate for the chats. \n  \nOverarching Principle - Respect every other member of the server, and do not deliberately try to make others feel uncomfortable or unsafe in any way. \n  \nServer Channels - The official channel should be used for official clan business only. The unofficial channel is for informal conversation, including memes. \n  \nLanguage - There are generally no profanity filters in the server; however, if you excessively cuss out someone even if they ask you to stop, you are breaking the overarching principle. \n  \nSexual content - Media that contains sexually inappropriate content will not be allowed in the server. Please keep in mind that it is in fact illegal for minors to view sexually explicit content without parental/guardian consent in the United States, and it is therefore also illegal to distribute sexually explicit content to minors. Just follow the law, and you will be fine. \n  \nGore - Any content that shows real gore will not be allowed in the chats. CGI gore will be allowed to a certain extent, but as with any media, server leadership reserves the right to declare it inappropriate for the chat.');
         }
+        if(message.content == '!roll') {
+            var list = [
+                '1, Not Really Dumb At All',
+                '2, Not The Brightest Dude On The Block',
+                '3, Pretty Goddamn Stupid',
+                '4, Incompetent Fool',
+                '5, Born And Raised In Texas',
+                '6, Invested In Cryptocurrency',
+                '7, Cannot Tell The Difference Between Tomatoes and Dildos',
+                '8, Suffering From The Jslayer Disease',
+                '9, Promoted Dreamz To Sector Leader',
+                '10, Has Already Pre-Ordered Battlefront III'
+            ];
+            
+            var rand = Math.floor(Math.random() * list.length)
+
+            message.reply(list[rand])
+        }
 
 });
 
