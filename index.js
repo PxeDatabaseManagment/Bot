@@ -1,5 +1,10 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const fs = require('fs');
+
+const func = require('./functions.js');
+
+const config = require('./config.js');
 
 bot.on('message', (message) => {
 
