@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-bot.user.setPresence({ status: 'online', game: { name: 'Phoenix Era' } });
+bot.user.setStatus(online, 'Phoenix Era');
 
 bot.on('guildMemberAdd', member => {
         const welcomechannel = member.guild.channels.find('name','unofficial')
