@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
+bot.user.setPresence({ status: 'online', game: { name: 'Phoenix Era' } });
+
 bot.on('guildMemberAdd', member => {
         const welcomechannel = member.guild.channels.find('name','unofficial')
         
@@ -23,6 +25,10 @@ bot.on('message', (message) => {
 
         if(message.content == '!help') {
             message.channel.send('You can use these commands: \n \n!chatrules - displays server chat rules \n!roe - displays RoE');
+        }
+        
+        if(message.content == 'Maybe we should check the audit log...') {
+            message.channel.send('NEVER EVER FORGET THAT RUEFUL KING INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP');
         }
         
         if(message.content == 'Jenkins, what do you think of your name?') {
