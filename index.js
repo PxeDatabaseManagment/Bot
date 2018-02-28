@@ -31,7 +31,7 @@ bot.on('message', (message) => {
         }
         
         if(message.content == 'Maybe we should check the audit log...') {
-            message.channel.send('NEVER EVER FORGET THAT RUEFUL KING INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP');
+            message.channel.send('NEVER EVER FORGET THAT RUEFUL KING INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP', {files: ["https://i.imgur.com/mWb2AvL.png"]});
         }
         
         if(message.content == 'Jenkins, what do you think of your name?') {
