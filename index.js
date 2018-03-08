@@ -27,7 +27,15 @@ bot.on('guildMemberRemove', member => {
 bot.on('message', (message) => {
 
         if(message.content == '!help') {
-            message.channel.send('You can use these commands: \n \n!chatrules - displays server chat rules \n!roe - displays RoE');
+            message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
+        }
+        
+        if(message.content == '!hhh') {
+            message.channel.send('Type !help if you would like me to give you a list of useful commands.');
+        }
+        
+        if(message.content == '!clanrules') {
+            message.channel.send('1. At the end of the game of a formal clan activity, do not move. \n2. Do not disrespect dead bodies during clan activities, or whenever you represent the clan. \n3. During a clan activity, do not pick up a power weapon or press a switch unless you are authorized to do so.');
         }
         
         if(message.content == 'Maybe we should check the audit log...') {
