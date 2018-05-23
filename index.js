@@ -15,9 +15,7 @@ bot.on('guildMemberAdd', member => {
         return welcomechannel.send(embed)
         
         var role = member.guild.roles.find('name', 'Trainee');
-        var roles = member.guild.roles.find('name', 'Class 3');
         member.addRole(role)
-        member.addRole(roles)
 });
 
 bot.on('guildMemberRemove', member => {
