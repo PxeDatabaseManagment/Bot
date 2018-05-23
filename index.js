@@ -28,10 +28,10 @@ bot.on("message", function (message)
 {
     var input = message.content.toUpperCase();
 
-    if(input === "!CLASS3")
+    if(input === "!SENTINEL")
     {
-        let class3RoleObject = message.server.roles.get('name', 'Class 3');
-        bot.sendMessage(message, `${class3RoleObject} are on the way!`);
+        let classRoleObject = message.server.roles.get('name', 'Sentinel');
+        bot.sendMessage(message, `${classRoleObject} is on the way!`);
     }
 
 });
