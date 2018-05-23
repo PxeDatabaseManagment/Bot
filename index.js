@@ -47,7 +47,8 @@ bot.on('message', (message) => {
         }
         
         if(message.content == '!class3') {
-            message.channel.send('<@&417861841721491482> Get the hell on Halo now.');
+            const getonhalo = bot.emojis.find("name", "GetOnHalo");
+            message.channel.send('<@&417861841721491482> Get the hell on Halo now. ${getonhalo}');
         }
         
         if(message.content == '!class2') {
