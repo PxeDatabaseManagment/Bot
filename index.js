@@ -30,7 +30,7 @@ bot.on("message", function (message)
 
     if(input === "!SENTINEL")
     {
-        let classRoleObject = message.server.roles.get('name', 'Sentinel');
+        let classRoleObject = message.server.roles.get('name', 'sentinel');
         bot.sendMessage(message, `${classRoleObject} is on the way!`);
     }
 
