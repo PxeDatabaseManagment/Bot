@@ -28,6 +28,10 @@ bot.on('message', (message) => {
         
         const msg = message.content.toLowerCase();
         
+        if(msg == '!update') {
+            message.channel.send('@everyone \nAll commands are no longer case sensitive! Feel free to ask for !HELP or !help or !hElP. \n \nPlease reach out to <@216628403921485824> if you have any suggestions for new commands! \n \nThat is all. Have a pleasant day.');
+        }
+        
         if(msg == '!help') {
             message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
         }
@@ -92,7 +96,7 @@ bot.on('message', (message) => {
             
             var rand = Math.floor(Math.random() * list.length);
 
-            message.channel.send(`${name} has received a dumbass score of ` + list[rand]);
+            message.channel.send(`On a scale of 1-10, ${name} has received a dumbass score of ` + list[rand]);
         }
         
         if (command === "jenkins") {
