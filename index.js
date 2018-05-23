@@ -8,7 +8,7 @@ bot.on('ready', () => {
 
 bot.on('guildMemberAdd', member => {
         
-        var role = member.guild.roles.find('name', 'Intelligence');
+        let role = member.guild.roles.find('name', 'Intelligence');
         member.addRole(role)
         
 });
