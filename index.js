@@ -25,6 +25,8 @@ bot.on('guildMemberRemove', member => {
 });
 
 bot.on('message', (message) => {
+        
+        message = message.content.toLowerCase();
 
         if(message.content == '!help') {
             message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
@@ -34,15 +36,15 @@ bot.on('message', (message) => {
             message.channel.send('1. At the end of the game of a formal clan activity, do not move. \n2. Do not disrespect dead bodies during clan activities, or whenever you represent the clan. \n3. During a clan activity, do not pick up a power weapon or press a switch unless you are authorized to do so.');
         }
         
-        if(message.content == 'Maybe we should check the audit log...') {
+        if(message.content == 'maybe we should check the audit log...') {
             message.channel.send('NEVER EVER FORGET THAT RUEFUL KING INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP', {files: ["https://i.imgur.com/mWb2AvL.png"]});
         }
         
-        if(message.content == 'Jenkins, what do you think of your name?') {
+        if(message.content == 'jenkins, what do you think of your name?') {
             message.channel.send('What do I think of my name?! I really could not give a shit. Why do I even have a name? I am literally just a couple hundred lines of code Nuqrs came up with! Even if I had to have a name, I would want it to be Stewart.');
         }
         
-        if(message.content == 'Could you pull up the RoE for me?') {
+        if(message.content == 'could you pull up the roe for me?') {
             message.channel.send('I dunno, could you just type !roe like a normal person?');
         }
         
