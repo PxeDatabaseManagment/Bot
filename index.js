@@ -46,12 +46,16 @@ bot.on('message', (message) => {
             message.channel.send('I dunno, could you just type !roe like a normal person?');
         }
         
+        if(message.content == '!class3') {
+            message.channel.send('<@&417861841721491482> Get the hell on Halo now.');
+        }
+        
         if(message.content == '!class2') {
-            message.channel.send('<@&Class 2> Get the hell on Halo now.');
+            message.channel.send('<@&417862299609595905> Get the hell on Halo now.');
         }
         
         if(message.content == '!class1') {
-            message.channel.send('<@&Class 1> Get the hell on Halo now.');
+            message.channel.send('<@&417862490240581632> Get the hell on Halo now.');
         }
         
         if(message.content == '!roe') {
