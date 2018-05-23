@@ -6,17 +6,6 @@ bot.on('ready', () => {
         bot.user.setPresence({ game: { name: 'Phoenix Era', type: 0 } })
 });
 
-bot.on('guildMemberAdds', member => {
-        
-        const welcomechannel = member.guild.channels.find('name','unofficial')
-         
-        var embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setDescription(member.user + " has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
-        return welcomechannel.send(embed)
-        
-});
-
 bot.on('guildMemberAdd', member => {
         
         let role = member.guild.roles.get('391331240738947073');
