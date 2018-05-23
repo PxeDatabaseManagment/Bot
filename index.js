@@ -7,15 +7,10 @@ bot.on('ready', () => {
 });
 
 bot.on('guildMemberAdd', member => {
-        const welcomechannel = member.guild.channels.find('name','unofficial')
         
-        var embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setDescription(member.user + " has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
-        return welcomechannel.send(embed)
-        
-        var role = member.guild.roles.find('name', 'Trainee');
+        var role = member.guild.roles.find('name', 'Intelligence');
         member.addRole(role)
+        
 });
 
 bot.on('guildMemberRemove', member => {
