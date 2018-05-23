@@ -6,7 +6,7 @@ bot.on('ready', () => {
         bot.user.setPresence({ game: { name: 'Phoenix Era', type: 0 } })
 });
 
-bot.on('guildMemberAdd', member => {
+bot.on('guildMemberAdds', member => {
         
         const welcomechannel = member.guild.channels.find('name','unofficial')
          
