@@ -47,15 +47,21 @@ bot.on('message', (message) => {
         }
         
         if(message.content == '!class3') {
-            message.channel.send('@Class 3 Get the hell on Halo now. :GetOnHalo:');
+            var class3Role = message.channel.server.roles.get('name', 'Class 3');
+                
+        bot.sendMessage(message, class3Role + " Get the hell on Halo now.");
         }
         
         if(message.content == '!class2') {
-            message.channel.send('@Class 2 Get the hell on Halo now. :GetOnHalo:');
+            var class2Role = message.channel.server.roles.get('name', 'Class 2');
+                
+        bot.sendMessage(message, class2Role + " Get the hell on Halo now.");
         }
         
         if(message.content == '!class1') {
-            message.channel.send('@Class 1 Get the hell on Halo now. :GetOnHalo:');
+            var class1Role = message.channel.server.roles.get('name', 'Class 1');
+                
+        bot.sendMessage(message, class1Role + " Get the hell on Halo now.");
         }
         
         if(message.content == '!roe') {
