@@ -96,6 +96,39 @@ bot.on('message', (message) => {
             message.channel.send(list[rand]);
         }
         
+        if (command === "jenkins get class 3 on") {
+
+            var list = [
+                '@Class 3 Get the hell on Halo now. :GetOnHalo:',
+            ];
+            
+            var rand = Math.floor(Math.random() * list.length);
+
+            message.channel.send(list[rand]);
+        }
+        
+        if (command === "jenkins get class 2 on") {
+
+            var list = [
+                '@Class 2 Get the hell on Halo now. :GetOnHalo:',
+            ];
+            
+            var rand = Math.floor(Math.random() * list.length);
+
+            message.channel.send(list[rand]);
+        }
+        
+        if (command === "jenkins get class 1 on") {
+
+            var list = [
+                '@Class 1 Get the hell on Halo now. :GetOnHalo:',
+            ];
+            
+            var rand = Math.floor(Math.random() * list.length);
+
+            message.channel.send(list[rand]);
+        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
