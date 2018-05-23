@@ -6,6 +6,28 @@ bot.on('ready', () => {
         bot.user.setPresence({ game: { name: 'Phoenix Era', type: 0 } })
 });
 
+bot.on("message", msg => {
+        
+    if(msg.content == '!class3') {
+            var class3Role = msg.channel.server.roles.get('name', 'Class 3');
+                
+        bot.sendMessage(msg, class3Role + " Get the hell on Halo now.");
+        }
+        
+        if(msg.content == '!class2') {
+            var class2Role = msg.channel.server.roles.get('name', 'Class 2');
+                
+        bot.sendMessage(msg, class2Role + " Get the hell on Halo now.");
+        }
+        
+        if(msg.content == '!class1') {
+            var class1Role = msg.channel.server.roles.get('name', 'Class 1');
+                
+        bot.sendMessage(msg, class1Role + " Get the hell on Halo now.");
+        }
+        
+});
+
 bot.on('guildMemberAdd', member => {
         const welcomechannel = member.guild.channels.find('name','unofficial')
         
@@ -23,6 +45,8 @@ bot.on('guildMemberRemove', member => {
         .setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.")
         return leave.send(embed)
 });
+
+
 
 bot.on('message', (message) => {
 
@@ -44,24 +68,6 @@ bot.on('message', (message) => {
         
         if(message.content == 'Could you pull up the RoE for me?') {
             message.channel.send('I dunno, could you just type !roe like a normal person?');
-        }
-        
-        if(message.content == '!class3') {
-            var class3Role = message.channel.server.roles.get('name', 'Class 3');
-                
-        bot.sendMessage(message, class3Role + " Get the hell on Halo now.");
-        }
-        
-        if(message.content == '!class2') {
-            var class2Role = message.channel.server.roles.get('name', 'Class 2');
-                
-        bot.sendMessage(message, class2Role + " Get the hell on Halo now.");
-        }
-        
-        if(message.content == '!class1') {
-            var class1Role = message.channel.server.roles.get('name', 'Class 1');
-                
-        bot.sendMessage(message, class1Role + " Get the hell on Halo now.");
         }
         
         if(message.content == '!roe') {
