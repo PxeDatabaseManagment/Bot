@@ -1,5 +1,5 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+var Discord = require('discord.js');
+var bot = new Discord.Client();
 
 bot.on('ready', () => {
         bot.user.setStatus('Online')
@@ -24,9 +24,19 @@ bot.on('guildMemberRemove', member => {
         return leave.send(embed)
 });
 
+bot.on("message", function (message)
+{
+    var input = message.content.toUpperCase();
 
+    if(input === "!CLASS3")
+    {
+        let class3RoleObject = message.server.roles.get('name', 'Class 3');
+        bot.sendMessage(message, `${class3RoleObject} are on the way!`);
+    }
 
-bot.on('message', (message) => {
+});
+
+bot.on('mssage', (message) => {
 
         if(message.content == '!help') {
             message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
@@ -46,10 +56,6 @@ bot.on('message', (message) => {
         
         if(message.content == 'Could you pull up the RoE for me?') {
             message.channel.send('I dunno, could you just type !roe like a normal person?');
-        }
-        
-        if(message.content == '!class3') {
-            message.channel.send('<@&Class 3> Get the hell on Halo now.');
         }
         
         if(message.content == '!class2') {
