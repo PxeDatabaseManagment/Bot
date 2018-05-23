@@ -8,7 +8,7 @@ bot.on('ready', () => {
 
 bot.on('guildMemberAdd', member => {
         
-        let role = member.guild.roles.get('409543599949086731');
+        let role = member.guild.roles.get('391331240738947073');
         member.addRole(role).catch(console.error);
         
 });
