@@ -13,6 +13,11 @@ bot.on('guildMemberAdd', member => {
         .setColor('RANDOM')
         .setDescription(member.user + " has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
         return welcomechannel.send(embed)
+        
+        var role = member.guild.roles.find('name', 'Trainee');
+        var roles = member.guild.roles.find('name', 'Class 3');
+        member.addRole(role)
+        member.addRole(roles)
 });
 
 bot.on('guildMemberRemove', member => {
