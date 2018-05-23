@@ -13,7 +13,11 @@ bot.on('guildMemberAdd', member => {
         var embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setDescription(member.user + " has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
-        return welcomechannel.send(embed);
+        return welcomechannel.send(embed)
+        
+});
+
+bot.on('guildMemberAdd', member => {
         
         let role = member.guild.roles.get('391331240738947073');
         member.addRole(role).catch(console.error);
