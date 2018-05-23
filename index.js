@@ -8,23 +8,29 @@ bot.on('ready', () => {
 
 bot.on("message", msg => {
         
-    if(msg.content == '!class3') {
+        if(msg.content == "mention") {
+        var hereRole = msg.channel.server.roles.get('name', 'here');
+
+        bot.sendMessage(msg, hereRole + " is anyone here?");
+    }
+        
+        if(msg.content == '!class3') {
             var class3Role = msg.channel.server.roles.get('name', 'Class 3');
                 
         bot.sendMessage(msg, class3Role + " Get the hell on Halo now.");
-        }
+    }
         
         if(msg.content == '!class2') {
             var class2Role = msg.channel.server.roles.get('name', 'Class 2');
                 
         bot.sendMessage(msg, class2Role + " Get the hell on Halo now.");
-        }
+    }
         
         if(msg.content == '!class1') {
             var class1Role = msg.channel.server.roles.get('name', 'Class 1');
                 
         bot.sendMessage(msg, class1Role + " Get the hell on Halo now.");
-        }
+    }
         
 });
 
