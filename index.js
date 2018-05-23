@@ -47,16 +47,15 @@ bot.on('message', (message) => {
         }
         
         if(message.content == '!class3') {
-            const getonhalo = bot.emojis.find("name", "GetOnHalo");
-            message.channel.send('<@&417861841721491482> Get the hell on Halo now. ${getonhalo}');
+            message.channel.send('<@&417861841721491482> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
         
         if(message.content == '!class2') {
-            message.channel.send('<@&417862299609595905> Get the hell on Halo now.');
+            message.channel.send('<@&417862299609595905> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
         
         if(message.content == '!class1') {
-            message.channel.send('<@&417862490240581632> Get the hell on Halo now.');
+            message.channel.send('<@&417862490240581632> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
         
         if(message.content == '!roe') {
