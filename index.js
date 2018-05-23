@@ -25,8 +25,6 @@ bot.on('guildMemberRemove', member => {
 });
 
 bot.on('message', (message) => {
-        
-        message = message.content.toLowerCase();
 
         if(message.content == '!help') {
             message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
