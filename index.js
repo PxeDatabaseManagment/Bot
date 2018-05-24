@@ -43,6 +43,10 @@ bot.on('message', (message) => {
             message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
         }
         
+        if(msg == '!yes') {
+            message.author.sendMessage('Your message here.');
+        }
+        
         if(msg == '!clanrules') {
             message.channel.send('1. At the end of the game of a formal clan activity, do not move. \n2. Do not disrespect dead bodies during clan activities, or whenever you represent the clan. \n3. During a clan activity, do not pick up a power weapon or press a switch unless you are authorized to do so.');
         }
