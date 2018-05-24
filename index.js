@@ -23,7 +23,7 @@ bot.on('guildMemberAdd', member => {
         member.addRole(role).catch(console.error);
         let roles = member.guild.roles.get('417861841721491482');
         member.addRole(roles).catch(console.error);
-        
+        member.sendMessage('Welcome to Phoenix Era.');
 });
 
 bot.on('guildMemberRemove', member => {
