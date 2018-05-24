@@ -23,7 +23,7 @@ bot.on('guildMemberAdd', member => {
         member.addRole(role).catch(console.error);
         let roles = member.guild.roles.get('417861841721491482');
         member.addRole(roles).catch(console.error);
-        member.sendMessage('Welcome to Phoenix Era.');
+        member.sendMessage('Welcome to Phoenix Era. Type !help to see a list of useful commands. \nType !chatrules to see server rules. \nPlease read the member guide: \nhttps://docs.google.com/document/d/1AdhipSusWtomgfIVPc4X-gp3A2WGUas3dilsnDuHrDk/edit?usp=sharing \n \nAbove all: do not be stupid.');
 });
 
 bot.on('guildMemberRemove', member => {
@@ -44,7 +44,7 @@ bot.on('message', (message) => {
         }
         
         if(msg == '!yes') {
-            message.author.sendMessage('Your message here.');
+            message.author.sendMessage('Welcome to Phoenix Era. Type !help to see a list of useful commands. \nType !chatrules to see server rules. \nPlease read the member guide: \nhttps://docs.google.com/document/d/1AdhipSusWtomgfIVPc4X-gp3A2WGUas3dilsnDuHrDk/edit?usp=sharing \n \nAbove all: do not be stupid.');
         }
         
         if(msg == '!clanrules') {
