@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 bot.on('ready', () => {
         bot.user.setStatus('Online')
-        bot.user.setPresence({ game: { name: 'Phoenix', type: 0 } })
+        bot.user.setPresence({ game: { name: 'Phoenix Era', type: 0 } })
 });
 
 bot.on('guildMemberAdd', member => {
