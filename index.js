@@ -146,6 +146,11 @@ bot.on('message', (message) => {
             message.channel.send(list[rand]);
         }
         
+        if (command === "apok") {
+
+            message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
+        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
