@@ -21,7 +21,7 @@ bot.on('guildMemberAdd', member => {
         
         let role = member.guild.roles.get('391331240738947073');
         member.addRole(role).catch(console.error);
-        let roles = member.guild.roles.get('417861841721491482');
+        let roles = member.guild.roles.get('698704980336574466');
         member.addRole(roles).catch(console.error);
         let roless = member.guild.roles.get('689275374139605145');
         member.addRole(roless).catch(console.error);
@@ -63,7 +63,7 @@ bot.on('message', (message) => {
         }
         
         if(msg == 'maybe we should check the audit log...') {
-            message.channel.send('NEVER EVER FORGET THAT RUEFUL KING INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP', {files: ["https://i.imgur.com/mWb2AvL.png"]});
+            message.channel.send('NEVER EVER FORGET THAT APOK INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP', {files: ["https://i.imgur.com/mWb2AvL.png"]});
         }
         
         if(msg == 'jenkins, what do you think of your name?') {
@@ -72,6 +72,11 @@ bot.on('message', (message) => {
         
         if(msg == 'could you pull up the roe for me?') {
             message.channel.send('I dunno, could you just type !roe like a normal person?');
+        }
+        
+        if(msg == '!class4') {
+            message.delete();
+            message.channel.send('<@&698704980336574466> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
         
         if(msg == '!class3') {
