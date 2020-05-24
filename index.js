@@ -151,6 +151,11 @@ bot.on('message', (message) => {
             message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
         
+        if (command === "apoc") {
+
+            message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
+        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
