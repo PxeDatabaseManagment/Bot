@@ -163,7 +163,196 @@ bot.on('message', (message) => {
             if (id == '037') {
                     id = '216628403921485824';
             }
+            if (title == 'pxk') {
+                    title = '391204267001643009';
+            }
+            if (title == 'csg') {
+                    title = '391204267001643009';
+            }
+            if (title == 'acg') {
+                    title = '391204267001643009';
+            }
+            if (title == 'str') {
+                    title = '391204267001643009';
+            }
+            if (title == 'ast') {
+                    title = '391204267001643009';
+            }
+            if (title == 'omc') {
+                    title = '391204267001643009';
+            }
+            if (title == 'aoc') {
+                    title = '391204267001643009';
+            }
+            if (title == 'prp') {
+                    title = '391204267001643009';
+            }
+            if (title == 'app') {
+                    title = '391204267001643009';
+            }
+            if (title == 'eql') {
+                    title = '391204267001643009';
+            }
+            if (title == 'ael') {
+                    title = '391204267001643009';
+            }
+            if (title == 'vil') {
+                    title = '391204267001643009';
+            }
+            if (title == 'avl') {
+                    title = '391204267001643009';
+            }
+            if (title == 'aql') {
+                    title = '391204267001643009';
+            }
+            if (title == 'aal') {
+                    title = '391204267001643009';
+            }
+            if (title == 'rul') {
+                    title = '391204267001643009';
+            }
+            if (title == 'arl') {
+                    title = '391204267001643009';
+            }
+            if (title == 'fuc') {
+                    title = '391204267001643009';
+            }
+            if (title == 'mtl') {
+                    title = '391204267001643009';
+            }
+            if (title == 'amt') {
+                    title = '391204267001643009';
+            }
+            if (title == 'mxl') {
+                    title = '391204267001643009';
+            }
+            if (title == 'amx') {
+                    title = '391204267001643009';
+            }
+            if (title == 'mdl') {
+                    title = '391204267001643009';
+            }
+            if (title == 'amd') {
+                    title = '391204267001643009';
+            }
+            if (title == 'mal') {
+                    title = '391204267001643009';
+            }
+            if (title == 'ama') {
+                    title = '391204267001643009';
+            }
+            if (title == 'mtr') {
+                    title = '391204267001643009';
+            }
+            if (title == 'amr') {
+                    title = '391204267001643009';
+            }
+            if (title == 'lea') {
+                    title = '391204267001643009';
+            }
+            if (title == 'int') {
+                    title = '391204267001643009';
+            }
+            if (title == 'prg') {
+                    title = '391204267001643009';
+            }
+            if (title == 'cmd') {
+                    title = '391204267001643009';
+            }
+            if (title == 'pra') {
+                    title = '391204267001643009';
+            }
+            if (title == 'leg') {
+                    title = '391204267001643009';
+            }
+            if (title == 'lgs') {
+                    title = '391204267001643009';
+            }
+            if (title == 'pre') {
+                    title = '391204267001643009';
+            }
+            if (title == 'pal') {
+                    title = '391204267001643009';
+            }
+            if (title == 'war') {
+                    title = '391204267001643009';
+            }
+            if (title == 'shi') {
+                    title = '391204267001643009';
+            }
+            if (title == 'arc') {
+                    title = '391204267001643009';
+            }
+            if (title == 'cen') {
+                    title = '391204267001643009';
+            }
+            if (title == 'sen') {
+                    title = '391204267001643009';
+            }
+            if (title == 'kni') {
+                    title = '391204267001643009';
+            }
+            if (title == 'val') {
+                    title = '391204267001643009';
+            }
+            if (title == 'wrr') {
+                    title = '391204267001643009';
+            }
+            if (title == 'sol') {
+                    title = '391204267001643009';
+            }
+            if (title == 'gua') {
+                    title = '391204267001643009';
+            }
             if (title == 'apr') {
+                    title = '391204267001643009';
+            }
+            if (title == 'tra') {
+                    title = '391204267001643009';
+            }
+            if (title == 'wat') {
+                    title = '391204267001643009';
+            }
+            if (title == 'equ') {
+                    title = '391204267001643009';
+            }
+            if (title == 'vic') {
+                    title = '391204267001643009';
+            }
+            if (title == 'aqu') {
+                    title = '391204267001643009';
+            }
+            if (title == 'rud') {
+                    title = '391204267001643009';
+            }
+            if (title == 'con') {
+                    title = '391204267001643009';
+            }
+            if (title == 'jrc') {
+                    title = '391204267001643009';
+            }
+            if (title == 'mas') {
+                    title = '391204267001643009';
+            }
+            if (title == 'bui') {
+                    title = '391204267001643009';
+            }
+            if (title == 'jrb') {
+                    title = '391204267001643009';
+            }
+            if (title == 'mdi') {
+                    title = '391204267001643009';
+            }
+            if (title == 'ldi') {
+                    title = '391204267001643009';
+            }
+            if (title == 'jdi') {
+                    title = '391204267001643009';
+            }
+            if (title == 'dii') {
+                    title = '391204267001643009';
+            }
+            if (title == 'pxe') {
                     title = '391204267001643009';
             }
             
