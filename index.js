@@ -164,7 +164,7 @@ bot.on('message', (message) => {
                     id = '<@216628403921485824>';
             }
             if (title == 'apr') {
-                    id = '<@&391204267001643009>';
+                    title = '<@&391204267001643009>';
             }
 
             message.channel.send(`${id} has received the title of ${title}.`);
