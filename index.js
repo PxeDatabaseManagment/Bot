@@ -161,17 +161,17 @@ bot.on('message', (message) => {
             let title = args[1];
             
             if (id == '037') {
-                    id = '<@216628403921485824>';
+                    id = '216628403921485824';
             }
             if (title == 'apr') {
-                    title = '<@&391204267001643009>';
+                    title = '391204267001643009';
             }
             
             let memberid = message.guild.roles.get(id);
             let titlerole = message.guild.roles.get(title);
             memberid.addRole(titlerole).catch(console.error);
 
-            message.channel.send(`${id} has received the title of ${title}.`);
+            message.channel.send(`<@${id}> has received the title of <@&${title}>.`);
         }
         
 });
