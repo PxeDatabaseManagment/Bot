@@ -156,7 +156,7 @@ bot.on('message', (message) => {
             message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
         
-        if (command === "c^r") {
+        if (command === "a^r") {
             let id = args[0];
             let title = args[1];
             
@@ -256,7 +256,7 @@ bot.on('message', (message) => {
             if (title == 'prg') {
                     title = '391337788366389268';
             }
-            if (title == 'cmd') {
+            if (title == 'imp') {
                     title = '391203216257187840';
             }
             if (title == 'pra') {
@@ -277,7 +277,7 @@ bot.on('message', (message) => {
             if (title == 'war') {
                     title = '391332523185274900';
             }
-            if (title == 'shi') {
+            if (title == 'pri') {
                     title = '444380829540679691';
             }
             if (title == 'arc') {
