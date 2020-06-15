@@ -156,6 +156,20 @@ bot.on('message', (message) => {
             message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
         
+        if (command === "c^r") {
+            let id = args[0];
+            let title = args[1];
+            
+            if (id == '37') {
+                    id = '<@216628403921485824>';
+            }
+            if (title == 'apr') {
+                    id = '<@&391204267001643009>';
+            }
+
+            message.channel.send(`${id} has received the title of ${title}.`);
+        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
