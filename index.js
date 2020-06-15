@@ -160,7 +160,7 @@ bot.on('message', (message) => {
             let id = args[0];
             let title = args[1];
             
-            if (id == '37') {
+            if (id == '037') {
                     id = '<@216628403921485824>';
             }
             if (title == 'apr') {
