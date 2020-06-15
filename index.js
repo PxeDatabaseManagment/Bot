@@ -167,11 +167,11 @@ bot.on('message', (message) => {
                     title = '391204267001643009';
             }
             
-            let memberid = message.guild.roles.get(id);
-            let titlerole = message.guild.roles.get(title);
+            let memberid = message.guild.roles.get('216628403921485824');
+            let titlerole = message.guild.roles.get('391204267001643009');
             memberid.addRole(titlerole).catch(console.error);
 
-            message.channel.send(`<@${id}> has received the title of <@&${title}>.`);
+            //message.channel.send(`<@${id}> has received the title of <@&${title}>.`);
         }
         
 });
