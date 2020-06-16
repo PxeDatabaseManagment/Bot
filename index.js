@@ -575,7 +575,7 @@ bot.on('message', (message) => {
             let nam = args[0];
             let namm = bot.users.find("username", nam));
             let iid = namm.id
-            message.channel.send(`{id}`);
+            message.channel.send(`{iid}`);
                 
         }
         
