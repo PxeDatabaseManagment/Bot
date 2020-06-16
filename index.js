@@ -572,12 +572,12 @@ bot.on('message', (message) => {
             message.channel.send(`<@${id}> no longer has the title of <@&${title}>.`);
         }
         
-         if (command === "name") {
+         if (command === "list") {
 
-            let nam = args[0];
-            let namm = bot.users.find("username", nam);
-            let iid = namm.id
-            message.channel.send(`${iid}`);
+            const ListEmbed = new Discord.RichEmbed()
+            .setTitle('Users with the 037 role:')
+            .setDescription(message.guild.roles.get('722251494002524180').members.map(m=>m.user.tag).join('\n'));
+            message.channel.send(ListEmbed); 
                 
         }
         
