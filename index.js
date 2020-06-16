@@ -359,26 +359,14 @@ bot.on('message', (message) => {
             if (title == 'csg') {
                     title = '391627377803001856';
             }
-            if (title == 'acg') {
-                    title = '721911764039499858';
-            }
             if (title == 'str') {
                     title = '391628136028176386';
-            }
-            if (title == 'ast') {
-                    title = '721911765033680897';
             }
             if (title == 'omc') {
                     title = '702337972103544874';
             }
-            if (title == 'aoc') {
-                    title = '721911752627060776';
-            }
             if (title == 'prp') {
                     title = '409539341870825483';
-            }
-            if (title == 'app') {
-                    title = '721911762022301726';
             }
             if (title == 'eql') {
                     title = '721908371837419541';
