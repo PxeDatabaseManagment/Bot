@@ -561,9 +561,9 @@ bot.on('message', (message) => {
             let rolememberid = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
             let memberid = message.guild.members.get(rolememberid);
             let titlerole = message.guild.roles.get(title);
-            memberid.addRole(titlerole).catch(console.error);
+            memberid.removeRole(titlerole).catch(console.error);
 
-            message.channel.send(`<@${id}> no longer has the title of <@&${title}>.`);
+            message.channel.send(`<@${rolememberid}> no longer has the title of <@&${title}>.`);
         }
         
          if (command === "!admin!list!") {
