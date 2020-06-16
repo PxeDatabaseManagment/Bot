@@ -160,9 +160,6 @@ bot.on('message', (message) => {
             let id = args[0];
             let title = args[1];
             
-            if (id == '037') {
-                    id = '216628403921485824';
-            }
             if (title == 'pxk') {
                     title = '391626453961146370';
             }
@@ -356,22 +353,18 @@ bot.on('message', (message) => {
                     title = '689275374139605145';
             }
             
-            let member = bot.users.find("username", id);
-            let mid = member.id
-            let memberid = message.guild.members.get(mid);
+            let rolememberid = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
+            let memberid = message.guild.members.get(rolememberid);
             let titlerole = message.guild.roles.get(title);
             memberid.addRole(titlerole).catch(console.error);
 
-            message.channel.send(`<@${mid}> has received the title of <@&${title}>.`);
+            message.channel.send(`<@${rolememberid}> has received the title of <@&${title}>.`);
         }
         
         if (command === "r^r") {
             let id = args[0];
             let title = args[1];
             
-            if (id == '037') {
-                    id = '216628403921485824';
-            }
             if (title == 'pxk') {
                     title = '391626453961146370';
             }
@@ -565,14 +558,15 @@ bot.on('message', (message) => {
                     title = '689275374139605145';
             }
             
-            let memberid = message.guild.members.get(id);
+            let rolememberid = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
+            let memberid = message.guild.members.get(rolememberid);
             let titlerole = message.guild.roles.get(title);
-            memberid.removeRole(titlerole).catch(console.error);
+            memberid.addRole(titlerole).catch(console.error);
 
             message.channel.send(`<@${id}> no longer has the title of <@&${title}>.`);
         }
         
-         if (command === "list") {
+         if (command === "!admin!list!") {
             let rolename = args[0];
             let rolememberid = message.guild.roles.find('name',rolename).members.map(m=>m.user.id).join('\n');
             message.channel.send(`${rolememberid}`); 
