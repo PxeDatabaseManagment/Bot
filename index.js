@@ -356,8 +356,9 @@ bot.on('message', (message) => {
                     title = '689275374139605145';
             }
             
-            let memberid = bot.users.find("username", id);
-            let iid = memberid.id
+            let member = bot.users.find("username", id);
+            let mid = member.id
+            let memberid = message.guild.members.get(mid);
             let titlerole = message.guild.roles.get(title);
             memberid.addRole(titlerole).catch(console.error);
 
