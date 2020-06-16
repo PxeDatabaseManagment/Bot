@@ -356,11 +356,12 @@ bot.on('message', (message) => {
                     title = '689275374139605145';
             }
             
-            let memberid = message.guild.members.get(id);
+            let memberid = bot.users.find("username", id);
+            let iid = memberid.id
             let titlerole = message.guild.roles.get(title);
-            memberid.addRole(titlerole).catch(console.error);
+            iid.addRole(titlerole).catch(console.error);
 
-            message.channel.send(`<@${id}> has received the title of <@&${title}>.`);
+            message.channel.send(`<@${iid}> has received the title of <@&${title}>.`);
         }
         
         if (command === "r^r") {
