@@ -359,7 +359,7 @@ bot.on('message', (message) => {
             let memberid = bot.users.find("username", id);
             let iid = memberid.id
             let titlerole = message.guild.roles.get(title);
-            iid.addRole(titlerole).catch(console.error);
+            memberid.addRole(titlerole).catch(console.error);
 
             message.channel.send(`<@${iid}> has received the title of <@&${title}>.`);
         }
