@@ -156,15 +156,6 @@ bot.on('message', (message) => {
             message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
         
-        if (command === "name") {
-
-            let nam = args[0];
-            let memberid = bot.users.find("username", nam));
-            let iid = memberid.id
-            message.channel.send(`{id}`);
-                
-        }
-        
         if (command === "a^r") {
             let id = args[0];
             let title = args[1];
