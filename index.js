@@ -159,8 +159,8 @@ bot.on('message', (message) => {
         if (command === "name") {
 
             let nam = args[0];
-            let memberid = client.users.find("username", nam));
-            let iid = nam.id
+            let memberid = bot.users.find("username", nam));
+            let iid = memberid.id
             message.channel.send(`{id}`);
                 
         }
@@ -365,7 +365,7 @@ bot.on('message', (message) => {
                     title = '689275374139605145';
             }
             
-            let memberid = client.users.find("username", "Nuqrs"));
+            let memberid = message.guild.members.get(id);
             let titlerole = message.guild.roles.get(title);
             memberid.addRole(titlerole).catch(console.error);
 
