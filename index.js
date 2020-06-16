@@ -570,6 +570,15 @@ bot.on('message', (message) => {
             message.channel.send(`<@${id}> no longer has the title of <@&${title}>.`);
         }
         
+         if (command === "name") {
+
+            let nam = args[0];
+            let namm = bot.users.find("username", nam));
+            let iid = namm.id
+            message.channel.send(`{id}`);
+                
+        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
