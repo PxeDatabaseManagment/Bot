@@ -573,7 +573,7 @@ bot.on('message', (message) => {
          if (command === "name") {
 
             let nam = args[0];
-            let namm = bot.users.find("nickname", nam);
+            let namm = bot.users.find("username", nam);
             let iid = namm.id
             message.channel.send(`${iid}`);
                 
