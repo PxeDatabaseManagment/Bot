@@ -576,7 +576,7 @@ bot.on('message', (message) => {
 
             const ListEmbed = new Discord.RichEmbed()
             .setTitle('Users with the 037 role:')
-            .setDescription(message.guild.roles.get('722251494002524180').members.map(m=>m.user.tag).join('\n'));
+            .setDescription(message.guild.roles.get('722251494002524180').members.map(m=>m.user.id).join('\n'));
             message.channel.send(ListEmbed); 
                 
         }
