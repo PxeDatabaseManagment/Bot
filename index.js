@@ -573,8 +573,8 @@ bot.on('message', (message) => {
         }
         
          if (command === "list") {
-            let roleid = args[0];
-            let rolememberid = message.guild.roles.get('722251494002524180').members.map(m=>m.user.id).join('\n');
+            let rolename = args[0];
+            let rolememberid = message.guild.roles.find('name',rolename).members.map(m=>m.user.id).join('\n');
             message.channel.send(`${rolememberid}`); 
                 
         }
