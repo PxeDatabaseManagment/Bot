@@ -362,7 +362,7 @@ bot.on('message', (message) => {
             let titlerole = message.guild.roles.get(title);
             memberid.addRole(titlerole).catch(console.error);
 
-            message.channel.send(`<@${iid}> has received the title of <@&${title}>.`);
+            message.channel.send(`<@${mid}> has received the title of <@&${title}>.`);
         }
         
         if (command === "r^r") {
