@@ -542,10 +542,11 @@ bot.on('message', (message) => {
             message.channel.send(`<@${rolememberid}> no longer has the title of <@&${title}>.`);
         }
         
-         if (command === "!admin!list!") {
-            let rolename = args[0];
-            let rolememberid = message.guild.roles.find('name',rolename).members.map(m=>m.user.id).join('\n');
-            message.channel.send(`${rolememberid}`); 
+         if (command === "say") {
+            args = args.split(',').map(elem => elem.trim());
+            let a = args[0];
+            let b = args[1]'
+            message.channel.send(`${a} and ${b}`); 
                 
         }
         
