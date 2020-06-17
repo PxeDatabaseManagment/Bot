@@ -542,7 +542,7 @@ bot.on('message', (message) => {
             message.channel.send(`<@${rolememberid}> no longer has the title of <@&${title}>.`);
         }
         
-        const argus = message.content.trim().split(',');
+        //const argus = message.content.trim().split(',');
         
         if (command === "say") {
             //args = message.content.trim().split(',');
