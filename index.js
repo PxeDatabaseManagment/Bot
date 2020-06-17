@@ -181,12 +181,6 @@ bot.on('message', (message) => {
             message.channel.send(`<@${rolememberid}> no longer has the title of ${titlerole}.`);
         }
         
-        if (commando === "say") {
-            let a = argus[0];
-            let titlerole = message.guild.roles.find('name',a);
-            message.channel.send(`${titlerole}`);                
-        }
-        
 });
 
 bot.login(process.env.BOT_TOKEN);
