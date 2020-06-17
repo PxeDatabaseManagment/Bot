@@ -543,10 +543,10 @@ bot.on('message', (message) => {
         }
         
          if (command === "say") {
-            args = message.content.trim().split(',');
-            //args = args.split(',').map(elem => elem.trim());
+            //args = message.content.trim().split(',');
+            args = args.split(',').map(elem => elem.trim());
             let a = args[0];
-            let b = args[1]'
+            let b = args[1];
             message.channel.send(`${a} and ${b}`); 
                 
         }
