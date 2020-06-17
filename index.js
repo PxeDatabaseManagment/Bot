@@ -156,194 +156,15 @@ bot.on('message', (message) => {
             message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
         
-        if (command === "a^r") {
-            let id = args[0];
-            let title = args[1];
-            
-            if (title == 'pxk') {
-                    title = '391626453961146370';
-            }
-            if (title == 'csg') {
-                    title = '391627377803001856';
-            }
-            if (title == 'str') {
-                    title = '391628136028176386';
-            }
-            if (title == 'omc') {
-                    title = '702337972103544874';
-            }
-            if (title == 'prp') {
-                    title = '409539341870825483';
-            }
-            if (title == 'eql') {
-                    title = '721908371837419541';
-            }
-            if (title == 'ael') {
-                    title = '721908369522163754';
-            }
-            if (title == 'vil') {
-                    title = '721908376203952138';
-            }
-            if (title == 'avl') {
-                    title = '721908374471704627';
-            }
-            if (title == 'aql') {
-                    title = '721908378804289588';
-            }
-            if (title == 'aal') {
-                    title = '721908378091257937';
-            }
-            if (title == 'rul') {
-                    title = '391624000671055874';
-            }
-            if (title == 'arl') {
-                    title = '469706783557025796';
-            }
-            if (title == 'fuc') {
-                    title = '702336972471140402';
-            }
-            if (title == 'mtl') {
-                    title = '721879027614351422';
-            }
-            if (title == 'amt') {
-                    title = '721908035705897000';
-            }
-            if (title == 'mxl') {
-                    title = '721910577814962256';
-            }
-            if (title == 'amx') {
-                    title = '721910579245219970';
-            }
-            if (title == 'mdl') {
-                    title = '721910580897644554';
-            }
-            if (title == 'amd') {
-                    title = '721910582466445369';
-            }
-            if (title == 'mal') {
-                    title = '721910584253087746';
-            }
-            if (title == 'ama') {
-                    title = '721910585662374031';
-            }
-            if (title == 'mtr') {
-                    title = '391623580451995658';
-            }
-            if (title == 'amr') {
-                    title = '721910587369586698';
-            }
-            if (title == 'lea') {
-                    title = '391336437544517654';
-            }
-            if (title == 'int') {
-                    title = '409543599949086731';
-            }
-            if (title == 'prg') {
-                    title = '391337788366389268';
-            }
-            if (title == 'imp') {
-                    title = '391203216257187840';
-            }
-            if (title == 'pra') {
-                    title = '702296645940936795';
-            }
-            if (title == 'leg') {
-                    title = '702296627200786482';
-            }
-            if (title == 'lgs') {
-                    title = '702296599287693382';
-            }
-            if (title == 'pre') {
-                    title = '702296549245452388';
-            }
-            if (title == 'pal') {
-                    title = '391334867381780523';
-            }
-            if (title == 'war') {
-                    title = '391332523185274900';
-            }
-            if (title == 'pri') {
-                    title = '444380829540679691';
-            }
-            if (title == 'arc') {
-                    title = '702296493641564210';
-            }
-            if (title == 'cen') {
-                    title = '702296483168518155';
-            }
-            if (title == 'sen') {
-                    title = '444380823760666624';
-            }
-            if (title == 'kni') {
-                    title = '702296331728715989';
-            }
-            if (title == 'val') {
-                    title = '702296280440897536';
-            }
-            if (title == 'wrr') {
-                    title = '391333611661557771';
-            }
-            if (title == 'sol') {
-                    title = '391331728427581440';
-            }
-            if (title == 'gua') {
-                    title = '702327662420688906';
-            }
-            if (title == 'apr') {
-                    title = '391204267001643009';
-            }
-            if (title == 'tra') {
-                    title = '391331240738947073';
-            }
-            if (title == 'wat') {
-                    title = '702296100387684363';
-            }
-            if (title == 'equ') {
-                    title = '417862490240581632';
-            }
-            if (title == 'vic') {
-                    title = '417862299609595905';
-            }
-            if (title == 'aqu') {
-                    title = '417861841721491482';
-            }
-            if (title == 'rud') {
-                    title = '698704980336574466';
-            }
-            if (title == 'con') {
-                    title = '702335523779248159';
-            }
-            if (title == 'jrc') {
-                    title = '702335568763420672';
-            }
-            if (title == 'mas') {
-                    title = '702335500421431327';
-            }
-            if (title == 'bui') {
-                    title = '702335503541731379';
-            }
-            if (title == 'jrb') {
-                    title = '702335461506547793';
-            }
-            if (title == 'mdi') {
-                    title = '702335553047363615';
-            }
-            if (title == 'ldi') {
-                    title = '423480177633394689';
-            }
-            if (title == 'jdi') {
-                    title = '702335526631637102';
-            }
-            if (title == 'dii') {
-                    title = '702335570692669480';
-            }
-            if (title == 'pxe') {
-                    title = '689275374139605145';
-            }
-            
+        const argus = message.content.trim().split(',');
+        const commando = argus.shift().toLowerCase();
+        
+        if (commando === "a^r") {
+            let id = argus[0];
+            let title = argus[1];
             let rolememberid = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
             let memberid = message.guild.members.get(rolememberid);
-            let titlerole = message.guild.roles.get(title);
+            let titlerole = message.guild.roles.find('name',title);
             memberid.addRole(titlerole).catch(console.error);
 
             message.channel.send(`<@${rolememberid}> has received the title of <@&${title}>.`);
@@ -542,13 +363,10 @@ bot.on('message', (message) => {
             message.channel.send(`<@${rolememberid}> no longer has the title of <@&${title}>.`);
         }
         
-        const argus = message.content.trim().split(',');
-        const commando = argus.shift().toLowerCase();
-        
         if (commando === "say") {
             let a = argus[0];
-            let b = argus[1];
-            message.channel.send(`${a} and ${b}`);                
+            let titlerole = message.guild.roles.find('name',a);
+            message.channel.send(`${titlerole}`);                
         }
         
 });
