@@ -167,7 +167,7 @@ bot.on('message', (message) => {
             let titlerole = message.guild.roles.find('name',title);
             memberid.addRole(titlerole).catch(console.error);
 
-            message.channel.send(`<@${rolememberid}> has received the title of ${title}.`);
+            message.channel.send(`<@${rolememberid}> has received the title of ${titlerole}.`);
         }
         
         if (commando === "r^r") {
@@ -178,7 +178,7 @@ bot.on('message', (message) => {
             let titlerole = message.guild.roles.find('name',title);
             memberid.removeRole(titlerole).catch(console.error);
 
-            message.channel.send(`<@${rolememberid}> no longer has the title of ${title}.`);
+            message.channel.send(`<@${rolememberid}> no longer has the title of ${titlerole}.`);
         }
         
         if (commando === "say") {
