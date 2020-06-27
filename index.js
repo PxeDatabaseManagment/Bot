@@ -185,7 +185,7 @@ bot.on('message', (message) => {
             //let id = argus[0];
             //let title = argus[1];
             //let nickmemberid = message.guild.members.filter(m=>{m.user.username = 'Nuqrs'});
-            let nickmemberid = message.guild.members.filter(member => member.user.presence.status === "online");
+            let nickmemberid = message.guild.members.filter(member => member.user.presence.status === "online").map(m=>m.user.id).join('\n');
             //let memberid = message.guild.members.get(nickmemberid);
             //let titlerole = message.guild.roles.find('name',title);
             //memberid.removeRole(titlerole).catch(console.error);
