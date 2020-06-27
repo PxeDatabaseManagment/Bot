@@ -181,6 +181,17 @@ bot.on('message', (message) => {
             message.channel.send(`<@${rolememberid}> no longer has the title of ${titlerole}.`);
         }
         
+        if (commando === "!test") {
+            //let id = argus[0];
+            //let title = argus[1];
+            let nickmemberid = message.guild.members.filter(mem=>{mem.displayName != mem.user.username});
+            //let memberid = message.guild.members.get(nickmemberid);
+            //let titlerole = message.guild.roles.find('name',title);
+            //memberid.removeRole(titlerole).catch(console.error);
+
+            message.channel.send(`<@${nickmemberid}>`);
+        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
