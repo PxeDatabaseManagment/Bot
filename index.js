@@ -198,6 +198,19 @@ bot.on('message', (message) => {
             message.channel.send(`<@${nickmemberid}> now has the nickname of ${newnick}.`);
         }
         
+        const arguss = message.content.trim().split('^');
+        const commandos = arguss.shift().toLowerCase();
+        
+        if (commandos === "d$m") {
+            let nick = arguss[0];
+            let dm = arguss[1];
+            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
+            let memberid = message.guild.members.get(nickmemberid);
+            memberid.sendMessage(dm)
+            
+            message.channel.send(`DM has been sent to <@${nickmemberid}>.`);
+        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
