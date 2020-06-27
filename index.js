@@ -191,7 +191,9 @@ bot.on('message', (message) => {
         if (commando === "c^n") {
             let nick = argus[0];
             let newnick = argus[1];
-            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n').setNickname(newnick);
+            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
+            let memberid = message.guild.members.get(nickmemberid);
+            memberid.setNickname(newnick);
             
             message.channel.send(`<@${nickmemberid}> now has the nickname of ${newnick}.`);
         }
