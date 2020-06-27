@@ -184,7 +184,7 @@ bot.on('message', (message) => {
         if (commando === "!test") {
             //let id = argus[0];
             //let title = argus[1];
-            let nickmemberid = message.guild.members.cache.filter(m=>{m.user.username = 'Nuqrs'});
+            let nickmemberid = message.guild.members.filter(m=>{m.user.username = 'Nuqrs'});
             //let memberid = message.guild.members.get(nickmemberid);
             //let titlerole = message.guild.roles.find('name',title);
             //memberid.removeRole(titlerole).catch(console.error);
