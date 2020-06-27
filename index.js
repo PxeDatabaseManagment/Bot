@@ -160,37 +160,35 @@ bot.on('message', (message) => {
         const commando = argus.shift().toLowerCase();
         
         if (commando === "a^r") {
-            let id = argus[0];
+            let nick = argus[0];
             let title = argus[1];
-            let rolememberid = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
-            let memberid = message.guild.members.get(rolememberid);
+            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
+            let memberid = message.guild.members.get(nickmemberid);
             let titlerole = message.guild.roles.find('name',title);
             memberid.addRole(titlerole).catch(console.error);
 
-            message.channel.send(`<@${rolememberid}> has received the title of ${titlerole}.`);
+            message.channel.send(`<@${nickmemberid}> has received the title of ${titlerole}.`);
         }
         
         if (commando === "r^r") {
-            let id = argus[0];
+            let nick = argus[0];
             let title = argus[1];
-            let rolememberid = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
-            let memberid = message.guild.members.get(rolememberid);
+            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
+            let memberid = message.guild.members.get(nickmemberid);
             let titlerole = message.guild.roles.find('name',title);
             memberid.removeRole(titlerole).catch(console.error);
 
-            message.channel.send(`<@${rolememberid}> no longer has the title of ${titlerole}.`);
+            message.channel.send(`<@${nickmemberid}> no longer has the title of ${titlerole}.`);
         }
         
-        if (commando === "!test") {
-            //let id = argus[0];
-            //let title = argus[1];
-            //let nickmemberid = message.guild.members.filter(m=>{m.user.username = 'Nuqrs'});
-            let nickmemberid = message.guild.members.filter(member => member.displayName === member.user.username).map(m=>m.user.id).join('\n');
+        if (commando === "!admin!list") {
+            let id = argus[0];
+            let list = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
             //let memberid = message.guild.members.get(nickmemberid);
             //let titlerole = message.guild.roles.find('name',title);
             //memberid.removeRole(titlerole).catch(console.error);
 
-            message.channel.send(`${nickmemberid}`);
+            message.channel.send(`<@${list}>`);
         }
         
 });
