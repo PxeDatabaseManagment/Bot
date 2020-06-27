@@ -184,11 +184,16 @@ bot.on('message', (message) => {
         if (commando === "!admin!list") {
             let id = argus[0];
             let list = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
-            //let memberid = message.guild.members.get(nickmemberid);
-            //let titlerole = message.guild.roles.find('name',title);
-            //memberid.removeRole(titlerole).catch(console.error);
 
             message.channel.send(`<@${list}>`);
+        }
+        
+        if (commando === "c^n") {
+            let nick = argus[0];
+            let newnick = argus[1];
+            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n').setNickname(newnick);
+            
+            message.channel.send(`<@${nickmemberid}> now has the nickname of ${newnick}.`);
         }
         
 });
