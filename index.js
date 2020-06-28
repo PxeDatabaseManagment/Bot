@@ -198,6 +198,18 @@ bot.on('message', (message) => {
             message.channel.send(`<@${nickmemberid}> now has the nickname of ${newnick}.`);
         }
         
+        if (commando === "c^c") {
+            let channelname = argus[0];
+            let newnick = argus[1];
+            let channelid = message.guild.channels.find('name',channelname);
+            async function clear() {
+                    const fetched = await message.channelid.fetchMessages({limit: 99});
+                    msg.channelid.bulkDelete(fetched);
+            }
+            clear();
+            message.channel.send(`Messages in #${channelname} have been cleared.`);
+        }
+        
         const arguss = message.content.trim().split('^');
         const commandos = arguss.shift().toLowerCase();
         
