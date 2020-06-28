@@ -203,11 +203,11 @@ bot.on('message', (message) => {
             let newnick = argus[1];
             let channelid = message.guild.channels.find('name',channelname);
             async function clear() {
-                    const fetched = await message.channelid.fetchMessages({limit: 99});
-                    msg.channelid.bulkDelete(fetched);
+                    const fetched = await channelid.fetchMessages({limit: 99});
+                    channelid.bulkDelete(fetched);
             }
             clear();
-            message.channel.send(`Messages in #${channelname} have been cleared.`);
+            message.channel.send(`Messages in ${channelid} have been cleared.`);
         }
         
         const arguss = message.content.trim().split('^');
