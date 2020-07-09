@@ -53,7 +53,7 @@ bot.on('message', (message) => {
         
         if(msg == '!clanrules') {
             message.delete();
-            message.channel.send('1. At the end of the game of a formal clan activity, do not move. \n2. Do not disrespect dead bodies during clan activities, or whenever you represent the clan. \n3. During a clan activity, do not pick up a power weapon or press a switch unless you are authorized to do so.');
+            message.channel.send('1. At the end of the game of a formal clan activity, do not move. \n2. Do not disrespect dead bodies during clan activities, or whenever you represent the clan. \n3. During a clan activity, do not pick up a power weapon, press a switch, or take a teleporter unless you are authorized to do so.');
         }
         
         if(msg == 'maybe we should check the audit log...') {
@@ -68,22 +68,22 @@ bot.on('message', (message) => {
             message.channel.send('I dunno, could you just type !roe like a normal person?');
         }
         
-        if(msg == '!class4') {
+        if(msg == '!legion4') {
             message.delete();
             message.channel.send('<@&698704980336574466> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
         
-        if(msg == '!class3') {
+        if(msg == '!legion3') {
             message.delete();
             message.channel.send('<@&417861841721491482> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
         
-        if(msg == '!class2') {
+        if(msg == '!legion2') {
             message.delete();
             message.channel.send('<@&417862299609595905> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
         
-        if(msg == '!class1') {
+        if(msg == '!legion1') {
             message.delete();
             message.channel.send('<@&417862490240581632> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
@@ -96,7 +96,7 @@ bot.on('message', (message) => {
 
         if(msg == '!chatrules') {
             message.delete();
-            message.channel.send('Phoenix Server Chat Rules: \n  \nServer leadership reserves the right to declare any content inappropriate for the chats. \n  \nOverarching Principle - Respect every other member of the server, and do not deliberately try to make others feel uncomfortable or unsafe in any way. \n  \nServer Channels - The official channel should be used for official clan business only. The unofficial channel is for informal conversation, including memes. \n  \nLanguage - There are generally no profanity filters in the server; however, if you excessively cuss out someone even if they ask you to stop, you are breaking the overarching principle. \n  \nSexual content - Media that contains sexually inappropriate content will not be allowed in the server. Please keep in mind that it is in fact illegal for minors to view sexually explicit content without parental/guardian consent in the United States, and it is therefore also illegal to distribute sexually explicit content to minors. Just follow the law, and you will be fine. \n  \nGore - Any content that shows real gore will not be allowed in the chats. CGI gore will be allowed to a certain extent, but as with any media, server leadership reserves the right to declare it inappropriate for the chat.');
+            message.channel.send('Phoenix Era Server Chat Rules: \n  \nServer leadership reserves the right to declare any content inappropriate for the chats. \n  \nOverarching Principle - Respect every other member of the server, and do not deliberately try to make others feel uncomfortable or unsafe in any way. \n  \nServer Channels - The official channel should be used for official clan business only. The unofficial channel is for informal conversation, including memes. \n  \nLanguage - There are generally no profanity filters in the server; however, if you excessively cuss out someone even if they ask you to stop, you are breaking the overarching principle. \n  \nSexual content - Media that contains sexually inappropriate content will not be allowed in the server. Please keep in mind that it is in fact illegal for minors to view sexually explicit content without parental/guardian consent in the United States, and it is therefore also illegal to distribute sexually explicit content to minors. Just follow the law, and you will be fine. \n  \nGore - Any content that shows real gore will not be allowed in the chats. CGI gore will be allowed to a certain extent, but as with any media, server leadership reserves the right to declare it inappropriate for the chat.');
         }
         
         const args = message.content.trim().split(/ +/g);
