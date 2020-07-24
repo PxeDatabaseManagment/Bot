@@ -252,10 +252,8 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelid = message.guild.channels.find('name','event-rsvp');
             
-            channelid.fetchMessages({limit: 99}).then(msg => {
-            const specMessage = msg.filter(msg => msg.content.includes(b));
+            const specMessage = channelid.fetchMessages({limit: 99}).filter(msg => msg.content.includes(b));
             specMessage.edit('hello');
-            });
             message.delete();
             message.channel.send(`Event has been edited.`);
         }
