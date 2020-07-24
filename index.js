@@ -238,7 +238,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelid = message.guild.channels.find('name','event-rsvp');
             
-            channelid.fetchMessages().then(messages => {
+            channelid.fetchMessages({limit: 99}).then(messages => {
             const specMessage = messages.filter(msg => msg.content.includes(b));
             channelid.bulkDelete(specMessage);
             
@@ -252,8 +252,8 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelid = message.guild.channels.find('name','event-rsvp');
             
-            channelid.fetchMessages().then(messages => {
-            const specMessage = messages.filter(msg => msg.content.includes(b));
+            channelid.fetchMessages({limit: 99}).then(messages => {
+            const specMessage = messages.filter(msg => msg.content.includes(b)).map(m=>m.message.id).join('\n');
             specMessage.edit('hello');
             });
             message.delete();
