@@ -233,6 +233,7 @@ bot.on('message', (message) => {
             message.guild.channels.find('name','event-rsvp').send(`${b}`).then(function (message) {
             message.react(bot.emojis.get('733049184755646516'))
             message.react(bot.emojis.get('733048783046311988'))
+            message.react(bot.emojis.get('733049172592295937'))
             }).catch(function() {
             });
             message.channel.send(`Event has been posted.`);
