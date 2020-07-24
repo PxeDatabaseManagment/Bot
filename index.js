@@ -228,9 +228,24 @@ bot.on('message', (message) => {
         
         if (commandos === "a$m$") {
             let b = arguss[0];
-
+            
             message.delete();
             message.guild.channels.find('name','event-rsvp').send(`${b}`);
+            message.channel.send(`Event has been posted.`);
+        }
+        
+        if (commandos === "d$m$") {
+            let b = arguss[0];
+            let channelid = message.guild.channels.find('name','event-rsvp');
+            
+            message.channelid.fetchMessages().then(messages => {
+            const specMessage = messages.filter(msg => msg.content == b);
+            message.channel.bulkDelete(specMessage);
+            
+            });
+            message.delete();
+            message.guild.channels.find('name','event-rsvp').send(`${b}`);
+            message.channel.send(`Event has been deleted.`);
         }
         
 });
