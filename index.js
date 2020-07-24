@@ -255,7 +255,7 @@ bot.on('message', (message) => {
             async function edit() {
             channelid.fetchMessages({limit: 99}).then(msg => {
             const specMessage = await msg.filter(msg => msg.content.includes(b));
-            await specMessage.edit(c);
+            specMessage.edit(c);
             });
             }
             edit();
