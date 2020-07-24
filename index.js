@@ -253,8 +253,8 @@ bot.on('message', (message) => {
             let channelid = message.guild.channels.find('name','event-rsvp');
             
             channelid.fetchMessages({limit: 99}).then(messages => {
-            const specMessage = messages.filter(msg => msg.content.includes(b)).map(m=>m.message.id).join('\n');
-            specMessage.edit('hello');
+            const specMessage = messages.filter(msg => msg.content.includes(b));
+            specMessage.delete();
             });
             message.delete();
             message.channel.send(`Event has been edited.`);
