@@ -254,7 +254,7 @@ bot.on('message', (message) => {
             
             channelid.fetchMessages().then(messages => {
             const specMessage = await messages.filter(msg => msg.content.includes(b));
-            specMessage.edit(c);
+            specMessage.edit('hello');
             });
             message.delete();
             message.channel.send(`Event has been edited.`);
