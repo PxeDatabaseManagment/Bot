@@ -240,7 +240,7 @@ bot.on('message', (message) => {
             
             channelid.fetchMessages().then(messages => {
             const specMessage = messages.filter(msg => msg.content.includes(b));
-            message.channel.bulkDelete(specMessage);
+            channelid.bulkDelete(specMessage);
             
             });
             message.delete();
