@@ -252,7 +252,7 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelid = message.guild.channels.find('name','event-rsvp');
             
-            channelid.fetchMessages({around: '736349940409696357', limit: 1}).then(msg => {
+            channelid.messages.fetch({around: '736349940409696357', limit: 1}).then(msg => {
             const specMessage = msg.first;
             specMessage.edit('hello');
             });
