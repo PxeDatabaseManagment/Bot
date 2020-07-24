@@ -253,8 +253,11 @@ bot.on('message', (message) => {
             let channelid = message.guild.channels.find('name','event-rsvp');
             
             async function edit() {
-            const message = await channelid.fetchMessage('736353700351836222');
-            await message.edit('Test.');
+            await channelid.fetchMessages({limit: 99}).then(msg => {
+            const specMessage = msg.filter(msg => msg.content.includes(b));
+            await specMessage.edit(c);
+            
+            });
             }
             edit();
             message.delete();
