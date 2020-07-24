@@ -254,11 +254,12 @@ bot.on('message', (message) => {
             channelid.fetchMessages({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
             let messageid = specMessage.id;
-            async function edit() {
-            const message = await channelid.fetchMessage(messageid);
-            await message.edit(c);
-            }
-            edit();
+            channelid.send(`${messageid}`);
+            //async function edit() {
+            //const message = await channelid.fetchMessage(messageid);
+            //await message.edit(c);
+            //}
+            //edit();
             });
             message.delete();
             message.channel.send(`Event has been edited.`);
