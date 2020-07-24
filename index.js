@@ -226,6 +226,13 @@ bot.on('message', (message) => {
             message.channel.send(`DM has been sent to <@${nickmemberid}>.`);
         }
         
+        if (commandos === "a$m$") {
+            let b = arguss[0];
+
+            message.delete();
+            message.guild.channels.find('name','event-rsvp').send(`${b}`);
+        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
