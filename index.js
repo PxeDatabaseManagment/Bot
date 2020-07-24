@@ -252,8 +252,11 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelid = message.guild.channels.find('name','event-rsvp');
             
-            const specMessage = channelid.fetchMessages({limit: 99}).filter(msg => msg.content.includes(b));
-            channelid.bulkDelete(specMessage);
+            async function edit() {
+            const message = await channelid.fetchMessage('736353700351836222');
+            await message.edit('Test.');
+            }
+            edit();
             message.delete();
             message.channel.send(`Event has been edited.`);
         }
