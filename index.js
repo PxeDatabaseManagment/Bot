@@ -251,12 +251,13 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let c = arguss[1];
             let channelid = message.guild.channels.find('name','event-rsvp');
-            
-            async function edit() {
             channelid.fetchMessages({limit: 99}).then(msg => {
-            const specMessage = await msg.filter(msg => msg.content.includes(b));
-            specMessage.edit(c);
+            const specMessage = msg.filter(msg => msg.content.includes(b));
+            let messageid = specMessage.id;
             });
+            async function edit() {
+            const message = await channelid.fetchMessage(messageid);
+            await message.edit(c);
             }
             edit();
             message.delete();
