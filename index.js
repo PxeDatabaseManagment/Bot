@@ -238,7 +238,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelid = message.guild.channels.find('name','event-rsvp');
             
-            message.channelid.fetchMessages().then(messages => {
+            channelid.fetchMessages().then(messages => {
             const specMessage = messages.filter(msg => msg.content.includes(b));
             message.channel.bulkDelete(specMessage);
             
