@@ -230,7 +230,11 @@ bot.on('message', (message) => {
             let b = arguss[0];
             
             message.delete();
-            message.guild.channels.find('name','event-rsvp').send(`${b}`);
+            message.guild.channels.find('name','event-rsvp').send(`${b}`).then(function (message) {
+            message.react(bot.emojis.get('733049184755646516'))
+            message.react(bot.emojis.get('733048783046311988'))
+            }).catch(function() {
+            });
             message.channel.send(`Event has been posted.`);
         }
         
