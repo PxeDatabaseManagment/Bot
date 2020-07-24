@@ -244,7 +244,6 @@ bot.on('message', (message) => {
             
             });
             message.delete();
-            message.guild.channels.find('name','event-rsvp').send(`${b}`);
             message.channel.send(`Event has been deleted.`);
         }
         
