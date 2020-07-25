@@ -275,7 +275,7 @@ bot.on('message', (message) => {
             const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
             async function edit() {
             const message = await channelid.fetchMessage(specMessage);
-            let reactions = message.reactions.cache.users.cache;
+            let reactions = message.reactions.cache.users.fetch;
             channelid.send(`${reactions}`);
             }
             edit();
