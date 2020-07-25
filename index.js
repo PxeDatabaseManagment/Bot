@@ -268,6 +268,22 @@ bot.on('message', (message) => {
             message.channel.send(`Event has been edited.`);
         }
         
+        if (commandos === "c$m$") {
+            let b = arguss[0];
+            let channelid = message.guild.channels.find('name','event-rsvp');
+            channelid.fetchMessages({limit: 99}).then(msg => {
+            const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
+            async function edit() {
+            const message = await channelid.fetchMessage(specMessage);
+            let reactions = message.reactions.cache.users.map(m=>m.user.id).join('\n');
+            channelid.send(`${reactions}`);
+            }
+            edit();
+            });
+            message.delete();
+            message.channel.send(`Event has been edited.`);
+        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
