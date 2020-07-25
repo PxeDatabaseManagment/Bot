@@ -277,7 +277,7 @@ bot.on('message', (message) => {
             const message = await channelid.fetchMessage(specMessage);
             let userReactions = message.reactions.cache.filter(reaction => reaction.users.cache.has('216628403921485824'));
             for (const reaction of userReactions.values()) {
-            await channelid.send(reaction.users.id);
+            await reaction.users.remove('216628403921485824');
 	    }
             }
             edit();
