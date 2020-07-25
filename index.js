@@ -275,7 +275,7 @@ bot.on('message', (message) => {
             const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
             async function edit() {
             const message = await channelid.fetchMessage(specMessage);
-            let userReactions = message.reactions.cache.filter(reaction => reaction.users.cache.has('216628403921485824'));
+            const userReactions = message.reactions.cache.filter(reaction => reaction.users.cache.has('216628403921485824'));
             for (const reaction of userReactions.values()) {
             await reaction.users.remove('216628403921485824');
 	    }
@@ -283,7 +283,7 @@ bot.on('message', (message) => {
             edit();
             });
             message.delete();
-            message.channel.send(`Event has been edited.`);
+            message.channel.send(`Reactions have been removed.`);
         }
         
 });
