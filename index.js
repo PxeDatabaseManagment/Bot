@@ -274,7 +274,7 @@ bot.on('message', (message) => {
             channelid.fetchMessages({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
             channelid.send(`${specMessage}`)
-            const mess = channelid.fetchMessage(specMessage);
+            let mess = channelid.fetchMessage(specMessage);
             mess.reactions.removeAll();
             });
             message.delete();
