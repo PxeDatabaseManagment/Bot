@@ -274,11 +274,8 @@ bot.on('message', (message) => {
             channelid.fetchMessages({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
             channelid.send(`${specMessage}`)
-            async function edit() {
-            const mess = await channelid.fetchMessage(specMessage);
-            await mess.reactions.removeAll();
-            }
-            edit();
+            const mess = channelid.fetchMessage(specMessage);
+            mess.reactions.removeAll();
             });
             message.delete();
             message.channel.send(`Reactions have been removed.`);
