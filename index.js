@@ -283,6 +283,23 @@ bot.on('message', (message) => {
             message.channel.send(`Event update notification has been sent.`);
         }
         
+        if (commandos === "e$w$") {
+            let b = arguss[0];
+            let time = arguss[1];
+            
+            message.delete();
+            message.guild.channels.find('name','event-rsvp').send(`<@&689275374139605145> The event **${b}** starts in **${time}** minutes. <:GetOnHalo:417888045925138432>`);
+            message.channel.send(`Event update notification has been sent.`);
+        }
+        
+        if (commandos === "e$s$") {
+            let b = arguss[0];
+            
+            message.delete();
+            message.guild.channels.find('name','event-rsvp').send(`<@&689275374139605145> The event **${b}** is starting now! <:GetOnHalo:417888045925138432>`);
+            message.channel.send(`Event update notification has been sent.`);
+        }
+        
 //            if (commandos === "c$m$") {
 //            let b = arguss[0];
 //            let channelid = message.guild.channels.find('name','event-rsvp');
