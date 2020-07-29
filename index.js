@@ -276,7 +276,7 @@ bot.on('message', (message) => {
             async function edit() {
             const message = await channelid.fetchMessage(specMessage);
             await message.edit('hello').then(function (message) {
-            message.reactions.removeAll())
+            message.reactions.removeAll()
             }).catch(function() {
             });
             }
