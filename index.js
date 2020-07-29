@@ -289,7 +289,7 @@ bot.on('message', (message) => {
             
             message.delete();
             message.guild.channels.find('name','official').send(`<@&689275374139605145> The event **${b}** starts in **${time}** minutes. <:GetOnHalo:417888045925138432>`);
-            message.channel.send(`Event update notification has been sent.`);
+            message.channel.send(`Event start warning has been sent.`);
         }
         
         if (commandos === "e$s$") {
@@ -297,7 +297,7 @@ bot.on('message', (message) => {
             
             message.delete();
             message.guild.channels.find('name','official').send(`<@&689275374139605145> The event **${b}** is starting now! <:GetOnHalo:417888045925138432>`);
-            message.channel.send(`Event update notification has been sent.`);
+            message.channel.send(`Event start notification has been sent.`);
         }
         
 //            if (commandos === "c$m$") {
