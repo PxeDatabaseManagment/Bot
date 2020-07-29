@@ -271,7 +271,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             
             message.delete();
-            message.guild.channels.find('name','event-rsvp').send(`<@&689275374139605145> A new event, **${b}**, has been posted in #event-rsvp <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name','event-rsvp').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
@@ -279,7 +279,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             
             message.delete();
-            message.guild.channels.find('name','event-rsvp').send(`<@&689275374139605145> There have been changes made to the event **${b}** in #event-rsvp <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name','event-rsvp').send(`<@&689275374139605145> There have been changes made to the event **${b}** in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`Event update notification has been sent.`);
         }
         
