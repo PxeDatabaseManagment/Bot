@@ -274,8 +274,7 @@ bot.on('message', (message) => {
             channelid.fetchMessages({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
             async function edit() {
-            const message = await channelid.fetchMessage(specMessage);
-            await message.edit('hello').then(function (message) {
+            const message = await channelid.fetchMessage(specMessage).then(function (message) {
             message.reactions.removeAll()
             }).catch(function() {
             });
