@@ -275,7 +275,10 @@ bot.on('message', (message) => {
             const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
             async function edit() {
             const message = await channelid.fetchMessage(specMessage);
-            await message.edit('hello').then(message.reactions.removeAll());
+            await message.edit('hello').then(function (message) {
+            message.reactions.removeAll())
+            }).catch(function() {
+            });
             }
             edit();
             });
