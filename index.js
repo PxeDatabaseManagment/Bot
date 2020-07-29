@@ -246,7 +246,6 @@ bot.on('message', (message) => {
             channelid.fetchMessages({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
             channelid.bulkDelete(specMessage);
-            
             });
             message.delete();
             message.channel.send(`Event has been deleted.`);
@@ -273,10 +272,14 @@ bot.on('message', (message) => {
             let channelid = message.guild.channels.find('name','event-rsvp');
             channelid.fetchMessages({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
-            channelid.fetchMessage(specMessage).then(function (message) {
+            async function edit() {
+            const message = await channelid.fetchMessage(specMessage);
+            await message.edit('hello').then(function (message) {
             message.reactions.removeAll()
             }).catch(function() {
             });
+            }
+            edit();
             });
             message.delete();
             message.channel.send(`Reactions have been removed.`);
