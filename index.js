@@ -273,13 +273,10 @@ bot.on('message', (message) => {
             let channelid = message.guild.channels.find('name','event-rsvp');
             channelid.fetchMessages({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
-            async function edit() {
-            const message = await channelid.fetchMessage(specMessage).then(function (message) {
+            channelid.fetchMessage(specMessage).then(function (message) {
             message.reactions.removeAll()
             }).catch(function() {
             });
-            }
-            edit();
             });
             message.delete();
             message.channel.send(`Reactions have been removed.`);
