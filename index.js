@@ -229,7 +229,6 @@ bot.on('message', (message) => {
         if (commandos === "a$m$") {
             let b = arguss[0];
             
-            message.delete();
             message.guild.channels.find('name','event-rsvp').send(`${b}`).then(function (message) {
             message.react(bot.emojis.get('733049184755646516'))
             message.react(bot.emojis.get('733048783046311988'))
@@ -247,7 +246,6 @@ bot.on('message', (message) => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
             channelid.bulkDelete(specMessage);
             });
-            message.delete();
             message.channel.send(`Event has been deleted.`);
         }
         
@@ -263,23 +261,37 @@ bot.on('message', (message) => {
             }
             edit();
             });
-            message.delete();
             message.channel.send(`Event has been edited.`);
         }
         
         if (commandos === "a$e$") {
             let b = arguss[0];
             
-            message.delete();
-            message.guild.channels.find('name','official').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
         if (commandos === "u$e$") {
             let b = arguss[0];
+            let c = arguss[1];
             
-            message.delete();
-            message.guild.channels.find('name','official').send(`<@&689275374139605145> There have been changes made to the event **${b}** in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#730551238395166780>:\n**${c}**`);
+            message.channel.send(`Event update notification has been sent.`);
+        }
+        
+        if (commandos === "u$s$") {
+            let b = arguss[0];
+            let c = arguss[1];
+            
+            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794>:\n**${c}**`);
+            message.channel.send(`Event update notification has been sent.`);
+        }
+        
+        if (commandos === "u$se$") {
+            let b = arguss[0];
+            let c = arguss[1];
+            
+            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794> and <#730551238395166780>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
         }
         
@@ -287,16 +299,14 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let time = arguss[1];
             
-            message.delete();
-            message.guild.channels.find('name','official').send(`<@&689275374139605145> The event **${b}** starts in **${time}** minutes. <:GetOnHalo:417888045925138432>`);
+            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> The event **${b}** starts in **${time}** minutes. <:GetOnHalo:417888045925138432>`);
             message.channel.send(`Event start warning has been sent.`);
         }
         
         if (commandos === "e$s$") {
             let b = arguss[0];
             
-            message.delete();
-            message.guild.channels.find('name','official').send(`<@&689275374139605145> The event **${b}** is starting now! <:GetOnHalo:417888045925138432>`);
+            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> The event **${b}** is starting now! <:GetOnHalo:417888045925138432>`);
             message.channel.send(`Event start notification has been sent.`);
         }
         
