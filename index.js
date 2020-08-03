@@ -220,7 +220,7 @@ bot.on('message', (message) => {
             let nick = argus[0];
             let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
             let memberid = message.guild.members.get(nickmemberid);
-            memberid.kick;
+            memberid.kick();
 
             message.channel.send(`<@${nickmemberid}> has been kicked.`);
         }
