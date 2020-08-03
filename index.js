@@ -222,7 +222,7 @@ bot.on('message', (message) => {
             let memberid = message.guild.members.get(nickmemberid);
             memberid.kick();
 
-            message.channel.send(`<@${nickmemberid}> has been kicked.`);
+            message.channel.send(`<@${nick}> has been kicked.`);
         }
         
         const arguss = message.content.trim().split('^');
