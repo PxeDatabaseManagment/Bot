@@ -216,6 +216,15 @@ bot.on('message', (message) => {
             message.channel.send(`DM has been sent to <@${nickmemberid}>.`);
         }
         
+        if (commando === "k^k") {
+            let nick = argus[0];
+            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
+            let memberid = message.guild.members.get(nickmemberid);
+            memberid.kick;
+
+            message.channel.send(`<@${nickmemberid}> has been kicked.`);
+        }
+        
         const arguss = message.content.trim().split('^');
         const commandos = arguss.shift().toLowerCase();
         
