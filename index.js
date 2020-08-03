@@ -283,6 +283,20 @@ bot.on('message', (message) => {
             message.channel.send(`New event notification has been sent.`);
         }
         
+        if (commandos === "a$s$") {
+            let b = arguss[0];
+            
+            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#729050150831521794>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.channel.send(`New event notification has been sent.`);
+        }
+        
+        if (commandos === "a$se$") {
+            let b = arguss[0];
+            
+            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#729050150831521794> and <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.channel.send(`New event notification has been sent.`);
+        }
+        
         if (commandos === "u$e$") {
             let b = arguss[0];
             let c = arguss[1];
