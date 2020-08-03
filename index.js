@@ -153,13 +153,17 @@ bot.on('message', (message) => {
         const argus = message.content.trim().split(',');
         const commando = argus.shift().toLowerCase();
         
+        let auditlog = message.guild.channels.find('name','audit-log');
+        let auditlogid = auditlog.id;
+        if (message.channel.id = auditlogid) {
+        
         if (commando === "a^r") {
             let nick = argus[0];
             let title = argus[1];
             let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
             let memberid = message.guild.members.get(nickmemberid);
             let titlerole = message.guild.roles.find('name',title);
-            memberid.addRole(titlerole).catch(console.error);
+            memberid.addRole(titlerole);
 
             message.channel.send(`<@${nickmemberid}> has received the title of ${titlerole}.`);
         }
@@ -170,7 +174,7 @@ bot.on('message', (message) => {
             let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
             let memberid = message.guild.members.get(nickmemberid);
             let titlerole = message.guild.roles.find('name',title);
-            memberid.removeRole(titlerole).catch(console.error);
+            memberid.removeRole(titlerole);
 
             message.channel.send(`<@${nickmemberid}> no longer has the title of ${titlerole}.`);
         }
@@ -327,7 +331,7 @@ bot.on('message', (message) => {
 //            message.delete();
 //            message.channel.send(`Reactions have been removed.`);
 //        }
-        
+        }
 });
 
 bot.login(process.env.BOT_TOKEN);
