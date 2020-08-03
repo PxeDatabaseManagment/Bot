@@ -155,7 +155,6 @@ bot.on('message', (message) => {
         
         let auditlog = message.guild.channels.find('name','audit-log');
         let auditlogid = auditlog.id;
-        if (message.channel.id = auditlogid) {
         
         if (commando === "a^r") {
             let nick = argus[0];
@@ -331,7 +330,7 @@ bot.on('message', (message) => {
 //            message.delete();
 //            message.channel.send(`Reactions have been removed.`);
 //        }
-        }
+        
 });
 
 bot.login(process.env.BOT_TOKEN);
