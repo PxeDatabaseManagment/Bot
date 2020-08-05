@@ -222,7 +222,7 @@ bot.on('message', (message) => {
             let memberid = message.guild.members.get(nickmemberid);
             memberid.kick();
 
-            message.channel.send(`<@${nick}> has been kicked.`);
+            message.channel.send(`${nick} has been kicked.`);
         }
         
         const arguss = message.content.trim().split('^');
@@ -279,21 +279,21 @@ bot.on('message', (message) => {
         if (commandos === "a$e$") {
             let b = arguss[0];
             
-            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name','official').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
         if (commandos === "a$s$") {
             let b = arguss[0];
             
-            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#729050150831521794>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name','official').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#729050150831521794>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
         if (commandos === "a$se$") {
             let b = arguss[0];
             
-            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#729050150831521794> and <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name','official').send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#729050150831521794> and <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
@@ -301,7 +301,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let c = arguss[1];
             
-            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#730551238395166780>:\n**${c}**`);
+            message.guild.channels.find('name','official').send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#730551238395166780>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
         }
         
@@ -309,7 +309,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let c = arguss[1];
             
-            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794>:\n**${c}**`);
+            message.guild.channels.find('name','official').send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
         }
         
@@ -317,7 +317,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let c = arguss[1];
             
-            message.guild.channels.find('name','geek-squad').send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794> and <#730551238395166780>:\n**${c}**`);
+            message.guild.channels.find('name','official').send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794> and <#730551238395166780>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
         }
         
