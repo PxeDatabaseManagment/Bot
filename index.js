@@ -17,11 +17,6 @@ bot.on('guildMemberAdd', member => {
         
 });
 
-bot.on('guildMemberAdd', member => {
-        
-        member.sendMessage('...');
-});
-
 bot.on('guildMemberRemove', member => {
         const leave = member.guild.channels.find('name','unofficial')
         
