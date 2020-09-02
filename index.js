@@ -278,7 +278,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> A new event **${b}** has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
@@ -286,7 +286,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#729050150831521794>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> A new event **${b}** has been posted in <#729050150831521794>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
@@ -294,7 +294,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> A new event, **${b}**, has been posted in <#729050150831521794> and <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> A new event **${b}** has been posted in <#729050150831521794> and <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
