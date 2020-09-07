@@ -246,6 +246,14 @@ bot.on('message', (message) => {
             message.channel.send(`Event has been posted.`);
         }
         
+        if (commandos === "s$m$") {
+            let b = arguss[0];
+            let channelname = arguss[1];
+            
+            message.guild.channels.find('name',channelname).send(`${b}`);
+            message.channel.send(`Event has been posted.`);
+        }
+        
         if (commandos === "d$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
