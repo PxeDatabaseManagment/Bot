@@ -251,7 +251,7 @@ bot.on('message', (message) => {
             let channelname = arguss[1];
             
             message.guild.channels.find('name',channelname).send(`${b}`);
-            message.channel.send(`Event has been posted.`);
+            message.channel.send(`Custom message has been sent.`);
         }
         
         if (commandos === "d$m$") {
