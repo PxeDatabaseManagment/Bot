@@ -225,7 +225,7 @@ bot.on('message', (message) => {
             let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
             let memberid = message.guild.members.get(nickmemberid);
 
-            message.channel.send(`Hey ${role}, it's ${nick}'s birthday! <:confetti_ball:> <:birthday:>`);
+            message.channel.send(`Hey ${role}, it's ${nick}'s birthday! :confetti_ball: :birthday:`);
         }
         
         const arguss = message.content.trim().split('^');
