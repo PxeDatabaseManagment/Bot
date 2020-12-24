@@ -221,11 +221,13 @@ bot.on('message', (message) => {
         
         if (commando === "b^r") {
             let nick = argus[0];
+            let channelname = argus[1];
             let roleP = message.guild.roles.find('name','Phoenix Era');
             let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
             let memberid = message.guild.members.get(nickmemberid);
 
-            message.channel.send(`Hey ${roleP}, it's <@${nickmemberid}>'s birthday! :confetti_ball: :birthday:`);
+            message.guild.channels.find('name',channelname).send(`Hey ${roleP}, it's <@${nickmemberid}>'s birthday! :confetti_ball: :birthday:`);
+            message.channel.send(`Birthday notification has been sent.`);
         }
         
         const arguss = message.content.trim().split('^');
