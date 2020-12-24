@@ -219,6 +219,15 @@ bot.on('message', (message) => {
             message.channel.send(`${nick} has been kicked.`);
         }
         
+        if (commando === "b^r") {
+            let nick = argus[0];
+            let role = message.guild.roles.find('name','Phoenix Era');
+            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
+            let memberid = message.guild.members.get(nickmemberid);
+
+            message.channel.send(`Hey ${role}, it's ${nick}'s birthday! <:confetti_ball:> <:birthday:>`);
+        }
+        
         const arguss = message.content.trim().split('^');
         const commandos = arguss.shift().toLowerCase();
         
