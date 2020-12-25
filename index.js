@@ -191,7 +191,6 @@ bot.on('message', (message) => {
         
         if (commando === "c^c") {
             let channelname = argus[0];
-            let newnick = argus[1];
             let channelid = message.guild.channels.find('name',channelname);
             async function clear() {
                     const fetched = await channelid.fetchMessages({limit: 99});
@@ -228,6 +227,18 @@ bot.on('message', (message) => {
 
             message.guild.channels.find('name',channelname).send(`Hey ${roleP}, it's <@${nickmemberid}>'s birthday! :confetti_ball: :birthday:`);
             message.channel.send(`Birthday notification has been sent.`);
+        }
+        
+        if (commando === "d^c") {
+            let channelname = argus[0];
+            let num = argus[1];
+            let channelid = message.guild.channels.find('name',channelname);
+            async function clear() {
+                    const fetched = await channelid.fetchMessages({limit: num});
+                    channelid.bulkDelete(fetched);
+            }
+            clear();
+            message.channel.send(`The last ${num} messages in ${channelid} have been cleared.`);
         }
         
         const arguss = message.content.trim().split('^');
