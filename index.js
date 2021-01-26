@@ -30,17 +30,19 @@ bot.on('message', (message) => {
             message.delete();
             message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
         }
-        /*
+        
         if(msg == '!!!ping') {
         setTimeout(function(){ 
                 message.channel.send('!!!pong'); 
         }, 3000);
         }
         
+        /*
         if(msg == '!startinfo') {
             message.delete();
             message.author.send('Welcome to Phoenix Era. Type !help to see a list of useful commands. \nType !chatrules to see server rules. \nPlease read the member guide: \nhttps:// \n \nAbove all: do not be stupid or act stupid.');
         }
+        */
         
         if(msg == '!clanrules') {
             message.delete();
@@ -58,7 +60,7 @@ bot.on('message', (message) => {
         if(msg == 'could you pull up the roe for me?') {
             message.channel.send('I dunno, could you just type !roe like a normal person?');
         }
-        
+        /*
         if(msg == '!legion4') {
             message.delete();
             message.channel.send('<@&698704980336574466> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
