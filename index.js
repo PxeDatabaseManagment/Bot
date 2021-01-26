@@ -10,7 +10,7 @@ bot.on('guildMemberAdd', member => {
         const welcomeEmbed = new Discord.MessageEmbed()
         welcomeEmbed.setColor('RANDOM')
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
-        member.guild.channels.cache.find(i => i.name === 'geek-squad').send(welcomeEmbed)
+        member.guild.channels.cache.find(i => i.name === 'official').send(welcomeEmbed)
         
 });
 
@@ -19,7 +19,7 @@ bot.on('guildMemberRemove', member => {
         const leaveEmbed = new Discord.MessageEmbed()
         leaveEmbed.setColor('RANDOM')
         leaveEmbed.setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.")
-        member.guild.channels.cache.find(i => i.name === 'geek-squad').send(leaveEmbed)
+        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed)
 });
 
 bot.on('message', (message) => {
@@ -145,24 +145,24 @@ bot.on('message', (message) => {
 
             message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
-        /*
+        
         const argus = message.content.trim().split(',');
         const commando = argus.shift().toLowerCase();
         
-        let auditlog = message.guild.channels.find('name','audit-log');
+        let auditlog = message.guild.channels.cache.find(i => i.name === 'audit-log');
         let auditlogid = auditlog.id;
         
         if (commando === "a^r") {
             let nick = argus[0];
             let title = argus[1];
             let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
-            let memberid = message.guild.members.get(nickmemberid);
-            let titlerole = message.guild.roles.find('name',title);
+            let memberid = message.guild.members.cache.get(nickmemberid);
+            let titlerole = message.guild.roles.cache.find('name',title);
             memberid.addRole(titlerole);
 
             message.channel.send(`<@${nickmemberid}> has received the title of ${titlerole}.`);
         }
-        
+        /*
         if (commando === "r^r") {
             let nick = argus[0];
             let title = argus[1];
