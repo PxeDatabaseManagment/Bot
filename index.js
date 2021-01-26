@@ -60,12 +60,13 @@ bot.on('message', (message) => {
         if(msg == 'could you pull up the roe for me?') {
             message.channel.send('I dunno, could you just type !roe like a normal person?');
         }
-        /*
+        
         if(msg == '!legion4') {
             message.delete();
-            message.channel.send('<@&698704980336574466> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
+            let role = message.guild.roles.cache.find(i => i.name === 'Rudis');
+            message.channel.send('${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
-        
+        /*
         if(msg == '!legion3') {
             message.delete();
             message.channel.send('<@&417861841721491482> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
