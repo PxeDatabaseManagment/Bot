@@ -155,7 +155,7 @@ bot.on('message', (message) => {
         if (commando === "a^r") {
             let nick = argus[0];
             let title = argus[1];
-            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
+            let nickmemberid = message.guild.members.cache.find(user => user.displayName === nick);
             let memberid = message.guild.members.cache.get(nickmemberid);
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
             memberid.roles.add(titlerole);
