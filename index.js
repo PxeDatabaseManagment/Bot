@@ -120,7 +120,7 @@ bot.on('message', (message) => {
 
             message.channel.send(`On a scale of 1-10, ${name} has received a dumbass score of ` + list[rand]);
         }
-        /*
+        
         if (command === "jenkins") {
 
             var list = [
@@ -145,7 +145,7 @@ bot.on('message', (message) => {
 
             message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
-        
+        /*
         const argus = message.content.trim().split(',');
         const commando = argus.shift().toLowerCase();
         
