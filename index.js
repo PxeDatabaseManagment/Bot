@@ -249,9 +249,8 @@ bot.on('message', (message) => {
             let dm = arguss[1];
             let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
             let memberid = message.guild.members.get(nickmemberid);
-            memberid.sendMessage(dm);
-            
             message.channel.send(`DM has been sent to <@${nickmemberid}>.`);
+            memberid.sendMessage(dm)
         }
         
         if (commandos === "a$m$") {
