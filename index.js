@@ -25,7 +25,7 @@ bot.on('guildMemberRemove', member => {
         return leave.send(embed)
 });
 
-bot.on('message', (message) => {
+/*bot.on('message', (message) => {
         
         const msg = message.content.toLowerCase();
         
@@ -387,5 +387,6 @@ bot.on('message', (message) => {
 //        }
         
 });
+*/
 
 bot.login(process.env.BOT_TOKEN);
