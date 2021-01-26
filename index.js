@@ -22,7 +22,7 @@ bot.on('guildMemberRemove', member => {
         member.guild.channels.cache.find(i => i.name === 'geek-squad').send(leaveEmbed)
 });
 
-/*bot.on('message', (message) => {
+bot.on('message', (message) => {
         
         const msg = message.content.toLowerCase();
         
@@ -30,7 +30,7 @@ bot.on('guildMemberRemove', member => {
             message.delete();
             message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
         }
-        
+        /*
         if(msg == '!!!ping') {
         setTimeout(function(){ 
                 message.channel.send('!!!pong'); 
@@ -364,7 +364,7 @@ bot.on('guildMemberRemove', member => {
             message.guild.channels.find('name',channelname).send(`<@&689275374139605145> The event **${b}** is starting now! <:GetOnHalo:417888045925138432>`);
             message.channel.send(`Event start notification has been sent.`);
         }
-        
+        */
 //            if (commandos === "c$m$") {
 //            let b = arguss[0];
 //            let channelid = message.guild.channels.find('name','event-rsvp');
@@ -384,6 +384,5 @@ bot.on('guildMemberRemove', member => {
 //        }
         
 });
-*/
 
 bot.login(process.env.BOT_TOKEN);
