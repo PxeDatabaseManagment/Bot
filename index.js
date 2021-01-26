@@ -158,7 +158,7 @@ bot.on('message', (message) => {
             //let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
             let memberid = message.guild.members.cache.get('216628403921485824');
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
-            memberid.addRole(titlerole);
+            memberid.roles.add(titlerole);
 
             message.channel.send(`<@{nickmemberid}> has received the title of ${titlerole}.`);
         }
