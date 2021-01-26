@@ -203,7 +203,7 @@ bot.on('message', (message) => {
         if (commando === "start^info") {
             let nick = argus[0];
             let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
-            let memberid = message.guild.members.get(nickmemberid);
+            let memberid = message.guild.members.cache.get(nickmemberid);
             message.channel.send(`DM has been sent to <@${nickmemberid}>.`);
             memberid.send("Welcome to Phoenix Era. Congratulations on passing the bootcamp! To be honest, I didn't think you'd make it. Then again, I never think anyone will make it... Anyway, now I feel like I can be associated with you without being totally humiliated. Don't prove me wrong by becoming a complete and utter failure.\n\nFirst step in not becoming a failure: watch this quick video.\nhttps://www.youtube.com/watch?v=nY9KrWEJ1k4");
         }
@@ -247,7 +247,7 @@ bot.on('message', (message) => {
             let nick = arguss[0];
             let dm = arguss[1];
             let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
-            let memberid = message.guild.members.get(nickmemberid);
+            let memberid = message.guild.members.cache.get(nickmemberid);
             message.channel.send(`DM has been sent to <@${nickmemberid}>.`);
             memberid.send(dm);
         }
