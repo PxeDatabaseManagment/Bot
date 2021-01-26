@@ -9,7 +9,7 @@ bot.on('guildMemberAdd', member => {
         
         const welcomeEmbed = new Discord.MessageEmbed()
         welcomeEmbed.setColor('RANDOM')
-        welcomeEmbed.setDescription(member.user.username + " has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
+        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
         member.guild.channels.cache.find(i => i.name === 'geek-squad').send(welcomeEmbed)
         
 });
