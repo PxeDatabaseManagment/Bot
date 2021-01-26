@@ -2,8 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 bot.on('ready', () => {
-        bot.user.setStatus('Online')
-        bot.user.setPresence({ game: { name: 'Phoenix Era', type: 3 } })
+bot.user.setPresence({ activity: { name: "Phoenix Era", type: "WATCHING" }, status: "online" })
 });
 
 bot.on('guildMemberAdd', member => {
