@@ -61,27 +61,6 @@ bot.on('message', (message) => {
             message.channel.send('I dunno, could you just type !roe like a normal person?');
         }
         
-        if(msg == '!legion4') {
-            message.delete();
-            let role = message.guild.roles.cache.find(i => i.name === 'Rudis');
-            message.channel.send('${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
-        }
-        /*
-        if(msg == '!legion3') {
-            message.delete();
-            message.channel.send('<@&417861841721491482> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
-        }
-        
-        if(msg == '!legion2') {
-            message.delete();
-            message.channel.send('<@&417862299609595905> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
-        }
-        
-        if(msg == '!legion1') {
-            message.delete();
-            message.channel.send('<@&417862490240581632> Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
-        }
-        
         if(msg == '!roe') {
             message.delete();
             message.channel.send('https://docs.google.com/document/d/1Y5VyxZVFWIL9T33wKhYrcU_Qna8FjIykC5IUSonSx1E/edit?usp=sharing');
@@ -95,6 +74,12 @@ bot.on('message', (message) => {
         const args = message.content.trim().split(/ +/g);
         const command = args.shift().toLowerCase();
         
+        if(command == '!legion4') {
+            message.delete();
+            let role = message.guild.roles.cache.find(i => i.name === 'Rudis');
+            message.channel.send('${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
+        }
+        /*
         if (command === "?how") {
             let a = args[0];
             let b = args[1];
