@@ -76,10 +76,10 @@ bot.on('message', (message) => {
         
         if(command == '!legion4') {
             message.delete();
-            let role = '7cefw76f76w';
+            let role = message.guild.roles.cache.find(i => i.name === 'Rudis');
             message.channel.send('${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
-        /*
+        
         if (command === "?how") {
             let a = args[0];
             let b = args[1];
@@ -102,7 +102,7 @@ bot.on('message', (message) => {
 
             message.channel.send(`On a scale of 1-10, ${name} has received a dumbass score of ` + list[rand]);
         }
-        
+        /*
         if (command === "jenkins") {
 
             var list = [
