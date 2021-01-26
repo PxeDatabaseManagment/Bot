@@ -77,7 +77,25 @@ bot.on('message', (message) => {
         if(command == '!legion4') {
             message.delete();
             let role = message.guild.roles.cache.find(i => i.name === 'Rudis');
-            message.channel.send('${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
+            message.channel.send(`${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>`);
+        }
+        
+        if(command == '!legion3') {
+            message.delete();
+            let role = message.guild.roles.cache.find(i => i.name === 'Aquila');
+            message.channel.send(`${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>`);
+        }
+        
+        if(command == '!legion2') {
+            message.delete();
+            let role = message.guild.roles.cache.find(i => i.name === 'Vicarius');
+            message.channel.send(`${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>`);
+        }
+        
+        if(command == '!legion1') {
+            message.delete();
+            let role = message.guild.roles.cache.find(i => i.name === 'Equitum');
+            message.channel.send(`${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>`);
         }
         
         if (command === "?how") {
