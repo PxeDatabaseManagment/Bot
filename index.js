@@ -76,7 +76,7 @@ bot.on('message', (message) => {
         
         if(command == '!legion4') {
             message.delete();
-            let role = message.guild.roles.cache.find(i => i.name === 'Rudis');
+            let role = '7cefw76f76w';
             message.channel.send('${role} Get the hell on Halo now. <:GetOnHalo:417888045925138432>');
         }
         /*
