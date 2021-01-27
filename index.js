@@ -149,9 +149,6 @@ bot.on('message', (message) => {
         const argus = message.content.trim().split(',');
         const commando = argus.shift().toLowerCase();
         
-        let auditlog = message.guild.channels.cache.find(i => i.name === 'audit-log');
-        let auditlogid = auditlog.id;
-        
         if (commando === "a^r") {
             let nick = argus[0];
             let title = argus[1];
