@@ -155,12 +155,13 @@ bot.on('message', (message) => {
         if (commando === "a^r") {
             let nick = argus[0];
             let title = argus[1];
-            let nickmemberid = message.guild.members.cache.find(member => member.displayName === nick).map(m=>m.user.id);
+            let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
+            let nickmemberid = nickmember.id;
             let memberid = message.guild.members.cache.get(nickmemberid);
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
             memberid.roles.add(titlerole);
 
-            message.channel.send(`<@${nickmemberid}> has received the title of ${titlerole}.`);
+            message.channel.send(`${nickmember} has received the title of ${titlerole}.`);
         }
         /*
         if (commando === "r^r") {
