@@ -200,7 +200,7 @@ bot.on('message', (message) => {
             let channelname = argus[0];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
             async function clear() {
-                    const fetched = await channelid.fetchMessages({limit: 99});
+                    const fetched = await channelid.messages.fetch({limit: 99});
                     channelid.bulkDelete(fetched);
             }
             clear();
