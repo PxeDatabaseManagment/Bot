@@ -261,13 +261,6 @@ bot.on('message', (message) => {
             memberid.send(dm);
         }
         
-        if (commandos === "!testdm") {
-            let memberid = '216628403921485824';
-            let theMember = message.guild.members.cache.get(memberid);
-            message.channel.send(`DM has been sent.`);
-            theMember.send("Hello.");
-        }
-        
         if (commandos === "a$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
