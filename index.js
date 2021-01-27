@@ -226,24 +226,25 @@ bot.on('message', (message) => {
             message.channel.send(`${nick} has been kicked.`);
         }
         
-        /*
+        
         if (commando === "b^r") {
             let nick = argus[0];
             let channelname = argus[1];
-            let roleP = message.guild.roles.find('name','Phoenix Era');
-            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
-            let memberid = message.guild.members.get(nickmemberid);
+            let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
+            let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
+            let nickmemberid = nickmember.id;
+            let memberid = message.guild.members.cache.get(nickmemberid);
 
-            message.guild.channels.find('name',channelname).send(`Hey ${roleP}, it's <@${nickmemberid}>'s birthday! :confetti_ball: :birthday:`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`Hey ${roleP}, it's ${nickmember}'s birthday! :confetti_ball: :birthday:`);
             message.channel.send(`Birthday notification has been sent.`);
         }
         
         if (commando === "d^c") {
             let channelname = argus[0];
             let num = argus[1];
-            let channelid = message.guild.channels.find('name',channelname);
+            let channelid = message.guild.channels.cache.find(i => i.name === channelname);
             async function clear() {
-                    const fetched = await channelid.fetchMessages({limit: num});
+                    const fetched = await channelid.messages.fetch({limit: num});
                     channelid.bulkDelete(fetched);
             }
             clear();
@@ -256,12 +257,13 @@ bot.on('message', (message) => {
         if (commandos === "d$m") {
             let nick = arguss[0];
             let dm = arguss[1];
-            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
+            let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
+            let nickmemberid = nickmember.id;
             let memberid = message.guild.members.cache.get(nickmemberid);
-            message.channel.send(`DM has been sent to <@${nickmemberid}>.`);
+            message.channel.send(`DM has been sent to ${nickmember}.`);
             memberid.send(dm);
         }
-        
+        /*
         if (commandos === "a$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
