@@ -269,9 +269,9 @@ bot.on('message', (message) => {
             let channelname = arguss[1];
             
             message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`).then(function (message) {
-            message.react(bot.emojis.get('733049184755646516'))
-            message.react(bot.emojis.get('733048783046311988'))
-            message.react(bot.emojis.get('733049172592295937'))
+            message.react(bot.emojis.cache.get('733049184755646516'))
+            message.react(bot.emojis.cache.get('733048783046311988'))
+            message.react(bot.emojis.cache.get('733049172592295937'))
             }).catch(function() {
             });
             message.channel.send(`Event has been posted.`);
@@ -381,23 +381,25 @@ bot.on('message', (message) => {
             message.channel.send(`Event start notification has been sent.`);
         }
         */
-//            if (commandos === "c$m$") {
-//            let b = arguss[0];
-//            let channelid = message.guild.channels.find('name','event-rsvp');
-//            channelid.fetchMessages({limit: 99}).then(msg => {
-//            const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
-//            async function edit() {
-//            const message = await channelid.fetchMessage(specMessage);
-//            await message.edit('hello').then(function (message) {
-//            message.reactions.removeAll()
-//            }).catch(function() {
-//            });
-//            }
-//            edit();
-//            });
-//            message.delete();
-//            message.channel.send(`Reactions have been removed.`);
-//        }
+        /*
+        if (commandos === "c$m$") {
+            let b = arguss[0];
+            let channelid = message.guild.channels.find('name','event-rsvp');
+            channelid.fetchMessages({limit: 99}).then(msg => {
+            const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
+            async function edit() {
+            const message = await channelid.fetchMessage(specMessage);
+            await message.edit('hello').then(function (message) {
+            message.reactions.removeAll()
+            }).catch(function() {
+            });
+            }
+            edit();
+            });
+            message.delete();
+            message.channel.send(`Reactions have been removed.`);
+        }
+        */
         
 });
 
