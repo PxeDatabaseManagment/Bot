@@ -263,12 +263,12 @@ bot.on('message', (message) => {
             message.channel.send(`DM has been sent to ${nickmember}.`);
             memberid.send(dm);
         }
-        /*
+        
         if (commandos === "a$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
             
-            message.guild.channels.find('name',channelname).send(`${b}`).then(function (message) {
+            message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`).then(function (message) {
             message.react(bot.emojis.get('733049184755646516'))
             message.react(bot.emojis.get('733048783046311988'))
             message.react(bot.emojis.get('733049172592295937'))
@@ -276,7 +276,7 @@ bot.on('message', (message) => {
             });
             message.channel.send(`Event has been posted.`);
         }
-        
+        /*
         if (commandos === "s$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
