@@ -155,21 +155,20 @@ bot.on('message', (message) => {
         if (commando === "a^r") {
             let nick = argus[0];
             let title = argus[1];
-            let nickmemberid = message.guild.members.cache.find(user => user.displayName === nick);
-            message.channel.send(`${nickmemberid}`);
-            /*let memberid = message.guild.members.cache.get(nickmemberid);
+            let nickmemberid = message.guild.members.cache.find(member => member.displayName === nick).map(m=>m.user.id);
+            let memberid = message.guild.members.cache.get(nickmemberid);
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
             memberid.roles.add(titlerole);
 
-            message.channel.send(`<@${nickmemberid}> has received the title of ${titlerole}.`);*/
+            message.channel.send(`<@${nickmemberid}> has received the title of ${titlerole}.`);
         }
         /*
         if (commando === "r^r") {
             let nick = argus[0];
             let title = argus[1];
-            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
-            let memberid = message.guild.members.get(nickmemberid);
-            let titlerole = message.guild.roles.find('name',title);
+            let nickmemberid = message.guild.members.cache.find(member => member.displayName === nick).map(m=>m.user.id);
+            let memberid = message.guild.members.cache.get(nickmemberid);
+            let titlerole = message.guild.roles.cache.find(i => i.name === title);
             memberid.removeRole(titlerole);
 
             message.channel.send(`<@${nickmemberid}> no longer has the title of ${titlerole}.`);
