@@ -163,35 +163,39 @@ bot.on('message', (message) => {
 
             message.channel.send(`${nickmember} has received the title of ${titlerole}.`);
         }
-        /*
+        
         if (commando === "r^r") {
             let nick = argus[0];
             let title = argus[1];
-            let nickmemberid = message.guild.members.cache.find(member => member.displayName === nick).map(m=>m.user.id);
+            let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
+            let nickmemberid = nickmember.id;
             let memberid = message.guild.members.cache.get(nickmemberid);
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
-            memberid.removeRole(titlerole);
+            memberid.roles.remove(titlerole);
 
             message.channel.send(`<@${nickmemberid}> no longer has the title of ${titlerole}.`);
         }
         
+        /*
         if (commando === "!admin!list") {
             let id = argus[0];
             let list = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
 
             message.channel.send(`<@${list}>`);
         }
+        */
         
         if (commando === "c^n") {
             let nick = argus[0];
             let newnick = argus[1];
-            let nickmemberid = message.guild.members.filter(member => member.displayName === nick).map(m=>m.user.id).join('\n');
-            let memberid = message.guild.members.get(nickmemberid);
+            let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
+            let nickmemberid = nickmember.id;
+            let memberid = message.guild.members.cache.get(nickmemberid);
             memberid.setNickname(newnick);
             
-            message.channel.send(`<@${nickmemberid}> now has the nickname of ${newnick}.`);
+            message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
         }
-        
+        /*
         if (commando === "c^c") {
             let channelname = argus[0];
             let channelid = message.guild.channels.find('name',channelname);
