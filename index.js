@@ -292,8 +292,6 @@ bot.on('message', (message) => {
             
             channelid.messages.fetch({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
-            const specMessageid = specMessage.id;
-            message.channel.send(`${specMessageid}`);
             channelid.bulkDelete(specMessage);
             });
             message.channel.send(`Event has been deleted.`);
@@ -305,11 +303,9 @@ bot.on('message', (message) => {
             let channelname = arguss[2];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
             channelid.messages.fetch({limit: 99}).then(msg => {
-            const specMessage = msg.filter(msg => msg.content.includes(b));
-            const specMessageid = specMessage.id;
-            message.channel.send(`${specMessageid}`);
+            const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
             async function edit() {
-            const message = await channelid.messages.fetch(specMessageid);
+            const message = await channelid.messages.fetch(specMessage);
             await message.edit(c);
             }
             edit();
