@@ -266,9 +266,9 @@ bot.on('message', (message) => {
         
         if (commandos === "!testdm") {
             let memberid = '216628403921485824';
-            let themember = message.guild.members.cache.get(memberid);
+            let theMember = message.guild.members.cache.get(memberid);
             message.channel.send(`DM has been sent.`);
-            memberid.send("Hello.");
+            theMember.send("Hello.");
         }
         
         if (commandos === "a$m$") {
