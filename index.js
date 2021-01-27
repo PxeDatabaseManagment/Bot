@@ -318,7 +318,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> A new event **${b}** has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`<@&689275374139605145> A new event **${b}** has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
@@ -326,7 +326,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> A new event **${b}** has been posted in <#729050150831521794>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`<@&689275374139605145> A new event **${b}** has been posted in <#729050150831521794>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
@@ -334,7 +334,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> A new event **${b}** has been posted in <#729050150831521794> and <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`<@&689275374139605145> A new event **${b}** has been posted in <#729050150831521794> and <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
         }
         
@@ -343,7 +343,7 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelname = arguss[2];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#730551238395166780>:\n**${c}**`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#730551238395166780>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
         }
         
@@ -352,7 +352,7 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelname = arguss[2];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794>:\n**${c}**`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
         }
         
@@ -361,7 +361,7 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelname = arguss[2];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794> and <#730551238395166780>:\n**${c}**`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`<@&689275374139605145> The following change has been made to the event **${b}** in <#729050150831521794> and <#730551238395166780>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
         }
         
@@ -370,7 +370,7 @@ bot.on('message', (message) => {
             let time = arguss[1];
             let channelname = arguss[2];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> The event **${b}** starts in **${time}** minutes. <:GetOnHalo:417888045925138432>`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`<@&689275374139605145> The event **${b}** starts in **${time}** minutes. <:GetOnHalo:417888045925138432>`);
             message.channel.send(`Event start warning has been sent.`);
         }
         
@@ -378,10 +378,10 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             
-            message.guild.channels.find('name',channelname).send(`<@&689275374139605145> The event **${b}** is starting now! <:GetOnHalo:417888045925138432>`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`<@&689275374139605145> The event **${b}** is starting now! <:GetOnHalo:417888045925138432>`);
             message.channel.send(`Event start notification has been sent.`);
         }
-        */
+        
         /*
         if (commandos === "c$m$") {
             let b = arguss[0];
