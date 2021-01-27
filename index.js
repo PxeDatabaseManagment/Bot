@@ -292,6 +292,8 @@ bot.on('message', (message) => {
             
             channelid.messages.fetch({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
+            const specMessageid = specMessage.id;
+            message.channel.send(`${specMessageid}`);
             channelid.bulkDelete(specMessage);
             });
             message.channel.send(`Event has been deleted.`);
@@ -305,7 +307,7 @@ bot.on('message', (message) => {
             channelid.messages.fetch({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
             const specMessageid = specMessage.id;
-            message.channel.send(`${specMessage}`);
+            message.channel.send(`${specMessageid}`);
             async function edit() {
             const message = await channelid.messages.fetch(specMessageid);
             await message.edit(c);
