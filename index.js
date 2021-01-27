@@ -226,6 +226,7 @@ bot.on('message', (message) => {
             message.channel.send(`${nick} has been kicked.`);
         }
         
+        /*
         if (commando === "b^r") {
             let nick = argus[0];
             let channelname = argus[1];
