@@ -304,7 +304,7 @@ bot.on('message', (message) => {
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
             channelid.messages.fetch({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
-            const specMessageid = specMessage.id
+            const specMessageid = specMessage.id;
             async function edit() {
             const message = await channelid.message.fetch(specMessageid);
             await message.edit(c);
