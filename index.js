@@ -296,16 +296,17 @@ bot.on('message', (message) => {
             });
             message.channel.send(`Event has been deleted.`);
         }
-        /*
+        
         if (commandos === "e$m$") {
             let b = arguss[0];
             let c = arguss[1];
             let channelname = arguss[2];
-            let channelid = message.guild.channels.find('name',channelname);
-            channelid.fetchMessages({limit: 99}).then(msg => {
-            const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
+            let channelid = message.guild.channels.cache.find(i => i.name === channelname);
+            channelid.messages.fetch({limit: 99}).then(msg => {
+            const specMessage = msg.filter(msg => msg.content.includes(b));
+            const specMessageid = specMessage.id
             async function edit() {
-            const message = await channelid.fetchMessage(specMessage);
+            const message = await channelid.message.fetch(specMessageid);
             await message.edit(c);
             }
             edit();
