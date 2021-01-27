@@ -276,27 +276,27 @@ bot.on('message', (message) => {
             });
             message.channel.send(`Event has been posted.`);
         }
-        /*
+        
         if (commandos === "s$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
             
-            message.guild.channels.find('name',channelname).send(`${b}`);
+            message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`);
             message.channel.send(`Custom message has been sent.`);
         }
         
         if (commandos === "d$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
-            let channelid = message.guild.channels.find('name',channelname);
+            let channelid = message.guild.channels.cache.find(i => i.name === channelname);
             
-            channelid.fetchMessages({limit: 99}).then(msg => {
+            channelid.messages.fetch({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
             channelid.bulkDelete(specMessage);
             });
             message.channel.send(`Event has been deleted.`);
         }
-        
+        /*
         if (commandos === "e$m$") {
             let b = arguss[0];
             let c = arguss[1];
