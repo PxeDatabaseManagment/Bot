@@ -40,7 +40,7 @@ bot.on('message', (message) => {
         /*
         if(msg == '!startinfo') {
             message.delete();
-            message.author.send('Welcome to Phoenix Era. Type !help to see a list of useful commands. \nType !chatrules to see server rules. \nPlease read the member guide: \nhttps:// \n \nAbove all: do not be stupid or act stupid.');
+            message.author.send('Welcome to Phoenix Era. Type !help to see a list of useful commands. \nType !chatrules to see server rules. \nPlease read the member guide: \nMEMBER GUIDE \n \nAbove all: do not be stupid or act stupid.');
         }
         */
         
