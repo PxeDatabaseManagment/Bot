@@ -204,6 +204,46 @@ bot.on('message', (message) => {
             message.channel.send(`Messages in ${channelid} have been cleared.`);
         }
         
+        if (commando === "c^a") {
+            let channelid = message.guild.channels.cache.find(i => i.name === 'full-schedule');
+            async function clear() {
+                    const fetched = await channelid.messages.fetch({limit: 99});
+                    channelid.bulkDelete(fetched);
+            }
+            clear();
+            let channelid = message.guild.channels.cache.find(i => i.name === 'rudis-events');
+            async function clear() {
+                    const fetched = await channelid.messages.fetch({limit: 99});
+                    channelid.bulkDelete(fetched);
+            }
+            clear();
+            let channelid = message.guild.channels.cache.find(i => i.name === 'vicarius-events');
+            async function clear() {
+                    const fetched = await channelid.messages.fetch({limit: 99});
+                    channelid.bulkDelete(fetched);
+            }
+            clear();
+            let channelid = message.guild.channels.cache.find(i => i.name === 'equitum-events');
+            async function clear() {
+                    const fetched = await channelid.messages.fetch({limit: 99});
+                    channelid.bulkDelete(fetched);
+            }
+            clear();
+            let channelid = message.guild.channels.cache.find(i => i.name === 'pg-events');
+            async function clear() {
+                    const fetched = await channelid.messages.fetch({limit: 99});
+                    channelid.bulkDelete(fetched);
+            }
+            clear();
+            let channelid = message.guild.channels.cache.find(i => i.name === 'intel-events');
+            async function clear() {
+                    const fetched = await channelid.messages.fetch({limit: 99});
+                    channelid.bulkDelete(fetched);
+            }
+            clear();
+            message.channel.send(`Messages in all schedule channels have been cleared.`);
+        }
+        
         if (commando === "start^info") {
             let nick = argus[0];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
