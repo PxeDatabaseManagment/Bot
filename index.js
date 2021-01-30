@@ -217,30 +217,36 @@ bot.on('message', (message) => {
                     channelid2.bulkDelete(fetched);
             }
             clear2();
-            let channelid3 = message.guild.channels.cache.find(i => i.name === 'vicarius-events');
+            let channelid3 = message.guild.channels.cache.find(i => i.name === 'aquila-events');
             async function clear3() {
                     const fetched = await channelid3.messages.fetch({limit: 99});
                     channelid3.bulkDelete(fetched);
             }
             clear3();
-            let channelid4 = message.guild.channels.cache.find(i => i.name === 'equitum-events');
+            let channelid4 = message.guild.channels.cache.find(i => i.name === 'vicarius-events');
             async function clear4() {
                     const fetched = await channelid4.messages.fetch({limit: 99});
                     channelid4.bulkDelete(fetched);
             }
             clear4();
-            let channelid5 = message.guild.channels.cache.find(i => i.name === 'pg-events');
+            let channelid5 = message.guild.channels.cache.find(i => i.name === 'equitum-events');
             async function clear5() {
                     const fetched = await channelid5.messages.fetch({limit: 99});
                     channelid5.bulkDelete(fetched);
             }
             clear5();
-            let channelid6 = message.guild.channels.cache.find(i => i.name === 'intel-events');
+            let channelid6 = message.guild.channels.cache.find(i => i.name === 'pg-events');
             async function clear6() {
                     const fetched = await channelid6.messages.fetch({limit: 99});
                     channelid6.bulkDelete(fetched);
             }
             clear6();
+            let channelid7 = message.guild.channels.cache.find(i => i.name === 'intel-events');
+            async function clear7() {
+                    const fetched = await channelid7.messages.fetch({limit: 99});
+                    channelid7.bulkDelete(fetched);
+            }
+            clear7();
             message.channel.send(`Messages in all schedule channels have been cleared.`);
         }
         
