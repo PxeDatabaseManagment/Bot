@@ -328,6 +328,33 @@ bot.on('message', (message) => {
             message.channel.send(`Custom message has been sent.`);
         }
         
+        if (commandos === "s$m$") {
+            let title = arguss[0];
+            let description = arguss[1];
+            let author = arguss[2];
+            let footer = arguss[3];
+            let channelname = arguss[4];
+            
+            const exampleEmbed = new Discord.MessageEmbed()
+	        .setColor('RANDOM')
+	        .setTitle(title)
+	        //.setURL('https://discord.js.org/')
+	        .setAuthor(author, 'https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png', 'https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png')
+	        .setDescription(description)
+	        .setThumbnail('https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png')
+	        //.addFields(
+		//        { name: 'Regular field title', value: 'Some value here' },
+		//        { name: '\u200B', value: '\u200B' },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+	        //)
+	        //.addField('Inline field title', 'Some value here', true)
+	        .setImage('https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png')
+	        .setTimestamp()
+	        .setFooter(footer, 'https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png');
+            message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed)
+        }
+        
         if (commandos === "d$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
