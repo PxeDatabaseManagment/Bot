@@ -333,8 +333,9 @@ bot.on('message', (message) => {
             let description = arguss[1];
             let author = arguss[2];
 	    let authorpic = arguss[3];
-            let footer = arguss[4];
-            let channelname = arguss[5];
+	    let image = arguss[4];
+            let footer = arguss[5];
+            let channelname = arguss[6];
             
             const exampleEmbed = new Discord.MessageEmbed()
 	        .setColor('RANDOM')
@@ -350,7 +351,7 @@ bot.on('message', (message) => {
 		//        { name: 'Inline field title', value: 'Some value here', inline: true },
 	        //)
 	        //.addField('Inline field title', 'Some value here', true)
-	        .setImage('https://cdn.discordapp.com/emojis/417837304036589568.png?v=1')
+	        .setImage(image)
 	        .setTimestamp()
 	        .setFooter(footer, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
             message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed);
