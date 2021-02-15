@@ -332,16 +332,17 @@ bot.on('message', (message) => {
             let title = arguss[0];
             let description = arguss[1];
             let author = arguss[2];
-            let footer = arguss[3];
-            let channelname = arguss[4];
+	    let authorpic = arguss[3];
+            let footer = arguss[4];
+            let channelname = arguss[5];
             
             const exampleEmbed = new Discord.MessageEmbed()
 	        .setColor('RANDOM')
 	        .setTitle(title)
 	        //.setURL('https://discord.js.org/')
-	        .setAuthor(author, 'https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png', 'https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png')
+	        .setAuthor(author, authorpic, authorpic)
 	        .setDescription(description)
-	        .setThumbnail('https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png')
+	        .setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
 	        //.addFields(
 		//        { name: 'Regular field title', value: 'Some value here' },
 		//        { name: '\u200B', value: '\u200B' },
@@ -349,9 +350,9 @@ bot.on('message', (message) => {
 		//        { name: 'Inline field title', value: 'Some value here', inline: true },
 	        //)
 	        //.addField('Inline field title', 'Some value here', true)
-	        .setImage('https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png')
+	        .setImage('https://cdn.discordapp.com/emojis/417837304036589568.png?v=1')
 	        .setTimestamp()
-	        .setFooter(footer, 'https://cdn.discordapp.com/avatars/213363192296898560/e534d38bcfe7061c1bb7d30b792a5cd8.png');
+	        .setFooter(footer, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
             message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed)
         }
         
