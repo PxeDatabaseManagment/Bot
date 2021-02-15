@@ -328,7 +328,7 @@ bot.on('message', (message) => {
             message.channel.send(`Custom message has been sent.`);
         }
         
-        if (commandos === "s$m$") {
+        if (commandos === "s$e$") {
             let title = arguss[0];
             let description = arguss[1];
             let author = arguss[2];
