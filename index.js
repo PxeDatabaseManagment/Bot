@@ -353,7 +353,8 @@ bot.on('message', (message) => {
 	        .setImage('https://cdn.discordapp.com/emojis/417837304036589568.png?v=1')
 	        .setTimestamp()
 	        .setFooter(footer, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
-            message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed)
+            message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed);
+	    message.channel.send(`Custom embed has been sent.`);
         }
         
         if (commandos === "d$m$") {
