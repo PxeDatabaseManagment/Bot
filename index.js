@@ -111,9 +111,9 @@ bot.on('message', (message) => {
                 '5, Born And Raised In Texas',
                 '6, Invested In Cryptocurrency',
                 '7, Cannot Tell The Difference Between Tomatoes and Dildos',
-                '8, Suffering From The Jslayer Disease',
+                '8, Believes America is a Meritocracy',
                 '9, Promoted Dreamz To Sector Leader',
-                '10, Has Already Pre-Ordered Battlefront III'
+                '10, Thinks Sprint is a Good Idea in Halo'
             ];
             
             var rand = Math.floor(Math.random() * list.length);
