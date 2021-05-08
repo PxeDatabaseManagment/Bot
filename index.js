@@ -185,16 +185,15 @@ bot.on('message', (message) => {
         if (commando === "c^n") {
             let nick = argus[0];
             let newnick = argus[1];
-	    try{
 	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
             let nickmemberid = nickmember.id;
             let memberid = message.guild.members.cache.get(nickmemberid);
+	    try{
 	    memberid.setNickname(newnick);
+	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    } catch(err) {
     	    console.log(err)
 	    }
-            
-            message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
         }
         
         if (commando === "c^c") {
