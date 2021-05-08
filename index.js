@@ -188,7 +188,7 @@ bot.on('message', (message) => {
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
             let nickmemberid = nickmember.id;
             let memberid = message.guild.members.cache.get(nickmemberid);
-	    async function dummy() {
+	    function dummy() {
 	    }
 	    dummy.then(function (memberid) {
             memberid.setNickname(newnick)
