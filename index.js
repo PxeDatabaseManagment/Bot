@@ -186,11 +186,9 @@ bot.on('message', (message) => {
             let nick = argus[0];
             let newnick = argus[1];
 	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-            let nickmemberid = nickmember.id;
-            let memberid = message.guild.members.cache.get(nickmemberid);
-	    //message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
+	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    try{
-	    memberid.setNickname(newnick);
+	    nickmember.setNickname(newnick);
 	    } catch(err) {
 	    }
         }
