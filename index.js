@@ -191,12 +191,12 @@ bot.on('message', (message) => {
 	    try{
 	    memberid.setNickname(newnick);
 	    } catch(err) {
-    	    console.log(err);
+    	    console.error(err);
 	    }
 	    try{
 	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    } catch(err2) {
-    	    console.log(err2);
+    	    console.error(err2);
 	    }
         }
         
