@@ -190,9 +190,13 @@ bot.on('message', (message) => {
             let memberid = message.guild.members.cache.get(nickmemberid);
 	    try{
 	    memberid.setNickname(newnick);
-	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    } catch(err) {
     	    console.log(err)
+	    }
+	    try{
+	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
+	    } catch(err2) {
+    	    console.log(err2)
 	    }
         }
         
