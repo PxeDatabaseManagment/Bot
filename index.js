@@ -264,6 +264,7 @@ bot.on('message', (message) => {
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
             let nickmemberid = nickmember.id;
             let memberid = message.guild.members.cache.get(nickmemberid);
+	    message.guild.channels.cache.find(i => i.name === 'official').send(`${nick} has been kicked from the server.`);
             memberid.kick();
 
             message.channel.send(`${nick} has been kicked.`);
