@@ -188,13 +188,13 @@ bot.on('message', (message) => {
 	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
 	    //let nickmemberid = nickmember.id;
             //let memberid = message.guild.members.cache.get(nickmemberid);
-	    //if (nickmemberid.length > 0) {
-	    //nickmember.setNickname(newnick);
-	    //message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
-	    message.channel.send(`${nickmember}`);
-	    //} else {
-	    //message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
-	    //}
+	    if (nickmember === "undefined") {
+	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
+	    //message.channel.send(`${nickmember}`);
+	    } else {
+	    nickmember.setNickname(newnick);
+	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
+	    }
         }
         
         if (commando === "c^c") {
