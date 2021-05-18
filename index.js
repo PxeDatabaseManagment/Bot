@@ -191,6 +191,7 @@ bot.on('message', (message) => {
             let newnick = argus[1];
 	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
 	    let memberlist = message.guild.members.cache.map(m=>m.nickname).join('\n');
+	    message.channel.send(`${memberlist}`);
 	    if (memberlist.includes(nick)) {
 	    nickmember.setNickname(newnick);
 	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
