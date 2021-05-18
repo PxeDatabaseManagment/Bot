@@ -192,7 +192,7 @@ bot.on('message', (message) => {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
 	    //message.channel.send(`${nickmember}`);
 	    } else {
-	    nickmember.setNickname(newnick);
+	    //nickmember.setNickname(newnick);
 	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    }
         }
