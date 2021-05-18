@@ -259,10 +259,10 @@ bot.on('message', (message) => {
         if (commando === "start^info") {
             let nick = argus[0];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-            message.channel.send(`DM has been sent to ${nickmember}.`);
 	    let memberlist = message.guild.members.cache.map(m=>m.nickname).join('\n');
 	    if (memberlist.includes(nick)) {
 	    nickmember.send("Welcome to Phoenix Era. Congratulations on passing the bootcamp! To be honest, I didn't think you'd make it. Then again, I never think anyone will make it... Anyway, now I feel like I can be associated with you without being totally humiliated. Don't prove me wrong by becoming a complete and utter failure.\n\nFirst step in not becoming a failure: watch this quick video.\nhttps://www.youtube.com/watch?v=nY9KrWEJ1k4");
+	    message.channel.send(`DM has been sent to ${nickmember}.`);
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
 	    }
