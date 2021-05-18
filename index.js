@@ -153,10 +153,8 @@ bot.on('message', (message) => {
             let nick = argus[0];
             let title = argus[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-            let nickmemberid = nickmember.id;
-            let memberid = message.guild.members.cache.get(nickmemberid);
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
-            memberid.roles.add(titlerole);
+            nickmember.roles.add(titlerole);
 
             message.channel.send(`${nickmember} has received the title of ${titlerole}.`);
         }
@@ -165,12 +163,10 @@ bot.on('message', (message) => {
             let nick = argus[0];
             let title = argus[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-            let nickmemberid = nickmember.id;
-            let memberid = message.guild.members.cache.get(nickmemberid);
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
-            memberid.roles.remove(titlerole);
+            nickmember.roles.remove(titlerole);
 
-            message.channel.send(`<@${nickmemberid}> no longer has the title of ${titlerole}.`);
+            message.channel.send(`${nickmember} no longer has the title of ${titlerole}.`);
         }
         
         /*
@@ -188,7 +184,7 @@ bot.on('message', (message) => {
 	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
 	    let memberlist = message.guild.members.cache.map(m=>m.nickname).join('\n');
 	    if (memberlist.includes(nick)) {
-	    //nickmember.setNickname(newnick);
+	    nickmember.setNickname(newnick);
 	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
