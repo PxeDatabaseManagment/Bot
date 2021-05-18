@@ -176,7 +176,7 @@ bot.on('message', (message) => {
         /*
         if (commando === "!admin!list") {
             let id = argus[0];
-            let list = message.guild.roles.find('name',id).members.map(m=>m.user.id).join('\n');
+            let list = message.guild.roles.cache.find(i => i.name === id).members.map(m=>m.user.id).join('\n');
 
             message.channel.send(`<@${list}>`);
         }
@@ -186,10 +186,11 @@ bot.on('message', (message) => {
             let nick = argus[0];
             let newnick = argus[1];
 	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
-	    try{
+	    if (nickmember.length > 0) {
 	    nickmember.setNickname(newnick);
-	    } catch(err) {
+	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
+	    } else {
+	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
 	    }
         }
         
