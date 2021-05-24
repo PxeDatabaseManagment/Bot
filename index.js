@@ -195,8 +195,20 @@ bot.on('message', (message) => {
 	    nickmember.setNickname(newnick);
 	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    } else {
+	    if (nickmember.nickname = '') {
+	    nickmember.setNickname(newnick);
+	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
+	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
 	    }
+	    }
+        }
+	
+	if (commando === "o^n") {
+            let nick = argus[0];
+	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
+	    let memberlist = nickmember.nickname;
+	    message.channel.send(`${nickmember} has the nickname of ${memberlist}.`);
         }
         
         if (commando === "c^c") {
