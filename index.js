@@ -195,7 +195,7 @@ bot.on('message', (message) => {
 	    nickmember.setNickname(newnick);
 	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    } else {
-	    if (nickmember.nickname = '') {
+	    if (nickmember.nickname = null) {
 	    nickmember.setNickname(newnick);
 	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    } else {
