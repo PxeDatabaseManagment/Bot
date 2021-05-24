@@ -7,19 +7,21 @@ bot.user.setPresence({ activity: { name: "Phoenix Era", type: "WATCHING" }, stat
 
 bot.on('guildMemberAdd', member => {
         
-        const welcomeEmbed = new Discord.MessageEmbed()
-        welcomeEmbed.setColor('RANDOM')
-        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
-        member.guild.channels.cache.find(i => i.name === 'official').send(welcomeEmbed)
+        const welcomeEmbed = new Discord.MessageEmbed();
+        welcomeEmbed.setColor('RANDOM');
+        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
+        member.guild.channels.cache.find(i => i.name === 'official').send(welcomeEmbed);
+	let oldnick = member.displayName;
+	member.setNickname(oldnick + '- cadet');
         
 });
 
 bot.on('guildMemberRemove', member => {
         
-        const leaveEmbed = new Discord.MessageEmbed()
-        leaveEmbed.setColor('RANDOM')
-        leaveEmbed.setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.")
-        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed)
+        const leaveEmbed = new Discord.MessageEmbed();
+        leaveEmbed.setColor('RANDOM');
+        leaveEmbed.setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.");
+        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed);
 });
 
 bot.on('message', (message) => {
@@ -195,20 +197,8 @@ bot.on('message', (message) => {
 	    nickmember.setNickname(newnick);
 	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
 	    } else {
-	    if (nickmember.nickname = null) {
-	    nickmember.setNickname(newnick);
-	    message.channel.send(`${nickmember} now has the nickname of ${newnick}.`);
-	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
 	    }
-	    }
-        }
-	
-	if (commando === "o^n") {
-            let nick = argus[0];
-	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-	    let memberlist = nickmember.nickname;
-	    message.channel.send(`${nickmember} has the nickname of ${memberlist}.`);
         }
         
         if (commando === "c^c") {
