@@ -7,21 +7,19 @@ bot.user.setPresence({ activity: { name: "Phoenix Era", type: "WATCHING" }, stat
 
 bot.on('guildMemberAdd', member => {
         
-        const welcomeEmbed = new Discord.MessageEmbed();
-        welcomeEmbed.setColor('RANDOM');
-        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
-        member.guild.channels.cache.find(i => i.name === 'official').send(welcomeEmbed);
-	let oldnick = member.displayName;
-	member.setNickname(oldnick + '- cadet');
+        const welcomeEmbed = new Discord.MessageEmbed()
+        welcomeEmbed.setColor('RANDOM')
+        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
+        member.guild.channels.cache.find(i => i.name === 'official').send(welcomeEmbed)
         
 });
 
 bot.on('guildMemberRemove', member => {
         
-        const leaveEmbed = new Discord.MessageEmbed();
-        leaveEmbed.setColor('RANDOM');
-        leaveEmbed.setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.");
-        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed);
+        const leaveEmbed = new Discord.MessageEmbed()
+        leaveEmbed.setColor('RANDOM')
+        leaveEmbed.setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.")
+        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed)
 });
 
 bot.on('message', (message) => {
@@ -156,7 +154,7 @@ bot.on('message', (message) => {
             let title = argus[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
-	    let memberlist = ',' + message.guild.members.cache.map(m=>m.nickname).join(',') + ',';
+	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	    if (memberlist.includes(',' + nick + ',')) {
 	    nickmember.roles.add(titlerole);
             message.channel.send(`${nickmember} has received the title of ${titlerole}.`);
@@ -170,7 +168,7 @@ bot.on('message', (message) => {
             let title = argus[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
-	    let memberlist = ',' + message.guild.members.cache.map(m=>m.nickname).join(',') + ',';
+	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	    if (memberlist.includes(',' + nick + ',')) {
 	    nickmember.roles.remove(titlerole);
             message.channel.send(`${nickmember} no longer has the title of ${titlerole}.`);
@@ -261,7 +259,7 @@ bot.on('message', (message) => {
         if (commando === "start^info") {
             let nick = argus[0];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-	    let memberlist = ',' + message.guild.members.cache.map(m=>m.nickname).join(',') + ',';
+	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	    if (memberlist.includes(',' + nick + ',')) {
 	    nickmember.send("Welcome to Phoenix Era. Congratulations on passing the bootcamp! To be honest, I didn't think you'd make it. Then again, I never think anyone will make it... Anyway, now I feel like I can be associated with you without being totally humiliated. Don't prove me wrong by becoming a complete and utter failure.\n\nFirst step in not becoming a failure: watch this quick video.\nhttps://www.youtube.com/watch?v=nY9KrWEJ1k4");
 	    message.channel.send(`DM has been sent to ${nickmember}.`);
@@ -273,7 +271,7 @@ bot.on('message', (message) => {
         if (commando === "k^k") {
             let nick = argus[0];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-	    let memberlist = ',' + message.guild.members.cache.map(m=>m.nickname).join(',') + ',';
+	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	    if (memberlist.includes(',' + nick + ',')) {
 	    message.guild.channels.cache.find(i => i.name === 'official').send(`${nick} has been kicked from the server.`);
             nickmember.kick();
@@ -290,7 +288,7 @@ bot.on('message', (message) => {
             let channelname = argus[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-	    let memberlist = ',' + message.guild.members.cache.map(m=>m.nickname).join(',') + ',';
+	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	    if (memberlist.includes(',' + nick + ',')) {
 	    message.guild.channels.cache.find(i => i.name === channelname).send(`Hey ${roleP}, it's ${nickmember}'s birthday! :confetti_ball: :birthday:`);
             message.channel.send(`Birthday notification has been sent.`);
@@ -318,7 +316,7 @@ bot.on('message', (message) => {
             let nick = arguss[0];
             let dm = arguss[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
-	    let memberlist = '^' + message.guild.members.cache.map(m=>m.nickname).join('^') + '^';
+	    let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
 	    if (memberlist.includes('^' + nick + '^')) {
 	    message.channel.send(`DM has been sent to ${nickmember}.`);
             nickmember.send(dm);
