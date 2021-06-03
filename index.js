@@ -156,11 +156,9 @@ bot.on('message', (message) => {
             let titlerole = message.guild.roles.cache.find(i => i.name === title);
 	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	    let chan = message.channel.name;
-	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
-	    if (chan = 'audit-log') {
+	    if (chan == 'audit-log') {
 	    if (memberlist.includes(',' + nick + ',')) {
 	    nickmember.roles.add(titlerole);
-	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
             message.channel.send(`${nickmember} has received the title of ${titlerole}.`);
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
