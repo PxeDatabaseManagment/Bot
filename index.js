@@ -159,6 +159,7 @@ bot.on('message', (message) => {
 	    if (chan = 'audit-log') {
 	    if (memberlist.includes(',' + nick + ',')) {
 	    nickmember.roles.add(titlerole);
+	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
             message.channel.send(`${nickmember} has received the title of ${titlerole}.`);
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
