@@ -378,7 +378,8 @@ bot.on('message', (message) => {
         if (commandos === "a$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
-            
+            let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
+
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
             message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`).then(function (message) {
@@ -388,6 +389,7 @@ bot.on('message', (message) => {
             }).catch(function() {
             });
             message.channel.send(`Event has been posted.`);
+	    message.channel.send(`${chanlist}`);
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -396,11 +398,13 @@ bot.on('message', (message) => {
         if (commandos === "s$m$") {
             let b = arguss[0];
             let channelname = arguss[1];
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
             message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`);
             message.channel.send(`Custom message has been sent.`);
+	    message.channel.send(`${chanlist}`);
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
