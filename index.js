@@ -217,14 +217,19 @@ bot.on('message', (message) => {
         if (commando === "c^c") {
             let channelname = argus[0];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            async function clear() {
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    async function clear() {
                     const fetched = await channelid.messages.fetch({limit: 99});
                     channelid.bulkDelete(fetched);
             }
             clear();
             message.channel.send(`Messages in ${channelid} have been cleared.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -324,11 +329,16 @@ bot.on('message', (message) => {
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
 	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
 	    if (memberlist.includes(',' + nick + ',')) {
+	    if (chanlist.includes('^' + channelname + '^')) {
 	    message.guild.channels.cache.find(i => i.name === channelname).send(`Hey ${roleP}, it's ${nickmember}'s birthday! :confetti_ball: :birthday:`);
             message.channel.send(`Birthday notification has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
 	    }
@@ -341,6 +351,7 @@ bot.on('message', (message) => {
             let channelname = argus[0];
             let num = argus[1];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
             async function clear() {
@@ -424,6 +435,7 @@ bot.on('message', (message) => {
 	    let image = arguss[4];
             let footer = arguss[5];
             let channelname = arguss[6];
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
             const exampleEmbed = new Discord.MessageEmbed()
 	        .setColor('RANDOM')
@@ -455,6 +467,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
@@ -473,6 +486,7 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelname = arguss[2];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
             channelid.messages.fetch({limit: 99}).then(msg => {
@@ -493,6 +507,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
@@ -507,6 +522,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
@@ -521,6 +537,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
@@ -536,6 +553,7 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelname = arguss[2];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
@@ -551,6 +569,7 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelname = arguss[2];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
@@ -566,6 +585,7 @@ bot.on('message', (message) => {
             let c = arguss[1];
             let channelname = arguss[2];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
@@ -581,6 +601,7 @@ bot.on('message', (message) => {
             let time = arguss[1];
             let channelname = arguss[2];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
@@ -595,6 +616,7 @@ bot.on('message', (message) => {
             let b = arguss[0];
             let channelname = arguss[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
