@@ -439,7 +439,6 @@ bot.on('message', (message) => {
 	    let image = arguss[4];
             let footer = arguss[5];
             let channelname = arguss[6];
-	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
             
             const exampleEmbed = new Discord.MessageEmbed()
 	        .setColor('RANDOM')
@@ -458,6 +457,7 @@ bot.on('message', (message) => {
 	        .setImage(image)
 	        .setTimestamp()
 	        .setFooter(footer, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
