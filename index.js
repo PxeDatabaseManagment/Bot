@@ -354,12 +354,16 @@ bot.on('message', (message) => {
 	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            async function clear() {
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    async function clear() {
                     const fetched = await channelid.messages.fetch({limit: num});
                     channelid.bulkDelete(fetched);
             }
             clear();
             message.channel.send(`The last ${num} messages in ${channelid} have been cleared.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -456,8 +460,12 @@ bot.on('message', (message) => {
 	        .setFooter(footer, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed);
 	    message.channel.send(`Custom embed has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -471,11 +479,15 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            channelid.messages.fetch({limit: 99}).then(msg => {
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    channelid.messages.fetch({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
             channelid.bulkDelete(specMessage);
             });
             message.channel.send(`Event has been deleted.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -489,7 +501,8 @@ bot.on('message', (message) => {
 	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            channelid.messages.fetch({limit: 99}).then(msg => {
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    channelid.messages.fetch({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
             async function edit() {
             const message = await channelid.messages.fetch(specMessage);
@@ -498,6 +511,9 @@ bot.on('message', (message) => {
             edit();
             });
             message.channel.send(`Event has been edited.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -511,8 +527,12 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} A new event **${b}** has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} A new event **${b}** has been posted in <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -526,8 +546,12 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} A new event **${b}** has been posted in <#729050150831521794>. <:PhoenixEraInsignia:417837304036589568>`);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} A new event **${b}** has been posted in <#729050150831521794>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -541,8 +565,12 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} A new event **${b}** has been posted in <#729050150831521794> and <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} A new event **${b}** has been posted in <#729050150831521794> and <#730551238395166780>. <:PhoenixEraInsignia:417837304036589568>`);
             message.channel.send(`New event notification has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -557,8 +585,12 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The following change has been made to the event **${b}** in <#730551238395166780>:\n**${c}**`);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The following change has been made to the event **${b}** in <#730551238395166780>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -573,8 +605,12 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The following change has been made to the event **${b}** in <#729050150831521794>:\n**${c}**`);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The following change has been made to the event **${b}** in <#729050150831521794>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -589,8 +625,12 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The following change has been made to the event **${b}** in <#729050150831521794> and <#730551238395166780>:\n**${c}**`);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The following change has been made to the event **${b}** in <#729050150831521794> and <#730551238395166780>:\n**${c}**`);
             message.channel.send(`Event update notification has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -605,8 +645,12 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The event **${b}** starts in **${time}** minutes. <:GetOnHalo:417888045925138432>`);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The event **${b}** starts in **${time}** minutes. <:GetOnHalo:417888045925138432>`);
             message.channel.send(`Event start warning has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -620,8 +664,12 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The event **${b}** is starting now! <:GetOnHalo:417888045925138432>`);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${roleP} The event **${b}** is starting now! <:GetOnHalo:417888045925138432>`);
             message.channel.send(`Event start notification has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
