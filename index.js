@@ -382,14 +382,17 @@ bot.on('message', (message) => {
 
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`).then(function (message) {
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`).then(function (message) {
             message.react(bot.emojis.cache.get('733049184755646516'))
             message.react(bot.emojis.cache.get('733048783046311988'))
             message.react(bot.emojis.cache.get('733049172592295937'))
             }).catch(function() {
             });
             message.channel.send(`Event has been posted.`);
-	    message.channel.send(`${chanlist}`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
@@ -402,9 +405,12 @@ bot.on('message', (message) => {
             
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-            message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`);
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`);
             message.channel.send(`Custom message has been sent.`);
-	    message.channel.send(`${chanlist}`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
