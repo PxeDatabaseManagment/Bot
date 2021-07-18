@@ -157,6 +157,7 @@ bot.on('message', (message) => {
 	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	    let rolelist = ',' + message.guild.roles.cache.map(m=>m.name).join(',') + ',';
 	    let chan = message.channel.name;
+	    if (message.channel.type === 'dm') {
 	    if (chan == 'audit-log') {
 	    if (memberlist.includes(',' + nick + ',')) {
 	    if (rolelist.includes(',' + title + ',')) {
@@ -170,6 +171,9 @@ bot.on('message', (message) => {
 	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
 	    }
         }
         
