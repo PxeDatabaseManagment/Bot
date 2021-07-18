@@ -178,6 +178,7 @@ bot.on('message', (message) => {
         }
         
         if (commando === "r^r") {
+	    if (message.channel.type != 'dm') {
             let nick = argus[0];
             let title = argus[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
@@ -199,6 +200,9 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         /*
@@ -211,6 +215,7 @@ bot.on('message', (message) => {
         */
         
         if (commando === "c^n") {
+	    if (message.channel.type != 'dm') {
             let nick = argus[0];
             let newnick = argus[1];
 	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
@@ -226,9 +231,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commando === "c^c") {
+	    if (message.channel.type != 'dm') {
             let channelname = argus[0];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
 	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
@@ -247,9 +256,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commando === "c^a") {
+	    if (message.channel.type != 'dm') {
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
             let channelid = message.guild.channels.cache.find(i => i.name === 'full-schedule');
@@ -298,9 +311,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commando === "start^info") {
+	    if (message.channel.type != 'dm') {
             let nick = argus[0];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
 	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
@@ -315,9 +332,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commando === "k^k") {
+	    if (message.channel.type != 'dm') {
             let nick = argus[0];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
 	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
@@ -334,10 +355,14 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         
         if (commando === "b^r") {
+	    if (message.channel.type != 'dm') {
             let nick = argus[0];
             let channelname = argus[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
@@ -359,9 +384,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commando === "d^c") {
+	    if (message.channel.type != 'dm') {
             let channelname = argus[0];
             let num = argus[1];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
@@ -381,12 +410,16 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         const arguss = message.content.trim().split('^');
         const commandos = arguss.shift().toLowerCase();
         
         if (commandos === "d$m") {
+	    if (message.channel.type != 'dm') {
             let nick = arguss[0];
             let dm = arguss[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
@@ -402,9 +435,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "a$m$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let channelname = arguss[1];
             let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
@@ -425,9 +462,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "s$m$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let channelname = arguss[1];
 	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
@@ -443,9 +484,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "s$e$") {
+	    if (message.channel.type != 'dm') {
             let title = arguss[0];
             let description = arguss[1];
             let author = arguss[2];
@@ -483,9 +528,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "d$m$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let channelname = arguss[1];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
@@ -505,9 +554,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "e$m$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let c = arguss[1];
             let channelname = arguss[2];
@@ -531,9 +584,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "a$e$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let channelname = arguss[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
@@ -550,9 +607,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "a$s$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let channelname = arguss[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
@@ -569,9 +630,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "a$se$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let channelname = arguss[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
@@ -588,9 +653,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "u$e$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let c = arguss[1];
             let channelname = arguss[2];
@@ -608,9 +677,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "u$s$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let c = arguss[1];
             let channelname = arguss[2];
@@ -628,9 +701,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "u$se$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let c = arguss[1];
             let channelname = arguss[2];
@@ -648,9 +725,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "e$w$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let time = arguss[1];
             let channelname = arguss[2];
@@ -668,9 +749,13 @@ bot.on('message', (message) => {
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
         }
         
         if (commandos === "e$s$") {
+	    if (message.channel.type != 'dm') {
             let b = arguss[0];
             let channelname = arguss[1];
             let roleP = message.guild.roles.cache.find(i => i.name === 'Phoenix Era');
@@ -686,6 +771,9 @@ bot.on('message', (message) => {
 	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
 	    }
         }
         
