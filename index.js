@@ -150,6 +150,7 @@ bot.on('message', (message) => {
         const commando = argus.shift().toLowerCase();
         
         if (commando === "a^r") {
+	    if (message.channel.type === 'dm') {
             let nick = argus[0];
             let title = argus[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
@@ -157,7 +158,6 @@ bot.on('message', (message) => {
 	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	    let rolelist = ',' + message.guild.roles.cache.map(m=>m.name).join(',') + ',';
 	    let chan = message.channel.name;
-	    if (message.channel.type === 'dm') {
 	    if (chan == 'audit-log') {
 	    if (memberlist.includes(',' + nick + ',')) {
 	    if (rolelist.includes(',' + title + ',')) {
