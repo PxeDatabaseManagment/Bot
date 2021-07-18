@@ -451,7 +451,7 @@ bot.on('message', (message) => {
             let channelname = arguss[6];
             
             const exampleEmbed = new Discord.MessageEmbed()
-	        .setColor('#ff0000')
+	        .setColor('RANDOM')
 	        .setTitle(title)
 	        //.setURL('https://discord.js.org/')
 	        .setAuthor(author, authorpic, authorpic)
