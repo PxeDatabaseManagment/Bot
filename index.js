@@ -150,7 +150,7 @@ bot.on('message', (message) => {
         const commando = argus.shift().toLowerCase();
         
         if (commando === "a^r") {
-	    let mtype = message.channel.type);
+	    let mtype = message.channel.type;
 	    if (mtype == 'dm') {
             let nick = argus[0];
             let title = argus[1];
