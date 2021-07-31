@@ -601,12 +601,11 @@ bot.on('message', (message) => {
 	    channelid.messages.fetch({limit: 99}).then(msg => {
 	    const ospecMessage = msg.filter(msg => msg.embeds[0].description.includes(odescription));
 	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle)).map(m=>m.id).join('\n');
-	    async function edit() {
+	    async function del() {
             const message = await channelid.messages.fetch(specMessage);
-            await message.edit();
+            await message.delete();
             }
-            edit();
-            //channelid.bulkDelete(specMessage);
+            del();
             });
             message.channel.send(`Embed has been deleted.`);
 	    } else {
