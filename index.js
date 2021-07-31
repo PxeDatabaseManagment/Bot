@@ -601,9 +601,10 @@ bot.on('message', (message) => {
 	    channelid.messages.fetch({limit: 99}).then(msg => {
 	    const ospecMessage = msg.filter(msg => msg.embeds[0].description.includes(odescription));
 	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle)).map(m=>m.id).join('\n');
+	    message.channel.send(`${specMessage}`);
             channelid.bulkDelete(specMessage);
             });
-            message.channel.send(`Message has been deleted.`);
+            message.channel.send(`Embed has been deleted.`);
 	    } else {
 	    message.channel.send(`${channelname} is not a valid channel in this server.`);
 	    }
