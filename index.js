@@ -572,13 +572,12 @@ bot.on('message', (message) => {
 	        .setFooter(nfooter, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
 	    channelid.messages.fetch({limit: 99}).then(msg => {
             const specMessage = msg.filter(msg => msg.embeds.description.includes(odescription)).map(m=>m.id).join('\n');
-	    let sM = specMessage.id;
             async function edit() {
             const message = await channelid.messages.fetch(specMessage);
             await message.edit(exampleEmbed);
-	    await message.channel.send(`${sM}`);
             }
             edit();
+	    message.channel.send(`id ${specMessage}`);
             });
             message.channel.send(`Embed has been edited.`);
 	    } else {
@@ -635,7 +634,6 @@ bot.on('message', (message) => {
             await message.edit(c);
             }
             edit();
-	    message.channel.send(`${specMessage} hi`);
             });
             message.channel.send(`Message has been edited.`);
 	    } else {
