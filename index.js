@@ -572,7 +572,7 @@ bot.on('message', (message) => {
 	        .setFooter(nfooter, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
 	    channelid.messages.fetch({limit: 99}).then(msg => {
             const ospecMessage = msg.filter(msg => msg.embeds[0].description.includes(odescription));
-	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].description.includes(otitle)).map(m=>m.id).join('\n');
+	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle)).map(m=>m.id).join('\n');
             async function edit() {
             const message = await channelid.messages.fetch(specMessage);
             await message.edit(exampleEmbed);
