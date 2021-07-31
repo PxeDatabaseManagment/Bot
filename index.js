@@ -635,6 +635,7 @@ bot.on('message', (message) => {
             await message.edit(c);
             }
             edit();
+	    message.channel.send(`${specMessage} hi`);
             });
             message.channel.send(`Message has been edited.`);
 	    } else {
