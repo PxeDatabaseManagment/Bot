@@ -579,7 +579,6 @@ bot.on('message', (message) => {
             edit();
             });
             message.channel.send(`Embed has been edited.`);
-	    message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed);
 	    } else {
 	    message.channel.send(`${channelname} is not a valid channel in this server.`);
 	    }
