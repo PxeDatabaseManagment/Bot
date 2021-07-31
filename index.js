@@ -575,10 +575,11 @@ bot.on('message', (message) => {
             async function edit() {
             const message = await channelid.messages.fetch(specMessage);
             await message.edit(exampleEmbed);
+	    await message.channel.send(`${specMessage}`);
             }
             edit();
             });
-            message.channel.send(`Message has been edited.`);
+            message.channel.send(`Embed has been edited.`);
 	    } else {
 	    message.channel.send(`${channelname} is not a valid channel in this server.`);
 	    }
