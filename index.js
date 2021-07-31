@@ -533,6 +533,63 @@ bot.on('message', (message) => {
 	    }
         }
         
+	if (commandos === "e$e$") {
+	    if (message.channel.type != 'dm') {
+            let otitle = arguss[0];
+            let odescription = arguss[1];
+            let oauthor = arguss[2];
+	    let oauthorpic = arguss[3];
+	    let oimage = arguss[4];
+            let ofooter = arguss[5];
+	    let ntitle = arguss[6];
+            let ndescription = arguss[7];
+            let nauthor = arguss[8];
+	    let nauthorpic = arguss[9];
+	    let nimage = arguss[10];
+            let nfooter = arguss[11];
+            let channelname = arguss[12];
+            let channelid = message.guild.channels.cache.find(i => i.name === channelname);
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
+	    let chan = message.channel.name;
+	    if (chan == 'audit-log') {
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    const exampleEmbed = new Discord.MessageEmbed()
+	        .setColor('RANDOM')
+	        .setTitle(ntitle)
+	        //.setURL('https://discord.js.org/')
+	        .setAuthor(nauthor, nauthorpic, nauthorpic)
+	        .setDescription(ndescription)
+	        .setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
+	        //.addFields(
+		//        { name: 'Regular field title', value: 'Some value here' },
+		//        { name: '\u200B', value: '\u200B' },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+	        //)
+	        //.addField('Inline field title', 'Some value here', true)
+	        .setImage(nimage)
+	        .setTimestamp()
+	        .setFooter(nfooter, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
+	    channelid.messages.fetch({limit: 99}).then(msg => {
+            const specMessage = msg.filter(msg => msg.embeds.description.includes(odescription)).map(m=>m.id).join('\n');
+            async function edit() {
+            const message = await channelid.messages.fetch(specMessage);
+            await message.edit(exampleEmbed);
+            }
+            edit();
+            });
+            message.channel.send(`Message has been edited.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
+	    } else {
+	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
+        }
+	
         if (commandos === "d$m$") {
 	    if (message.channel.type != 'dm') {
             let b = arguss[0];
@@ -547,7 +604,7 @@ bot.on('message', (message) => {
             const specMessage = msg.filter(msg => msg.content.includes(b));
             channelid.bulkDelete(specMessage);
             });
-            message.channel.send(`Event has been deleted.`);
+            message.channel.send(`Message has been deleted.`);
 	    } else {
 	    message.channel.send(`${channelname} is not a valid channel in this server.`);
 	    }
@@ -577,7 +634,7 @@ bot.on('message', (message) => {
             }
             edit();
             });
-            message.channel.send(`Event has been edited.`);
+            message.channel.send(`Message has been edited.`);
 	    } else {
 	    message.channel.send(`${channelname} is not a valid channel in this server.`);
 	    }
