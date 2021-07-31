@@ -537,17 +537,13 @@ bot.on('message', (message) => {
 	    if (message.channel.type != 'dm') {
             let otitle = arguss[0];
             let odescription = arguss[1];
-            let oauthor = arguss[2];
-	    let oauthorpic = arguss[3];
-	    let oimage = arguss[4];
-            let ofooter = arguss[5];
-	    let ntitle = arguss[6];
-            let ndescription = arguss[7];
-            let nauthor = arguss[8];
-	    let nauthorpic = arguss[9];
-	    let nimage = arguss[10];
-            let nfooter = arguss[11];
-            let channelname = arguss[12];
+	    let ntitle = arguss[2];
+            let ndescription = arguss[3];
+            let nauthor = arguss[4];
+	    let nauthorpic = arguss[5];
+	    let nimage = arguss[6];
+            let nfooter = arguss[7];
+            let channelname = arguss[8];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
 	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 	    let chan = message.channel.name;
@@ -580,6 +576,34 @@ bot.on('message', (message) => {
             edit();
             });
             message.channel.send(`Embed has been edited.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
+	    } else {
+	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
+        }
+	
+	if (commandos === "d$e$") {
+	    if (message.channel.type != 'dm') {
+            let otitle = arguss[0];
+            let odescription = arguss[1];
+            let channelname = arguss[2];
+            let channelid = message.guild.channels.cache.find(i => i.name === channelname);
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
+            
+	    let chan = message.channel.name;
+	    if (chan == 'audit-log') {
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    channelid.messages.fetch({limit: 99}).then(msg => {
+	    const ospecMessage = msg.filter(msg => msg.embeds[0].description.includes(odescription));
+	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle)).map(m=>m.id).join('\n');
+            channelid.bulkDelete(specMessage);
+            });
+            message.channel.send(`Message has been deleted.`);
 	    } else {
 	    message.channel.send(`${channelname} is not a valid channel in this server.`);
 	    }
