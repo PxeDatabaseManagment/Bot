@@ -675,6 +675,50 @@ bot.on('message', (message) => {
 	    }
         }
         
+	if (commandos === "dm$e") {
+	    if (message.channel.type != 'dm') {
+            let nick = arguss[0];
+	    let title = arguss[1];
+            let description = arguss[2];
+            let author = arguss[3];
+	    let authorpic = arguss[4];
+	    let image = arguss[5];
+            let footer = arguss[6];
+            let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
+	    let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
+	    let chan = message.channel.name;
+	    if (chan == 'audit-log') {
+	    const exampleEmbed = new Discord.MessageEmbed()
+	        .setColor('RANDOM')
+	        .setTitle(title)
+	        //.setURL('https://discord.js.org/')
+	        .setAuthor(author, authorpic, authorpic)
+	        .setDescription(description)
+	        .setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
+	        //.addFields(
+		//        { name: 'Regular field title', value: 'Some value here' },
+		//        { name: '\u200B', value: '\u200B' },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+	        //)
+	        //.addField('Inline field title', 'Some value here', true)
+	        .setImage(image)
+	        .setTimestamp()
+	        .setFooter(footer, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
+	    if (memberlist.includes('^' + nick + '^')) {
+	    message.channel.send(`Embed DM has been sent to ${nickmember}.`);
+            nickmember.send(exampleEmbed);
+	    } else {
+	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
+	    }
+	    } else {
+	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
+        }
+	
         if (commandos === "a$e$") {
 	    if (message.channel.type != 'dm') {
             let b = arguss[0];
