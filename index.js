@@ -587,6 +587,55 @@ bot.on('message', (message) => {
 	    }
         }
 	
+	if (commandos === "sr$e$") {
+	    if (message.channel.type != 'dm') {
+            let title = arguss[0];
+            let description = arguss[1];
+            let author = arguss[2];
+	    let authorpic = arguss[3];
+	    let image = arguss[4];
+            let footer = arguss[5];
+            let channelname = arguss[6];
+            
+            const exampleEmbed = new Discord.MessageEmbed()
+	        .setColor('RANDOM')
+	        .setTitle(title)
+	        //.setURL('https://discord.js.org/')
+	        .setAuthor(author, authorpic, authorpic)
+	        .setDescription(description)
+	        .setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
+	        //.addFields(
+		//        { name: 'Regular field title', value: 'Some value here' },
+		//        { name: '\u200B', value: '\u200B' },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+	        //)
+	        //.addField('Inline field title', 'Some value here', true)
+	        .setImage(image)
+	        .setTimestamp()
+	        .setFooter(footer, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
+	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
+	    let chan = message.channel.name;
+	    if (chan == 'audit-log') {
+	    if (chanlist.includes('^' + channelname + '^')) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed).then(function (message) {
+            message.react(bot.emojis.cache.get('733049184755646516'))
+            message.react(bot.emojis.cache.get('733048783046311988'))
+            message.react(bot.emojis.cache.get('733049172592295937'))
+            }).catch(function() {
+            });
+	    message.channel.send(`Custom embed with reactions has been sent.`);
+	    } else {
+	    message.channel.send(`${channelname} is not a valid channel in this server.`);
+	    }
+	    } else {
+	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
+        }
+	
 	if (commandos === "d$e$") {
 	    if (message.channel.type != 'dm') {
             let otitle = arguss[0];
