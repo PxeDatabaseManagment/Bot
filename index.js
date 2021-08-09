@@ -725,7 +725,7 @@ bot.on('message', (message) => {
 	    }
         }
         
-	if (commandos === "dm$e") {
+	if (commandos === "dm$e$") {
 	    if (message.channel.type != 'dm') {
             let nick = arguss[0];
 	    let title = arguss[1];
