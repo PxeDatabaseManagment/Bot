@@ -6,20 +6,21 @@ bot.user.setPresence({ activity: { name: "Phoenix Era", type: "WATCHING" }, stat
 });
 
 bot.on('guildMemberAdd', member => {
-        
-        const welcomeEmbed = new Discord.MessageEmbed()
-        welcomeEmbed.setColor('RANDOM')
-        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
-        member.guild.channels.cache.find(i => i.name === 'official').send(welcomeEmbed)
-        
+	var rand = Math.floor(Math.random() * 1000);
+        let setnick = 'cadet' + rand;
+        const welcomeEmbed = new Discord.MessageEmbed();
+        welcomeEmbed.setColor('RANDOM');
+        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
+        member.guild.channels.cache.find(i => i.name === 'official').send(welcomeEmbed);
+        member.setNickname(setnick);
 });
 
 bot.on('guildMemberRemove', member => {
         
-        const leaveEmbed = new Discord.MessageEmbed()
-        leaveEmbed.setColor('RANDOM')
-        leaveEmbed.setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.")
-        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed)
+        const leaveEmbed = new Discord.MessageEmbed();
+        leaveEmbed.setColor('RANDOM');
+        leaveEmbed.setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.");
+        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed);
 });
 
 bot.on('message', (message) => {
