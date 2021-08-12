@@ -19,7 +19,7 @@ bot.on('guildMemberRemove', member => {
         
         const leaveEmbed = new Discord.MessageEmbed();
         leaveEmbed.setColor('RANDOM');
-        leaveEmbed.setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.");
+        leaveEmbed.setDescription(member.user.tag + " has left the server.");
         member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed);
 });
 
