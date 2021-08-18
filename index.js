@@ -65,8 +65,7 @@ client.on('messageCreate', (message) => {
         }
         
         if(msg == 'maybe we should check the audit log...') {
-            message.channel.send('NEVER EVER FORGET THAT APOK INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP');
-	    message.channel.send({files: ['https://i.imgur.com/mWb2AvL.png']});
+            message.channel.send({content: 'NEVER EVER FORGET THAT APOK INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP', files: ['https://i.imgur.com/mWb2AvL.png']});
         }
         
         if(msg == 'jenkins, what do you think of your name?') {
@@ -607,8 +606,8 @@ client.on('messageCreate', (message) => {
 	        .setTimestamp()
 	        .setFooter(nfooter, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
 	    channelid.messages.fetch({limit: 99}).then(msg => {
-            const ospecMessage = msg.filter(msg => msg.embeds[0].description.includes(odescription.toString()));
-	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle.toString())).map(m=>m.id).join('\n');
+            const ospecMessage = msg.filter(msg => msg.embeds[0].description.includes(odescription));
+	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle)).map(m=>m.id).join('\n');
             async function edit() {
             const message = await channelid.messages.fetch(specMessage);
             await message.edit({ embeds: [exampleEmbed] });
