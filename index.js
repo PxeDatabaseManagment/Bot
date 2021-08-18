@@ -12,7 +12,7 @@ client.user.setPresence({ activities: [{ name: "Phoenix Era", type: "WATCHING" }
 client.on('guildMemberAdd', member => {
 	var rand = Math.floor(Math.random() * 1000);
 	let setnick = 'cadet' + rand;
-	let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
+	let memberlist = ',' + member.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	const welcomeEmbed = new MessageEmbed();
 	welcomeEmbed.setColor('RANDOM');
 	welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
