@@ -11,7 +11,7 @@ bot.on('guildMemberAdd', member => {
         const welcomeEmbed = new Discord.MessageEmbed();
         welcomeEmbed.setColor('RANDOM');
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
-        member.guild.channels.cache.find(i => i.name === 'official').send(welcomeEmbed);
+        member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [welcomeEmbed] });
         member.setNickname(setnick);
 });
 
@@ -20,7 +20,7 @@ bot.on('guildMemberRemove', member => {
         const leaveEmbed = new Discord.MessageEmbed();
         leaveEmbed.setColor('RANDOM');
         leaveEmbed.setDescription(member.user.tag + " has left the server.");
-        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed);
+        member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [leaveEmbed] });
 });
 
 bot.on('message', (message) => {
@@ -521,7 +521,7 @@ bot.on('message', (message) => {
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
-	    message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed);
+	    message.guild.channels.cache.find(i => i.name === channelname).send({ embeds: [exampleEmbed] });
 	    message.channel.send(`Custom embed has been sent.`);
 	    } else {
 	    message.channel.send(`${channelname} is not a valid channel in this server.`);
@@ -572,7 +572,7 @@ bot.on('message', (message) => {
 	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle)).map(m=>m.id).join('\n');
             async function edit() {
             const message = await channelid.messages.fetch(specMessage);
-            await message.edit(exampleEmbed);
+            await message.edit({ embeds: [exampleEmbed] });
             }
             edit();
             });
@@ -619,7 +619,7 @@ bot.on('message', (message) => {
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
-	    message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed).then(function (message) {
+	    message.guild.channels.cache.find(i => i.name === channelname).send({ embeds: [exampleEmbed] }).then(function (message) {
             message.react(bot.emojis.cache.get('733049184755646516'))
             message.react(bot.emojis.cache.get('733048783046311988'))
             message.react(bot.emojis.cache.get('733049172592295937'))
@@ -758,7 +758,7 @@ bot.on('message', (message) => {
 	        .setFooter(footer, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
 	    if (memberlist.includes('^' + nick + '^')) {
 	    message.channel.send(`Embed DM has been sent to ${nickmember}.`);
-            nickmember.send(exampleEmbed);
+            nickmember.send({ embeds: [exampleEmbed] });
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
 	    }
