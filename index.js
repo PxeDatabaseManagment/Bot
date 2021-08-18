@@ -11,12 +11,17 @@ client.user.setPresence({ activities: [{ name: "Phoenix Era", type: "WATCHING" }
 
 client.on('guildMemberAdd', member => {
 	var rand = Math.floor(Math.random() * 1000);
-        let setnick = 'cadet' + rand;
-        const welcomeEmbed = new MessageEmbed();
-        welcomeEmbed.setColor('RANDOM');
-        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
-        member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [welcomeEmbed] });
-        member.setNickname(setnick);
+	let setnick = 'cadet' + rand;
+	let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
+	const welcomeEmbed = new MessageEmbed();
+	welcomeEmbed.setColor('RANDOM');
+	welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
+	member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [welcomeEmbed] });
+	while (memberlist.includes(',' + setnick + ',')) {
+	var rand = Math.floor(Math.random() * 1000);
+	let setnick = 'cadet' + rand;
+	}
+	member.setNickname(setnick);
 });
 
 client.on('guildMemberRemove', member => {
