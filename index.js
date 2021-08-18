@@ -119,7 +119,7 @@ bot.on('message', (message) => {
             
             var rand = Math.floor(Math.random() * list.length);
 
-            message.channel.send(`On a scale of 1-10, ${name} has received a dumbass score of ` + list[rand]);
+            message.channel.send(`On a scale of 1-10, ${name} has received a dumbass score of ` + list[rand].toString());
         }
         
         if (command === "jenkins") {
@@ -134,7 +134,7 @@ bot.on('message', (message) => {
             
             var rand = Math.floor(Math.random() * list.length);
 
-            message.channel.send(list[rand]);
+            message.channel.send(list[rand].toString());
         }
         
         if (command === "apok") {
@@ -429,7 +429,7 @@ bot.on('message', (message) => {
 	    if (chan == 'audit-log') {
 	    if (memberlist.includes('^' + nick + '^')) {
 	    message.channel.send(`DM has been sent to ${nickmember}.`);
-            nickmember.send(dm);
+            nickmember.send(dm.toString());
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
 	    }
