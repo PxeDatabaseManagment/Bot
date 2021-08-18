@@ -20,9 +20,9 @@ client.on('guildMemberAdd', member => {
 	if (memberlist.includes(',' + 'cadet' + i + ',' === false)) {
 	let setnick = 'cadet' + i;
 	let i = 10;
+	}
+	}
 	member.setNickname(setnick);
-	}
-	}
 });
 
 client.on('guildMemberRemove', member => {
