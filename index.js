@@ -23,7 +23,7 @@ bot.on('guildMemberRemove', member => {
         member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [leaveEmbed] });
 });
 
-bot.on('message', (message) => {
+bot.on('messageCreate', (message) => {
         
         const msg = message.content.toLowerCase();
         
