@@ -451,9 +451,9 @@ bot.on('messageCreate', (message) => {
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
 	    message.guild.channels.cache.find(i => i.name === channelname).send(`${b}`).then(function (message) {
-            message.react(bot.emojis.cache.get('733049184755646516'))
-            message.react(bot.emojis.cache.get('733048783046311988'))
-            message.react(bot.emojis.cache.get('733049172592295937'))
+            message.react(message.guild.emojis.cache.get('733049184755646516'))
+            message.react(message.guild.emojis.cache.get('733048783046311988'))
+            message.react(message.guild.emojis.cache.get('733049172592295937'))
             }).catch(function() {
             });
             message.channel.send(`Event has been posted.`);
@@ -620,9 +620,9 @@ bot.on('messageCreate', (message) => {
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
 	    message.guild.channels.cache.find(i => i.name === channelname).send({ embeds: [exampleEmbed] }).then(function (message) {
-            message.react(bot.emojis.cache.get('733049184755646516'))
-            message.react(bot.emojis.cache.get('733048783046311988'))
-            message.react(bot.emojis.cache.get('733049172592295937'))
+            message.react(message.guild.emojis.cache.get('733049184755646516'))
+            message.react(message.guild.emojis.cache.get('733048783046311988'))
+            message.react(message.guild.emojis.cache.get('733049172592295937'))
             }).catch(function() {
             });
 	    message.channel.send(`Custom embed with reactions has been sent.`);
