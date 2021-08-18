@@ -11,6 +11,7 @@ client.user.setPresence({ activities: [{ name: "Phoenix Era", type: "WATCHING" }
 
 client.on('guildMemberAdd', member => {
 	let setnick = 'cadet0';
+	let x = 0;
 	let memberlist = ',' + member.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	const welcomeEmbed = new MessageEmbed();
 	welcomeEmbed.setColor('RANDOM');
