@@ -11,7 +11,7 @@ client.user.setPresence({ activities: [{ name: "Phoenix Era", type: "WATCHING" }
 client.on('guildMemberAdd', member => {
 	var rand = Math.floor(Math.random() * 1000);
         let setnick = 'cadet' + rand;
-        const welcomeEmbed = new Discord.MessageEmbed();
+        const welcomeEmbed = new MessageEmbed();
         welcomeEmbed.setColor('RANDOM');
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
         member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [welcomeEmbed] });
@@ -20,7 +20,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberRemove', member => {
         
-        const leaveEmbed = new Discord.MessageEmbed();
+        const leaveEmbed = new MessageEmbed();
         leaveEmbed.setColor('RANDOM');
         leaveEmbed.setDescription(member.user.tag + " has left the server.");
         member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [leaveEmbed] });
@@ -538,7 +538,7 @@ client.on('messageCreate', (message) => {
             let footer = arguss[5];
             let channelname = arguss[6];
             
-            const exampleEmbed = new Discord.MessageEmbed()
+            const exampleEmbed = new MessageEmbed()
 	        .setColor('RANDOM')
 	        .setTitle(title)
 	        //.setURL('https://discord.js.org/')
@@ -588,7 +588,7 @@ client.on('messageCreate', (message) => {
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
-	    const exampleEmbed = new Discord.MessageEmbed()
+	    const exampleEmbed = new MessageEmbed()
 	        .setColor('RANDOM')
 	        .setTitle(ntitle)
 	        //.setURL('https://discord.js.org/')
@@ -636,7 +636,7 @@ client.on('messageCreate', (message) => {
             let footer = arguss[5];
             let channelname = arguss[6];
             
-            const exampleEmbed = new Discord.MessageEmbed()
+            const exampleEmbed = new MessageEmbed()
 	        .setColor('RANDOM')
 	        .setTitle(title)
 	        //.setURL('https://discord.js.org/')
@@ -777,7 +777,7 @@ client.on('messageCreate', (message) => {
 	    let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-	    const exampleEmbed = new Discord.MessageEmbed()
+	    const exampleEmbed = new MessageEmbed()
 	        .setColor('RANDOM')
 	        .setTitle(title)
 	        //.setURL('https://discord.js.org/')
