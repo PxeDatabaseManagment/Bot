@@ -1,11 +1,15 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const { Client, Intents } = require('discord.js');
 
-bot.on('ready', () => {
-bot.user.setPresence({ activities: [{ name: "Phoenix Era", type: "WATCHING" }], status: "online" })
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_BANS, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.GUILD_INTEGRATIONS, Intents.FLAGS.GUILD_WEBHOOKS, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_INVITES, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILD_MESSAGE_TYPING, Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.DIRECT_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGE_TYPING],
+  allowedMentions: { parse: ["everyone"] },
+  partials: ["CHANNEL", "GUILD_MEMBER", "MESSAGE", "REACTION", "USER"],
 });
 
-bot.on('guildMemberAdd', member => {
+client.on('ready', () => {
+client.user.setPresence({ activities: [{ name: "Phoenix Era", type: "WATCHING" }], status: "online" })
+});
+
+client.on('guildMemberAdd', member => {
 	var rand = Math.floor(Math.random() * 1000);
         let setnick = 'cadet' + rand;
         const welcomeEmbed = new Discord.MessageEmbed();
@@ -15,7 +19,7 @@ bot.on('guildMemberAdd', member => {
         member.setNickname(setnick);
 });
 
-bot.on('guildMemberRemove', member => {
+client.on('guildMemberRemove', member => {
         
         const leaveEmbed = new Discord.MessageEmbed();
         leaveEmbed.setColor('RANDOM');
@@ -23,7 +27,7 @@ bot.on('guildMemberRemove', member => {
         member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [leaveEmbed] });
 });
 
-bot.on('messageCreate', (message) => {
+client.on('messageCreate', (message) => {
         
         const msg = message.content.toLowerCase();
         
@@ -982,4 +986,4 @@ bot.on('messageCreate', (message) => {
         
 });
 
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
