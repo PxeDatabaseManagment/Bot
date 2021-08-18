@@ -32,12 +32,14 @@ bot.on('messageCreate', (message) => {
             message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
         }
         
+	/*
         if(msg == '!!!ping') {
         setTimeout(function(){ 
                 message.channel.send('!!!pong'); 
         }, 3000);
         }
-        
+        */
+	
         /*
         if(msg == '!startinfo') {
             message.delete();
