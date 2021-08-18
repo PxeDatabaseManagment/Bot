@@ -17,9 +17,10 @@ client.on('guildMemberAdd', member => {
 	welcomeEmbed.setColor('RANDOM');
 	welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
 	member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [welcomeEmbed] });
-	while (memberlist.includes(',' + setnick + ',')) {
-	var rand = Math.floor(Math.random() * 10);
-	let setnick = 'cadet' + rand;
+	for (let i = 0; i<10; i++) {
+	if (memberlist.includes(',' + setnick + ',')) {
+	let setnick = 'cadet' + i;
+	}
 	}
 	member.setNickname(setnick);
 });
