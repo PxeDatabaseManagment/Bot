@@ -17,12 +17,12 @@ client.on('guildMemberAdd', member => {
 	welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
 	member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [welcomeEmbed] });
 	for (let i = 0; i<10; i++) {
-	member.setNickname(setnick);
-	//if (memberlist.includes(',' + 'cadet' + i + ',' === false)) {
-	//let setnick = 'cadet' + i;
-	//let i = 10;
-	//}
+	if (memberlist.indexOf(',' + 'cadet' + i + ',' === -1)) {
+	let setnick = 'cadet' + i;
+	let i = 10;
 	}
+	}
+	member.setNickname(setnick);
 });
 
 client.on('guildMemberRemove', member => {
