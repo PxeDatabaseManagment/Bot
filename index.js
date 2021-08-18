@@ -16,12 +16,12 @@ client.on('guildMemberAdd', member => {
 	welcomeEmbed.setColor('RANDOM');
 	welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
 	member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [welcomeEmbed] });
-	for (var x = 0; x<10; x++) {
+	for (var x = 0; x<100; x++) {
 	if (memberlist.includes(',' + 'cadet' + x + ',')) {
 	}
 	else {
 	var setnick = 'cadet' + x;
-	var x = 10;
+	var x = 100;
 	}
 	}
 	member.setNickname(setnick);
