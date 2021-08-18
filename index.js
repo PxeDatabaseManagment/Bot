@@ -56,7 +56,7 @@ client.on('messageCreate', (message) => {
         }
         
         if(msg == 'maybe we should check the audit log...') {
-            message.channel.send('NEVER EVER FORGET THAT APOK INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP', {files: ["https://i.imgur.com/mWb2AvL.png"]});
+            message.channel.send({'NEVER EVER FORGET THAT APOK INVITED HERB TO THE CHAT AND TRIED TO COVER IT UP', files: ['https://i.imgur.com/mWb2AvL.png']});
         }
         
         if(msg == 'jenkins, what do you think of your name?') {
