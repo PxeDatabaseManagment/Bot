@@ -6,7 +6,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 });
 
 client.on('ready', () => {
-client.user.setPresence({ activities: [{ name: "Managing Phoenix Era", type: "CUSTOM" }], status: "online" })
+client.user.setPresence({ activities: [{ name: 'with discord.js' }], status: "online" })
 });
 
 client.on('guildMemberAdd', member => {
