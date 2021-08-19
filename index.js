@@ -10,18 +10,18 @@ client.user.setPresence({ activities: [{ name: "Phoenix Era", type: "WATCHING" }
 });
 
 client.on('guildMemberAdd', member => {
-	var setnick = 'cadet0';
+	var setnick = 'Cadet1';
 	let memberlist = ',' + member.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	const welcomeEmbed = new MessageEmbed();
 	welcomeEmbed.setColor('RANDOM');
 	welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
 	member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [welcomeEmbed] });
-	for (var x = 0; x<100; x++) {
-	if (memberlist.includes(',' + 'cadet' + x + ',')) {
+	for (var x = 1; x<101; x++) {
+	if (memberlist.includes(',' + 'Cadet' + x + ',')) {
 	}
 	else {
-	var setnick = 'cadet' + x;
-	var x = 100;
+	var setnick = 'Cadet' + x;
+	var x = 101;
 	}
 	}
 	member.setNickname(setnick);
