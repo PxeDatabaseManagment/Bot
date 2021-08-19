@@ -145,6 +145,16 @@ client.on('messageCreate', (message) => {
 	    }
         }
         
+	if (msg.toString().indexOf(" apoc ")!=-1) || (msg.toString().indexOf("apoc ")!=-1) || (msg.toString().indexOf(" apoc")!=-1) || (msg === 'apoc') {
+
+            message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
+        }
+	
+	if (msg.toString().indexOf(" apok ")!=-1) || (msg.toString().indexOf("apok ")!=-1) || (msg.toString().indexOf(" apok")!=-1) || (msg === 'apok') {
+
+            message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
+        }
+	
         if (command === "?how") {
             let a = args[0];
             let b = args[1];
@@ -181,16 +191,6 @@ client.on('messageCreate', (message) => {
             var rand = Math.floor(Math.random() * list.length);
 
             message.channel.send(list[rand].toString());
-        }
-        
-        if (command === "apok") {
-
-            message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
-        }
-        
-        if (command === "apoc") {
-
-            message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
         
         const argus = message.content.trim().split(',');
