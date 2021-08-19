@@ -145,12 +145,12 @@ client.on('messageCreate', (message) => {
 	    }
         }
         
-	if (msg.toString().indexOf(" apoc ")!=-1) || (msg.toString().indexOf("apoc ")!=-1) || (msg.toString().indexOf(" apoc")!=-1) || (msg === 'apoc') {
+	if (msg.toString().indexOf(" apoc ")!=-1 || msg.toString().indexOf("apoc ")!=-1 || msg.toString().indexOf(" apoc")!=-1 || msg === 'apoc') {
 
             message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
 	
-	if (msg.toString().indexOf(" apok ")!=-1) || (msg.toString().indexOf("apok ")!=-1) || (msg.toString().indexOf(" apok")!=-1) || (msg === 'apok') {
+	if (msg.toString().indexOf(" apok ")!=-1 || msg.toString().indexOf("apok ")!=-1 || msg.toString().indexOf(" apok")!=-1 || msg === 'apok') {
 
             message.channel.send({files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"]});
         }
