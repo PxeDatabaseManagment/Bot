@@ -282,6 +282,28 @@ if(msg == '!help') {
 		}
 	}
 	
+	if (commando === "ch^r") {
+		if (message.channel.type != 'DM') {
+			let rname = argus[0];
+			let nname = argus[1];
+			let titlerole = message.guild.roles.cache.find(i => i.name === rname);
+			let rolelist = ',' + message.guild.roles.cache.map(m=>m.name).join(',') + ',';
+			let chan = message.channel.name;
+			if (chan == 'audit-log') {
+				if (rolelist.includes(',' + rname + ',')) {
+					titlerole.edit({name: nname});
+					message.channel.send(`${rname} has been renamed to ${titlerole}.`);
+				} else {
+					message.channel.send(`${rname} is not a valid role in this server.`);
+				}
+			} else {
+				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+			}
+		} else {
+			message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+		}
+	}
+	
 	if (commando === "c^n") {
 		if (message.channel.type != 'DM') {
 			let nick = argus[0];
