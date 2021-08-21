@@ -326,6 +326,27 @@ if(msg == '!help') {
 		}
 	}
 	
+	if (commando === "r^c") {
+		if (message.channel.type != 'DM') {
+			let channelname = argus[0];
+			let nname = argus[1];
+			let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
+			let chan = message.channel.name;
+			if (chan == 'audit-log') {
+				if (chanlist.includes('^' + channelname + '^')) {
+					message.guild.channels.cache.find(i => i.name === channelname).setName(nname);
+					message.channel.send(`Channel has been renamed.`);
+				} else {
+					message.channel.send(`${channelname} is not a valid channel in this server.`);
+				}
+			} else {
+				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+			}
+		} else {
+			message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+		}
+	}
+	
 	if (commando === "c^c") {
 		if (message.channel.type != 'DM') {
 			let channelname = argus[0];
