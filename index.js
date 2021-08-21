@@ -267,14 +267,14 @@ if(msg == '!help') {
 			let chan = message.channel.name;
 			if (chan == 'audit-log') {
 				message.guild.roles.create({
-					data: {
-						name: rname,
-						color: rcolor,
-					},
+					name: rname,
+					color: rcolor,
 					reason: 'Reason',
 				})
 					.then(console.log)
 					.catch(console.error);
+				let titlerole = message.guild.roles.cache.find(i => i.name === rname);
+				message.channel.send(`The role ${titlerole} has been created.`);
 			} else {
 				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 			}
