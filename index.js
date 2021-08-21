@@ -273,8 +273,7 @@ if(msg == '!help') {
 				})
 					.then(console.log)
 					.catch(console.error);
-				let titlerole = message.guild.roles.cache.find(i => i.name === rname);
-				message.channel.send(`The role ${titlerole} has been created.`);
+				message.channel.send(`The role "${rname}" has been created.`);
 			} else {
 				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 			}
