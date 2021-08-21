@@ -260,6 +260,29 @@ if(msg == '!help') {
         }
         */
 	
+	if (commando === "c^r") {
+		if (message.channel.type != 'DM') {
+			let rname = argus[0];
+			let rcolor = argus[1];
+			let chan = message.channel.name;
+			if (chan == 'audit-log') {
+				message.guild.roles.create({
+					data: {
+						name: rname,
+						color: rcolor,
+					},
+					reason: 'Reason',
+				})
+					.then(console.log)
+					.catch(console.error);
+			} else {
+				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+			}
+		} else {
+			message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+		}
+	}
+	
 	if (commando === "c^n") {
 		if (message.channel.type != 'DM') {
 			let nick = argus[0];
