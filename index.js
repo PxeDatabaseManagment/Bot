@@ -10,6 +10,7 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', member => {
+	try{
 	var setnick = 'Cadet1';
 	let memberlist = ',' + member.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 	const welcomeEmbed = new MessageEmbed();
@@ -24,28 +25,36 @@ client.on('guildMemberAdd', member => {
 		}
 	}
 	member.setNickname(setnick);
+	}
+	catch(error){
+		member.guild.channels.cache.find(i => i.name === 'error-reporting').send(`I almost crashed. Fix your shit. \nError code: ADD`);
+	}
 });
 
 client.on('guildMemberRemove', member => {
-        
+        try{
         const leaveEmbed = new MessageEmbed();
         leaveEmbed.setColor('RANDOM');
         leaveEmbed.setDescription(member.user.tag + " has left the server.");
         member.guild.channels.cache.find(i => i.name === 'official').send({ embeds: [leaveEmbed] });
+	}
+	catch(error){
+		member.guild.channels.cache.find(i => i.name === 'error-reporting').send(`I almost crashed. Fix your shit. \nError code: REMOVE`);
+	}
 });
 
 client.on('messageCreate', (message) => {
-        
-const msg = message.content.toLowerCase();
-        
-if(msg == '!help') {
-	if (message.channel.type != 'DM') {
-		message.delete();
-		message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
-	} else {
-		message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
+	try{
+	const msg = message.content.toLowerCase();
+	
+	if(msg == '!help') {
+		if (message.channel.type != 'DM') {
+			message.delete();
+			message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
+		} else {
+			message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
+		}
 	}
-}
         
 	/*
         if(msg == '!!!ping') {
@@ -1088,7 +1097,10 @@ if(msg == '!help') {
 	message.channel.send(`Reactions have been removed.`);
 	}
 	*/
-	
+	}
+	catch(error){
+		message.guild.channels.cache.find(i => i.name === 'error-reporting').send(`I almost crashed. Fix your shit. \nError code: MESSAGE`);
+	}
 });
 
 client.login(process.env.BOT_TOKEN);
