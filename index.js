@@ -47,6 +47,10 @@ client.on('messageCreate', (message) => {
 	try{
 	const msg = message.content.toLowerCase();
 	
+	if(msg.author.username == 'Nuqrs - 037') {
+		message.delete();
+	}
+	
 	if(msg == '!help') {
 		if (message.channel.type != 'DM') {
 			message.delete();
