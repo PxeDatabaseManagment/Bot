@@ -44,13 +44,13 @@ client.on('guildMemberRemove', member => {
 });
 
 client.on('messageCreate', (message) => {
-	try{
+//	try{
 	const msg = message.content.toLowerCase();
-/*	
+	
 	if(msg.author.id == '216628403921485824') {
 		message.delete();
 	}
-*/	
+	
 	if(msg == '!help') {
 		if (message.channel.type != 'DM') {
 			message.delete();
@@ -1101,10 +1101,10 @@ client.on('messageCreate', (message) => {
 	message.channel.send(`Reactions have been removed.`);
 	}
 	*/
-	}
-	catch(error){
-		message.guild.channels.cache.find(i => i.name === 'error-reporting').send(`I almost crashed. Fix your shit. \nError code: MESSAGE`);
-	}
+//	}
+//	catch(error){
+//		message.guild.channels.cache.find(i => i.name === 'error-reporting').send(`I almost crashed. Fix your shit. \nError code: MESSAGE`);
+//	}
 });
 
 client.login(process.env.BOT_TOKEN);
