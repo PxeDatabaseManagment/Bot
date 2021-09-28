@@ -46,11 +46,11 @@ client.on('guildMemberRemove', member => {
 client.on('messageCreate', (message) => {
 	try{
 	const msg = message.content.toLowerCase();
-	
+/*	
 	if(msg.author.id == '216628403921485824') {
 		message.delete();
 	}
-	
+*/	
 	if(msg == '!help') {
 		if (message.channel.type != 'DM') {
 			message.delete();
