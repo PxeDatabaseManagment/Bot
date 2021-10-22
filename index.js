@@ -642,7 +642,7 @@ client.on('messageCreate', (message) => {
 					} else {
 						
 						const exampleEmbed = new MessageEmbed()
-						.setColor('#ff0000')
+						.setColor('RANDOM')
 						.setTitle(title)
 						//.setURL('https://discord.js.org/')
 						.setAuthor(author, authorpic, authorpic)
