@@ -907,21 +907,22 @@ client.on('messageCreate', (message) => {
 			let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 			let chan = message.channel.name;
 			if (chan == 'audit-log') {
+				setTimeout(function(){
 				if (chanlist.includes('^' + channelname + '^')) {
 					channelid.messages.fetch({limit: 99}).then(msg => {
-						setTimeout(function(){
 						const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
 						async function edit() {
 							const message = await channelid.messages.fetch(specMessage);
 							await message.edit(c);
 						}
 						edit();
-						}, 3000);
 					});
 					message.channel.send(`First message has been edited.`);
 				} else {
 					message.channel.send(`${channelname} is not a valid channel in this server.`);
 				}
+				}, 3000);
+				setTimeout(function(){
 				if (chanlist.includes('^' + channelname2 + '^')) {
 					channelid2.messages.fetch({limit: 99}).then(msg => {
 						const specMessage2 = msg.filter(msg => msg.content.includes(b2)).map(m=>m.id).join('\n');
@@ -935,6 +936,8 @@ client.on('messageCreate', (message) => {
 				} else {
 					message.channel.send(`${channelname2} is not a valid channel in this server.`);
 				}
+				}, 6000);
+				setTimeout(function(){
 				if (chanlist.includes('^' + channelname3 + '^')) {
 					channelid3.messages.fetch({limit: 99}).then(msg => {
 						const specMessage3 = msg.filter(msg => msg.content.includes(b3)).map(m=>m.id).join('\n');
@@ -948,6 +951,8 @@ client.on('messageCreate', (message) => {
 				} else {
 					message.channel.send(`${channelname3} is not a valid channel in this server.`);
 				}
+				}, 9000);
+				setTimeout(function(){
 				if (chanlist.includes('^' + channelname4 + '^')) {
 					channelid4.messages.fetch({limit: 99}).then(msg => {
 						const specMessage4 = msg.filter(msg => msg.content.includes(b4)).map(m=>m.id).join('\n');
@@ -961,6 +966,7 @@ client.on('messageCreate', (message) => {
 				} else {
 					message.channel.send(`${channelname4} is not a valid channel in this server.`);
 				}
+				}, 12000);
 			} else {
 				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
 			}
