@@ -922,12 +922,12 @@ client.on('messageCreate', (message) => {
 				}
 				if (chanlist.includes('^' + channelname2 + '^')) {
 					channelid2.messages.fetch({limit: 99}).then(msg => {
-						const specMessage = msg.filter(msg => msg.content.includes(b2)).map(m=>m.id).join('\n');
-						async function edit() {
-							const message = await channelid2.messages.fetch(specMessage);
-							await message.edit(c2);
+						const specMessage2 = msg.filter(msg => msg.content.includes(b2)).map(m=>m.id).join('\n');
+						async function edit2() {
+							const message2 = await channelid2.messages.fetch(specMessage2);
+							await message2.edit(c2);
 						}
-						edit();
+						edit2();
 					});
 					message.channel.send(`Second message has been edited.`);
 				} else {
@@ -935,12 +935,12 @@ client.on('messageCreate', (message) => {
 				}
 				if (chanlist.includes('^' + channelname3 + '^')) {
 					channelid3.messages.fetch({limit: 99}).then(msg => {
-						const specMessage = msg.filter(msg => msg.content.includes(b3)).map(m=>m.id).join('\n');
-						async function edit() {
-							const message = await channelid3.messages.fetch(specMessage);
-							await message.edit(c3);
+						const specMessage3 = msg.filter(msg => msg.content.includes(b3)).map(m=>m.id).join('\n');
+						async function edit3() {
+							const message3 = await channelid3.messages.fetch(specMessage3);
+							await message3.edit(c3);
 						}
-						edit();
+						edit3();
 					});
 					message.channel.send(`Third message has been edited.`);
 				} else {
@@ -948,12 +948,12 @@ client.on('messageCreate', (message) => {
 				}
 				if (chanlist.includes('^' + channelname4 + '^')) {
 					channelid4.messages.fetch({limit: 99}).then(msg => {
-						const specMessage = msg.filter(msg => msg.content.includes(b4)).map(m=>m.id).join('\n');
-						async function edit() {
-							const message = await channelid4.messages.fetch(specMessage);
-							await message.edit(c4);
+						const specMessage4 = msg.filter(msg => msg.content.includes(b4)).map(m=>m.id).join('\n');
+						async function edit4() {
+							const message4 = await channelid4.messages.fetch(specMessage4);
+							await message4.edit(c4);
 						}
-						edit();
+						edit4();
 					});
 					message.channel.send(`Fourth message has been edited.`);
 				} else {
