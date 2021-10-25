@@ -924,8 +924,8 @@ client.on('messageCreate', (message) => {
 				}, 3000);
 				setTimeout(function(){
 				if (chanlist.includes('^' + channelname2 + '^')) {
-					channelid2.messages.fetch({limit: 99}).then(msg => {
-						const specMessage2 = msg.filter(msg => msg.content.includes(b2)).map(m=>m.id).join('\n');
+					channelid2.messages.fetch({limit: 99}).then(msg2 => {
+						const specMessage2 = msg2.filter(msg2 => msg2.content.includes(b2)).map(m2=>m2.id).join('\n');
 						async function edit2() {
 							const message2 = await channelid2.messages.fetch(specMessage2);
 							await message2.edit(c2);
@@ -939,8 +939,8 @@ client.on('messageCreate', (message) => {
 				}, 6000);
 				setTimeout(function(){
 				if (chanlist.includes('^' + channelname3 + '^')) {
-					channelid3.messages.fetch({limit: 99}).then(msg => {
-						const specMessage3 = msg.filter(msg => msg.content.includes(b3)).map(m=>m.id).join('\n');
+					channelid3.messages.fetch({limit: 99}).then(msg3=> {
+						const specMessage3 = msg3.filter(msg3 => msg3.content.includes(b3)).map(m3=>m3.id).join('\n');
 						async function edit3() {
 							const message3 = await channelid3.messages.fetch(specMessage3);
 							await message3.edit(c3);
@@ -954,8 +954,8 @@ client.on('messageCreate', (message) => {
 				}, 9000);
 				setTimeout(function(){
 				if (chanlist.includes('^' + channelname4 + '^')) {
-					channelid4.messages.fetch({limit: 99}).then(msg => {
-						const specMessage4 = msg.filter(msg => msg.content.includes(b4)).map(m=>m.id).join('\n');
+					channelid4.messages.fetch({limit: 99}).then(msg4 => {
+						const specMessage4 = msg4.filter(msg4 => msg4.content.includes(b4)).map(m4=>m4.id).join('\n');
 						async function edit4() {
 							const message4 = await channelid4.messages.fetch(specMessage4);
 							await message4.edit(c4);
