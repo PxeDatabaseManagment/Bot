@@ -909,12 +909,14 @@ client.on('messageCreate', (message) => {
 			if (chan == 'audit-log') {
 				if (chanlist.includes('^' + channelname + '^')) {
 					channelid.messages.fetch({limit: 99}).then(msg => {
+						setTimeout(function(){
 						const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
 						async function edit() {
 							const message = await channelid.messages.fetch(specMessage);
 							await message.edit(c);
 						}
 						edit();
+						}, 3000);
 					});
 					message.channel.send(`First message has been edited.`);
 				} else {
