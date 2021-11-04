@@ -1042,7 +1042,7 @@ client.on('messageCreate', (message) => {
 			let title = arguss[1];
 			let description = arguss[2];
 			let author = arguss[3];
-			let authorpic = arguss[4];
+			var authorpic = arguss[4];
 			let image = arguss[5];
 			let footer = arguss[6];
 			let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
@@ -1104,7 +1104,7 @@ client.on('messageCreate', (message) => {
 			let ntitle = arguss[2];
 			let ndescription = arguss[3];
 			let nauthor = arguss[4];
-			let nauthorpic = arguss[5];
+			var nauthorpic = arguss[5];
 			let nimage = arguss[6];
 			let nfooter = arguss[7];
 			let nick = arguss[8];
