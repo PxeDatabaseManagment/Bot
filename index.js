@@ -630,23 +630,23 @@ client.on('messageCreate', (message) => {
 			let title = arguss[0];
 			let description = arguss[1];
 			let author = arguss[2];
-			let authorpic = arguss[3];
+			var authorpic1 = arguss[3];
 			let image = arguss[4];
 			let footer = arguss[5];
 			let channelname = arguss[6];
 			let nickmember = message.guild.members.cache.find(member => member.displayName === author);
 			let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
-				if (authorpic.includes(' ')) {
+				if (authorpic1.includes(' ')) {
 					message.channel.send(`Invalid author avatar.`);
 				} else {
 					if (image.includes(' ')) {
 						message.channel.send(`Invalid image.`);
 					} else {
-						if (authorpic) {
+						if (authorpic1) {
 						} else {
 							if (memberlist.includes('^' + author + '^')) {
-								var authorpic = nickmember.displayAvatarURL();
-								message.channel.send(`${authorpic}`);
+								var authorpic1 = nickmember.displayAvatarURL();
+								message.channel.send(`${authorpic1}`);
 							} else {
 								message.channel.send(`${author} is not a valid nickname of a user in this server. No author avatar will be posted.`);
 							}
@@ -656,7 +656,7 @@ client.on('messageCreate', (message) => {
 						.setColor('RANDOM')
 						.setTitle(title)
 						//.setURL('https://discord.js.org/')
-						.setAuthor(author, authorpic, authorpic)
+						.setAuthor(author, authorpic1, authorpic1)
 						.setDescription(description)
 						.setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
 						//.addFields(
