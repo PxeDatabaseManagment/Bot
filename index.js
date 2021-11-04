@@ -649,6 +649,7 @@ client.on('messageCreate', (message) => {
 								message.channel.send(`${author} is not a valid nickname of a user in this server. No author avatar will be posted.`);
 							}
 						} else {
+							message.channel.send(`${authorpic}`);
 						}
 						
 						const exampleEmbed = new MessageEmbed()
