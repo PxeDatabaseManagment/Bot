@@ -645,7 +645,7 @@ client.on('messageCreate', (message) => {
 						if (authorpic) {
 						} else {
 							if (memberlist.includes('^' + author + '^')) {
-								let authorpic = nickmember.displayAvatarURL();
+								var authorpic = nickmember.displayAvatarURL();
 								message.channel.send(`${authorpic}`);
 							} else {
 								message.channel.send(`${author} is not a valid nickname of a user in this server. No author avatar will be posted.`);
