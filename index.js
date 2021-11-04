@@ -642,14 +642,14 @@ client.on('messageCreate', (message) => {
 					if (image.includes(' ')) {
 						message.channel.send(`Invalid image.`);
 					} else {
-						if (authorpic === "") {
+						if (authorpic) {
+						} else {
 							if (memberlist.includes('^' + author + '^')) {
 								let authorpic = nickmember.displayAvatarURL();
+								message.channel.send(`${authorpic}`);
 							} else {
 								message.channel.send(`${author} is not a valid nickname of a user in this server. No author avatar will be posted.`);
 							}
-						} else {
-							message.channel.send(`${authorpic}`);
 						}
 						
 						const exampleEmbed = new MessageEmbed()
