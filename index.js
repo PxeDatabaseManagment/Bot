@@ -486,7 +486,7 @@ client.on('messageCreate', (message) => {
 					message.channel.send(`${nick} has been kicked.`);
 				} else {
 					message.channel.send(`${nick} is not a valid nickname of a user in this server. Message of departure has been sent.`);
-					message.guild.channels.cache.find(i => i.name === 'official').send(`${nick} has left the server and has been purged from my database.\nBE GONE!`);
+					message.guild.channels.cache.find(i => i.name === 'official').send(`${nick} has left the server and has been purged from my database.`);
 				}
 			} else {
 				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
