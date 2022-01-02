@@ -667,7 +667,7 @@ client.on('messageCreate', (message) => {
 						//.addField('Inline field title', 'Some value here', true)
 						.setImage(image)
 						.setTimestamp()
-						.setFooter({ text: footer, icon_url: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
+						.setFooter({ text: footer, iconURL: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
 						let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 						let chan = message.channel.name;
 						if (chan == 'audit-log') {
@@ -735,7 +735,7 @@ client.on('messageCreate', (message) => {
 							//.addField('Inline field title', 'Some value here', true)
 							.setImage(nimage)
 							.setTimestamp()
-							.setFooter({ name: nfooter, url: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
+							.setFooter({ text: nfooter, iconURL: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
 							channelid.messages.fetch({limit: 99}).then(msg => {
 								const aospecMessage = msg.filter(msg => msg.embeds[0]);
 								const ospecMessage = aospecMessage.filter(msg => msg.embeds[0]?.description?.includes(odescription));
@@ -802,7 +802,7 @@ client.on('messageCreate', (message) => {
 					//.addField('Inline field title', 'Some value here', true)
 					.setImage(image)
 					.setTimestamp()
-					.setFooter({ name: footer, url: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
+					.setFooter({ text: footer, iconURL: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
 					let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 					let chan = message.channel.name;
 					if (chan == 'audit-log') {
@@ -1080,7 +1080,7 @@ client.on('messageCreate', (message) => {
 						//.addField('Inline field title', 'Some value here', true)
 						.setImage(image)
 						.setTimestamp()
-						.setFooter({ name: footer, url: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
+						.setFooter({ text: footer, iconURL: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
 						if (memberlist.includes('^' + nick + '^')) {
 							message.channel.send(`Embed DM has been sent to ${nickmember}.`);
 							nickmember.send({ embeds: [exampleEmbed] });
@@ -1145,7 +1145,7 @@ client.on('messageCreate', (message) => {
 							//.addField('Inline field title', 'Some value here', true)
 							.setImage(nimage)
 							.setTimestamp()
-							.setFooter({ name: nfooter, url: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
+							.setFooter({ text: nfooter, iconURL: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
 							channelid.messages.fetch({limit: 99}).then(msg => {
 								const aospecMessage = msg.filter(msg => msg.embeds[0]);
 								const ospecMessage = aospecMessage.filter(msg => msg.embeds[0]?.description?.includes(odescription));
