@@ -667,7 +667,7 @@ client.on('messageCreate', (message) => {
 						//.addField('Inline field title', 'Some value here', true)
 						.setImage(image)
 						.setTimestamp()
-						.setFooter({ name: footer, url: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
+						.setFooter({ text: footer, icon_url: 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1' });
 						let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 						let chan = message.channel.name;
 						if (chan == 'audit-log') {
