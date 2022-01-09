@@ -51,6 +51,11 @@ client.on('messageCreate', (message) => {
 		message.delete();
 	}
 */	
+		
+	if (msg.toString().indexOf("git gud")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
+		message.channel.send({files: ["https://c.tenor.com/LSPbESNm8hYAAAAd/git-gud-video-games.gif"]});
+        }
+		
 	if(msg == '!help') {
 		if (message.channel.type != 'DM') {
 			message.delete();
