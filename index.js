@@ -16,7 +16,7 @@ client.on('guildMemberAdd', member => {
 	const welcomeEmbed = new MessageEmbed();
 	welcomeEmbed.setColor('RANDOM');
 	welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.");
-	member.guild.channels.cache.find(i => i.name === 'aoc-full-council-link').send({ embeds: [welcomeEmbed] });
+	member.guild.channels.cache.find(i => i.name === 'member-log').send({ embeds: [welcomeEmbed] });
 	for (var x = 1; x<101; x++) {
 		if (memberlist.includes(',' + 'Cadet' + x + ',')) {
 		} else {
@@ -36,7 +36,7 @@ client.on('guildMemberRemove', member => {
         const leaveEmbed = new MessageEmbed();
         leaveEmbed.setColor('RANDOM');
         leaveEmbed.setDescription(member.user.tag + " has left the server.");
-        member.guild.channels.cache.find(i => i.name === 'aoc-full-council-link').send({ embeds: [leaveEmbed] });
+        member.guild.channels.cache.find(i => i.name === 'member-log').send({ embeds: [leaveEmbed] });
 	}
 	catch(error){
 		member.guild.channels.cache.find(i => i.name === 'error-reporting').send(`I almost crashed. Fix your shit. \nError code: REMOVE`);
