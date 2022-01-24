@@ -486,12 +486,12 @@ client.on('messageCreate', (message) => {
 			let chan = message.channel.name;
 			if (chan == 'audit-log') {
 				if (memberlist.includes(',' + nick + ',')) {
-					message.guild.channels.cache.find(i => i.name === 'official').send(`${nick} has been kicked from the server.`);
+					message.guild.channels.cache.find(i => i.name === 'member-log').send(`${nick} has been kicked from the server.`);
 					nickmember.kick();
 					message.channel.send(`${nick} has been kicked.`);
 				} else {
 					message.channel.send(`${nick} is not a valid nickname of a user in this server. Message of departure has been sent.`);
-					message.guild.channels.cache.find(i => i.name === 'official').send(`${nick} has left the server and has been purged from my database.`);
+					message.guild.channels.cache.find(i => i.name === 'member-log').send(`${nick} has left the server and has been purged from my database.`);
 				}
 			} else {
 				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
