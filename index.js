@@ -1065,7 +1065,7 @@ client.on('messageCreate', (message) => {
 				setTimeout(function(){
 				if (chanlist.includes('^' + channelname + '^')) {
 					channelid.messages.fetch({limit: 1}).then(msg => {
-						const specMessage = msg.filter(msg => msg.map(m=>m.id).join('\n');
+						const specMessage = msg.map(m=>m.id).join('\n');
 						async function edit() {
 							const message = await channelid.messages.fetch(specMessage);
 							await message.edit(c);
@@ -1080,7 +1080,7 @@ client.on('messageCreate', (message) => {
 				setTimeout(function(){
 				if (chanlist.includes('^' + channelname2 + '^')) {
 					channelid2.messages.fetch({limit: 1}).then(msg2 => {
-						const specMessage2 = msg2.filter(msg2 => msg2.map(m2=>m2.id).join('\n');
+						const specMessage2 = msg2.map(m2=>m2.id).join('\n');
 						async function edit2() {
 							const message2 = await channelid2.messages.fetch(specMessage2);
 							await message2.edit(c2);
@@ -1095,7 +1095,7 @@ client.on('messageCreate', (message) => {
 				setTimeout(function(){
 				if (chanlist.includes('^' + channelname3 + '^')) {
 					channelid3.messages.fetch({limit: 1}).then(msg3=> {
-						const specMessage3 = msg3.filter(msg3 => msg3.map(m3=>m3.id).join('\n');
+						const specMessage3 = msg3.map(m3=>m3.id).join('\n');
 						async function edit3() {
 							const message3 = await channelid3.messages.fetch(specMessage3);
 							await message3.edit(c3);
@@ -1110,7 +1110,7 @@ client.on('messageCreate', (message) => {
 				setTimeout(function(){
 				if (chanlist.includes('^' + channelname4 + '^')) {
 					channelid4.messages.fetch({limit: 1}).then(msg4 => {
-						const specMessage4 = msg4.filter(msg4 => msg4.map(m4=>m4.id).join('\n');
+						const specMessage4 = msg4.map(m4=>m4.id).join('\n');
 						async function edit4() {
 							const message4 = await channelid4.messages.fetch(specMessage4);
 							await message4.edit(c4);
@@ -1125,7 +1125,7 @@ client.on('messageCreate', (message) => {
 				setTimeout(function(){
 				if (chanlist.includes('^' + channelname5 + '^')) {
 					channelid5.messages.fetch({limit: 1}).then(msg5 => {
-						const specMessage5 = msg5.filter(msg5 => msg5.map(m5=>m5.id).join('\n');
+						const specMessage5 = msg5.map(m5=>m5.id).join('\n');
 						async function edit5() {
 							const message5 = await channelid5.messages.fetch(specMessage5);
 							await message5.edit(c5);
@@ -1140,7 +1140,7 @@ client.on('messageCreate', (message) => {
 				setTimeout(function(){
 				if (chanlist.includes('^' + channelname6 + '^')) {
 					channelid6.messages.fetch({limit: 1}).then(msg6 => {
-						const specMessage6 = msg6.filter(msg6 => msg6.map(m6=>m6.id).join('\n');
+						const specMessage6 = msg6.map(m6=>m6.id).join('\n');
 						async function edit6() {
 							const message6 = await channelid6.messages.fetch(specMessage6);
 							await message6.edit(c6);
