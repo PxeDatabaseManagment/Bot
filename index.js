@@ -1049,12 +1049,10 @@ client.on('messageCreate', (message) => {
 			let channelname3 = arguss[5];
 			let c4 = arguss[6];
 			let channelname4 = arguss[7];
-			let c4 = arguss[8];
-			let channelname4 = arguss[9];
-			let c5 = arguss[10];
-			let channelname5 = arguss[11];
-			let c6 = arguss[12];
-			let channelname6 = arguss[13];
+			let c5 = arguss[8];
+			let channelname5 = arguss[9];
+			let c6 = arguss[10];
+			let channelname6 = arguss[11];
 			let channelid = message.guild.channels.cache.find(i => i.name === channelname);
 			let channelid2 = message.guild.channels.cache.find(i => i.name === channelname2);
 			let channelid3 = message.guild.channels.cache.find(i => i.name === channelname3);
