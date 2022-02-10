@@ -921,6 +921,35 @@ client.on('messageCreate', (message) => {
 		}
 	}
 	
+	if (commandos === "e$om$") {
+		if (message.channel.type != 'DM') {
+			let c = arguss[0];
+			let channelname = arguss[1];
+			let channelid = message.guild.channels.cache.find(i => i.name === channelname);
+			let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
+			let chan = message.channel.name;
+			if (chan == 'audit-log') {
+				if (chanlist.includes('^' + channelname + '^')) {
+					channelid.messages.fetch({limit: 99}).then(msg => {
+						const specMessage = msg[0].map(m=>m.id).join('\n');
+						async function edit() {
+							const message = await channelid.messages.fetch(specMessage);
+							await message.edit(c);
+						}
+						edit();
+					});
+					message.channel.send(`Message has been edited.`);
+				} else {
+					message.channel.send(`${channelname} is not a valid channel in this server.`);
+				}
+			} else {
+				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+			}
+		} else {
+			message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+		}
+	}
+	
 	if (commandos === "ec$m$") {
 		if (message.channel.type != 'DM') {
 			let b = arguss[0];
