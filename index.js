@@ -930,8 +930,8 @@ client.on('messageCreate', (message) => {
 			let chan = message.channel.name;
 			if (chan == 'audit-log') {
 				if (chanlist.includes('^' + channelname + '^')) {
-					channelid.messages.fetch({limit: 99}).then(msg => {
-						const specMessage = msg[0].map(m=>m.id).join('\n');
+					channelid.messages.fetch({limit: 1}).then(msg => {
+						const specMessage = msg.map(m=>m.id).join('\n');
 						async function edit() {
 							const message = await channelid.messages.fetch(specMessage);
 							await message.edit(c);
