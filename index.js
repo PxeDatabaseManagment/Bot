@@ -1039,7 +1039,7 @@ client.on('messageCreate', (message) => {
 		}
 	}
 	
-	if (commandos === "ec$m$") {
+	if (commandos === "ec$om$") {
 		if (message.channel.type != 'DM') {
 			let c = arguss[0];
 			let channelname = arguss[1];
