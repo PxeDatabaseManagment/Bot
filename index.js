@@ -621,7 +621,7 @@ client.on('messageCreate', (message) => {
 						}
 						
 						const exampleEmbed = new MessageEmbed()
-						.setColor('#5c0707')
+						.setColor('#8a0c0c')
 						.setTitle(title)
 						//.setURL('https://discord.js.org/')
 						.setAuthor({ name: author, iconURL: authorpic, url: authorpic })
@@ -689,7 +689,7 @@ client.on('messageCreate', (message) => {
 					if (chan == 'audit-log') {
 						if (chanlist.includes('^' + channelname + '^')) {
 							const exampleEmbed = new MessageEmbed()
-							.setColor('#5c0707')
+							.setColor('#8a0c0c')
 							.setTitle(ntitle)
 							//.setURL('https://discord.js.org/')
 							.setAuthor({ name: nauthor, iconURL: nauthorpic, url: nauthorpic })
@@ -756,7 +756,7 @@ client.on('messageCreate', (message) => {
 					}
 					
 					const exampleEmbed = new MessageEmbed()
-					.setColor('#5c0707')
+					.setColor('#8a0c0c')
 					.setTitle(title)
 					//.setURL('https://discord.js.org/')
 					.setAuthor({ name: author, iconURL: authorpic, url: authorpic })
@@ -1184,7 +1184,7 @@ client.on('messageCreate', (message) => {
 					}
 					if (chan == 'audit-log') {
 						const exampleEmbed = new MessageEmbed()
-						.setColor('#5c0707')
+						.setColor('#8a0c0c')
 						.setTitle(title)
 						//.setURL('https://discord.js.org/')
 						.setAuthor({ name: author, iconURL: authorpic, url: authorpic })
@@ -1249,7 +1249,7 @@ client.on('messageCreate', (message) => {
 						if (memberlist.includes('^' + nick + '^')) {
 							let channelid = nickmember.user.dmChannel;
 							const exampleEmbed = new MessageEmbed()
-							.setColor('#5c0707')
+							.setColor('#8a0c0c')
 							.setTitle(ntitle)
 							//.setURL('https://discord.js.org/')
 							.setAuthor({ name: nauthor, iconURL: nauthorpic, url: nauthorpic })
