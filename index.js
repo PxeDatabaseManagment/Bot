@@ -304,6 +304,28 @@ client.on('messageCreate', (message) => {
 		}
 	}
 	
+	if (commando === "ca^r") {
+		if (message.channel.type != 'DM') {
+			let nick = argus[0];
+			let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
+			let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
+			let rolelist = ',' + message.guild.roles.cache.map(m=>m.name).join(',') + ',';
+			let chan = message.channel.name;
+			if (chan == 'audit-log') {
+				if (memberlist.includes(',' + nick + ',')) {
+					nickmember.roles.set(nickmember.roles.cache.filter(r => !r.editable));
+					message.channel.send(`All roles have been cleared from ${nickmember}.`);
+				} else {
+					message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
+				}
+			} else {
+				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+			}
+		} else {
+			message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+		}
+	}
+	
 	if (commando === "ch^r") {
 		if (message.channel.type != 'DM') {
 			let rname = argus[0];
