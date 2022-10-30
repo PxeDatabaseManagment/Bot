@@ -7,7 +7,7 @@ const client = new Client({
 });
 
 client.on('ready', () => {
-	client.user.setPresence({ activities: [{ name: "Phoenix Era", type: "WATCHING" }], status: "dnd" })
+	client.user.setPresence({ activities: [{ name: "Phoenix Era", type: "WATCHING" }] })
 });
 
 client.on('guildMemberAdd', member => {
