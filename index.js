@@ -122,7 +122,8 @@ client.on('messageCreate', (message) => {
 
 		const args = message.content.trim().split(/ +/g);
 		const command = args.shift().toLowerCase();
-
+		
+		/*
 		if (command == '!legion4') {
 			if (message.channel.type != 'DM') {
 				message.delete();
@@ -162,7 +163,8 @@ client.on('messageCreate', (message) => {
 				message.channel.send('Why would you possibly try to use that command in a DM, you idiot?');
 			}
 		}
-
+		*/
+		
 		if (msg.toString().indexOf(" apoc ") != -1 || msg.toString().indexOf("apoc ") != -1 || msg.toString().indexOf(" apoc") != -1 || msg === 'apoc') {
 
 			message.channel.send({ files: ["https://media.giphy.com/media/icDAoPu619Jahmhoai/giphy.gif"] });
