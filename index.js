@@ -60,9 +60,9 @@ client.on('messageCreate', (message) => {
 		if (msg == '!help') {
 			if (message.channel.type != 'DM') {
 				message.delete();
-				message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
+				message.channel.send('You can use the following commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
 			} else {
-				message.channel.send('You can use these commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
+				message.channel.send('You can use the following commands: \n \n!clanrules - displays clan rules \n!chatrules - displays server chat rules \n!roe - displays RoE');
 			}
 		}
 
