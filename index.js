@@ -205,7 +205,7 @@ client.on('messageCreate', (message) => {
 				'How you doin?',
 				'Yo.',
 				'Hey there.',
-				'What you need my dude?',
+				'What do you need my dude?',
 			];
 
 			var rand = Math.floor(Math.random() * list.length);
